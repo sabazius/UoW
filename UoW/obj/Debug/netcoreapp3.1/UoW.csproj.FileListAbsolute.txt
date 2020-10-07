@@ -1,0 +1,56 @@
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\UoW.exe
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\UoW.deps.json
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\UoW.runtimeconfig.json
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\UoW.runtimeconfig.dev.json
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\UoW.dll
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\UoW.pdb
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.csprojAssemblyReference.cache
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.AssemblyInfoInputs.cache
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.AssemblyInfo.cs
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.csproj.CoreCompileInputs.cache
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.MvcApplicationPartsAssemblyInfo.cs
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.MvcApplicationPartsAssemblyInfo.cache
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.RazorTargetAssemblyInfo.cache
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.csproj.CopyComplete
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.Manifest.cache
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.xml
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.dll
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.pdb
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\UoW.genruntimeconfig.cache
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.csprojAssemblyReference.cache
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.AssemblyInfoInputs.cache
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.AssemblyInfo.cs
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.csproj.CoreCompileInputs.cache
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.dll
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.pdb
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.exe
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.deps.json
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.runtimeconfig.json
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.runtimeconfig.dev.json
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.dll
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.pdb
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.RazorTargetAssemblyInfo.cache
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.csproj.CopyComplete
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.Manifest.cache
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.xml
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.genruntimeconfig.cache

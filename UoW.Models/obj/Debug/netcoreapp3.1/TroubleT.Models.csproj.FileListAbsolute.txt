@@ -1,0 +1,24 @@
+C:\Users\boris.se\source\repos\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\TroubleT.Models.deps.json
+C:\Users\boris.se\source\repos\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\TroubleT.Models.dll
+C:\Users\boris.se\source\repos\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\TroubleT.Models.pdb
+C:\Users\boris.se\source\repos\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.AssemblyInfoInputs.cache
+C:\Users\boris.se\source\repos\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.AssemblyInfo.cs
+C:\Users\boris.se\source\repos\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.dll
+C:\Users\boris.se\source\repos\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.pdb
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\TroubleT.Models.deps.json
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\TroubleT.Models.dll
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\TroubleT.Models.pdb
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.csprojAssemblyReference.cache
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.AssemblyInfoInputs.cache
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.AssemblyInfo.cs
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.csproj.CoreCompileInputs.cache
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.dll
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.pdb
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\TroubleT.Models.deps.json
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\TroubleT.Models.dll
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\TroubleT.Models.pdb
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.AssemblyInfoInputs.cache
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.AssemblyInfo.cs
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.csproj.CoreCompileInputs.cache
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.dll
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\TroubleT.Models.pdb

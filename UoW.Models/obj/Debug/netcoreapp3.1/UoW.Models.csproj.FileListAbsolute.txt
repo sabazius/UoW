@@ -1,0 +1,16 @@
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\UoW.Models.deps.json
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT.Models\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfoInputs.cache
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfo.cs
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\UoW.Models.csproj.CoreCompileInputs.cache
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Dropbox\PU\C#.net core\Part3\TroubleT\TroubleT.Models\obj\Debug\netcoreapp3.1\UoW.Models.pdb
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.deps.json
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfoInputs.cache
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfo.cs
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csproj.CoreCompileInputs.cache
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.pdb

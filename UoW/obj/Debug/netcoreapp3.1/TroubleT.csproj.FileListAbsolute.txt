@@ -1,0 +1,65 @@
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.exe
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.deps.json
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.runtimeconfig.json
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.runtimeconfig.dev.json
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.dll
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.pdb
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\staticwebassets\TroubleT.StaticWebAssets.Manifest.cache
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\staticwebassets\TroubleT.StaticWebAssets.xml
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.AssemblyInfoInputs.cache
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.AssemblyInfo.cs
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.RazorTargetAssemblyInfo.cache
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.dll
+C:\Users\boris.se\source\repos\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.pdb
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.exe
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.deps.json
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.runtimeconfig.json
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.runtimeconfig.dev.json
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.dll
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.pdb
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.csprojAssemblyReference.cache
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.AssemblyInfoInputs.cache
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.AssemblyInfo.cs
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.csproj.CoreCompileInputs.cache
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.RazorTargetAssemblyInfo.cache
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\staticwebassets\TroubleT.StaticWebAssets.Manifest.cache
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\staticwebassets\TroubleT.StaticWebAssets.xml
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.dll
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.pdb
+C:\Users\bbser\Dropbox\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.genruntimeconfig.cache
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.exe
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.deps.json
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.runtimeconfig.json
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.runtimeconfig.dev.json
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.dll
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.pdb
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.csprojAssemblyReference.cache
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.AssemblyInfoInputs.cache
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.AssemblyInfo.cs
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.RazorTargetAssemblyInfo.cache
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\staticwebassets\TroubleT.StaticWebAssets.Manifest.cache
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\staticwebassets\TroubleT.StaticWebAssets.xml
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.dll
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.pdb
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.genruntimeconfig.cache
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.Models.dll
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\TroubleT.Models.pdb
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.csproj.CopyComplete
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.csproj.CoreCompileInputs.cache
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bbser\Desktop\PU\C#.net core\Part2\TroubleT\TroubleT\obj\Debug\netcoreapp3.1\TroubleT.MvcApplicationPartsAssemblyInfo.cache
