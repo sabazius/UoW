@@ -1,14 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using UoW.Models.Tasks;
-using UoW.Models.User;
 
-namespace TroubleT.Controllers
+namespace UoW.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("users")]
-    public class UserController : Controller
+    public class LectorsController : ControllerBase
     {
-        public UserController()
+        public LectorsController()
         {
 
         }
@@ -25,6 +29,5 @@ namespace TroubleT.Controllers
 
             };
         }
-
     }
 }

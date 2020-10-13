@@ -54,3 +54,31 @@ C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.csproj.CopyC
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.Manifest.cache
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.xml
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.genruntimeconfig.cache
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\appsettings.json
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\UoW.exe
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\UoW.deps.json
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\UoW.runtimeconfig.json
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\UoW.runtimeconfig.dev.json
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\UoW.dll
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\UoW.pdb
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\UoW.Models.dll
+D:\georgi\New folder\UoW\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.csprojAssemblyReference.cache
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.AssemblyInfoInputs.cache
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.AssemblyInfo.cs
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.csproj.CoreCompileInputs.cache
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.MvcApplicationPartsAssemblyInfo.cs
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.MvcApplicationPartsAssemblyInfo.cache
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.RazorTargetAssemblyInfo.cache
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.csproj.CopyComplete
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.Manifest.cache
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.xml
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.dll
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.pdb
+D:\georgi\New folder\UoW\obj\Debug\netcoreapp3.1\UoW.genruntimeconfig.cache

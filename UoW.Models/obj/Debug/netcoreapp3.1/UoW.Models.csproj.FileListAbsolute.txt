@@ -14,3 +14,12 @@ C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Model
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csproj.CoreCompileInputs.cache
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.dll
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.pdb
+D:\georgi\New folder\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.deps.json
+D:\georgi\New folder\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.dll
+D:\georgi\New folder\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+D:\georgi\New folder\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csprojAssemblyReference.cache
+D:\georgi\New folder\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfoInputs.cache
+D:\georgi\New folder\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfo.cs
+D:\georgi\New folder\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csproj.CoreCompileInputs.cache
+D:\georgi\New folder\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.dll
+D:\georgi\New folder\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.pdb
