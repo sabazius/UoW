@@ -14,3 +14,12 @@ C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Model
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csproj.CoreCompileInputs.cache
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.dll
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.pdb
+D:\stoqn\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.deps.json
+D:\stoqn\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.dll
+D:\stoqn\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+D:\stoqn\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csprojAssemblyReference.cache
+D:\stoqn\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfoInputs.cache
+D:\stoqn\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfo.cs
+D:\stoqn\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csproj.CoreCompileInputs.cache
+D:\stoqn\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.dll
+D:\stoqn\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.pdb

@@ -210,19 +210,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bbser\\.nuget\\packages\\": {}
+    "C:\\Users\\EKIT LAB 315\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bbser\\OneDrive\\Desktop\\UoW\\UoW\\UoW.csproj",
+      "projectUniqueName": "D:\\stoqn\\UoW\\UoW.csproj",
       "projectName": "UoW",
-      "projectPath": "C:\\Users\\bbser\\OneDrive\\Desktop\\UoW\\UoW\\UoW.csproj",
-      "packagesPath": "C:\\Users\\bbser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bbser\\OneDrive\\Desktop\\UoW\\UoW\\obj\\",
+      "projectPath": "D:\\stoqn\\UoW\\UoW.csproj",
+      "packagesPath": "C:\\Users\\EKIT LAB 315\\.nuget\\packages\\",
+      "outputPath": "D:\\stoqn\\UoW\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bbser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\EKIT LAB 315\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -235,8 +235,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\bbser\\OneDrive\\Desktop\\UoW\\UoW.Models\\UoW.Models.csproj": {
-              "projectPath": "C:\\Users\\bbser\\OneDrive\\Desktop\\UoW\\UoW.Models\\UoW.Models.csproj"
+            "D:\\stoqn\\UoW.Models\\UoW.Models.csproj": {
+              "projectPath": "D:\\stoqn\\UoW.Models\\UoW.Models.csproj"
             }
           }
         }
@@ -277,7 +277,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

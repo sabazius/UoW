@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "rt7gRFCTGF/UM7FqT7Pcct6GXxgZ8doVAamdLgiNC/MncWtf7HSxGT4m32Y0LPGKSskxs39YtPLftwCyAi3TKg==",
+  "dgSpecHash": "AnMkqslxzuF3KsY4dsQWf89rp1B0GYv2FiDg6901x21S/fegtSk3xLMf10Y1cepF6vcifrgC5Ajsi9p4NHZAxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bbser\\OneDrive\\Desktop\\UoW\\UoW\\UoW.csproj",
+  "projectFilePath": "D:\\stoqn\\UoW\\UoW.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bbser\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-    "C:\\Users\\bbser\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
-    "C:\\Users\\bbser\\.nuget\\packages\\swashbuckle.aspnetcore\\5.5.1\\swashbuckle.aspnetcore.5.5.1.nupkg.sha512",
-    "C:\\Users\\bbser\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.5.1\\swashbuckle.aspnetcore.swagger.5.5.1.nupkg.sha512",
-    "C:\\Users\\bbser\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.5.1\\swashbuckle.aspnetcore.swaggergen.5.5.1.nupkg.sha512",
-    "C:\\Users\\bbser\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.5.1\\swashbuckle.aspnetcore.swaggerui.5.5.1.nupkg.sha512"
+    "C:\\Users\\EKIT LAB 315\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\EKIT LAB 315\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\EKIT LAB 315\\.nuget\\packages\\swashbuckle.aspnetcore\\5.5.1\\swashbuckle.aspnetcore.5.5.1.nupkg.sha512",
+    "C:\\Users\\EKIT LAB 315\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.5.1\\swashbuckle.aspnetcore.swagger.5.5.1.nupkg.sha512",
+    "C:\\Users\\EKIT LAB 315\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.5.1\\swashbuckle.aspnetcore.swaggergen.5.5.1.nupkg.sha512",
+    "C:\\Users\\EKIT LAB 315\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.5.1\\swashbuckle.aspnetcore.swaggerui.5.5.1.nupkg.sha512"
   ],
   "logs": []
 }
