@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj": {}
+    "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DAL\\UoW.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj": {
+    "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DAL\\UoW.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DAL\\UoW.DAL.csproj",
         "projectName": "UoW.DAL",
-        "projectPath": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj",
+        "projectPath": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DAL\\UoW.DAL.csproj",
         "packagesPath": "C:\\Users\\Vasil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DALL\\obj\\",
+        "outputPath": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vasil\\AppData\\Roaming\\NuGet\\NuGet.Config",

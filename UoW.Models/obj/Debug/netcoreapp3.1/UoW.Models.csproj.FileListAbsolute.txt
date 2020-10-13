@@ -17,7 +17,6 @@ C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Model
 C:\Users\Vasil\Source\Repos\UoW\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.deps.json
 C:\Users\Vasil\Source\Repos\UoW\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.dll
 C:\Users\Vasil\Source\Repos\UoW\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.pdb
-C:\Users\Vasil\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csprojAssemblyReference.cache
 C:\Users\Vasil\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfoInputs.cache
 C:\Users\Vasil\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfo.cs
 C:\Users\Vasil\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csproj.CoreCompileInputs.cache
