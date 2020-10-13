@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using UoW.Models.Tasks;
 using UoW.Models.User;
 
 namespace TroubleT.Controllers
@@ -13,14 +15,17 @@ namespace TroubleT.Controllers
         }
 
         [HttpGet]
-        public User GetUser()
+        public Story GetUser()
         {
-            return new User()
-            {
-                PersonalNumber = 1,
-                Name = "Boris",
-                TeamId = 12
-            };
+            return new Story()
+                { 
+            ID = 154,
+            Description = "description",
+            Name = "Ivan",
+            StartDate = DateTime.Now,
+            EndDate = DateTime.Now.AddDays(5),
+            ProjectID = 12
+        };
         }
 
     }
