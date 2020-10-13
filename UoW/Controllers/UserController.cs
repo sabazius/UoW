@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
+using UoW.Models.Tasks;
 using UoW.Models.User;
 
 namespace TroubleT.Controllers
@@ -13,14 +15,23 @@ namespace TroubleT.Controllers
         }
 
         [HttpGet]
-        public User GetUser()
+        public TaskTypes GetUser()
+            
         {
-            return new User()
+            return new TaskTypes()
             {
-                PersonalNumber = 1,
-                Name = "Boris",
-                TeamId = 12
-            };
+                ID = 11,
+                Description = "IKI",
+                Name = "Petar"
+
+
+
+
+                
+
+ 
+
+           };
         }
 
     }
