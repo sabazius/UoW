@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\bbser\\.nuget\\packages\\": {}
+    "C:\\Users\\Bio Lab_300_1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bbser\\OneDrive\\Desktop\\UoW\\UoW.Models\\UoW.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\UoW.Models.csproj",
       "projectName": "UoW.Models",
-      "projectPath": "C:\\Users\\bbser\\OneDrive\\Desktop\\UoW\\UoW.Models\\UoW.Models.csproj",
-      "packagesPath": "C:\\Users\\bbser\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bbser\\OneDrive\\Desktop\\UoW\\UoW.Models\\obj\\",
+      "projectPath": "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\UoW.Models.csproj",
+      "packagesPath": "C:\\Users\\Bio Lab_300_1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bbser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Bio Lab_300_1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
