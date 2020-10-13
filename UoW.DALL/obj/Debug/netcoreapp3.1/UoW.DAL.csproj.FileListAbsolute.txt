@@ -1,0 +1,12 @@
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\bin\Debug\netcoreapp3.1\UoW.DAL.deps.json
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\bin\Debug\netcoreapp3.1\UoW.DAL.dll
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\bin\Debug\netcoreapp3.1\UoW.DAL.pdb
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\bin\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\obj\Debug\netcoreapp3.1\UoW.DAL.csprojAssemblyReference.cache
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\obj\Debug\netcoreapp3.1\UoW.DAL.AssemblyInfoInputs.cache
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\obj\Debug\netcoreapp3.1\UoW.DAL.AssemblyInfo.cs
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\obj\Debug\netcoreapp3.1\UoW.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\obj\Debug\netcoreapp3.1\UoW.DAL.csproj.CopyComplete
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\obj\Debug\netcoreapp3.1\UoW.DAL.dll
+C:\Users\Vasil\source\repos\UoW\UoW.DALL\obj\Debug\netcoreapp3.1\UoW.DAL.pdb
