@@ -8,8 +8,4 @@
     <ProjectReference Include="..\UoW.Models\UoW.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Users\" />
-  </ItemGroup>
-
 </Project>

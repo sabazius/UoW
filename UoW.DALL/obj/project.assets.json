@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bio Lab_300_1\\.nuget\\packages\\": {}
+    "C:\\Users\\Vasil\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj",
       "projectName": "UoW.DAL",
-      "projectPath": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj",
-      "packagesPath": "C:\\Users\\Bio Lab_300_1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\obj\\",
+      "projectPath": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj",
+      "packagesPath": "C:\\Users\\Vasil\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.DALL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Bio Lab_300_1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vasil\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -52,8 +52,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.Models\\UoW.Models.csproj": {
-              "projectPath": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.Models\\UoW.Models.csproj"
+            "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.Models\\UoW.Models.csproj": {
+              "projectPath": "C:\\Users\\Vasil\\source\\repos\\UoW\\UoW.Models\\UoW.Models.csproj"
             }
           }
         }

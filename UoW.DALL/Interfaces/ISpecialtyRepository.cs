@@ -7,7 +7,7 @@ namespace DAL.Interfaces
     {
         void InsertSpecialty(Specialty specialty);
         void UpdateSpecialty(Specialty specialty);
-        void DeleteSpecialty(Specialty specialty);
-        IEnumerable<Specialty> GetAllSpecialties();
+        void DeleteSpecialty(int id);
+        List<Specialty> GetAllSpecialties();
     }
 }

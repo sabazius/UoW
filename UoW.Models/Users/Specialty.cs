@@ -8,9 +8,7 @@ namespace UoW.Models.User
     {
         public int ID { get; set; }
         public string Name { get; set; }
-
         public string ShortName { get; set; }
-
         public int FacultyID { get; set; }
         public int LectorID { get; set; }
     }
