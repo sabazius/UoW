@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace UoW.Models.User
+﻿namespace UoW.Models.User
 {
     public class Users
     {
@@ -8,7 +6,7 @@ namespace UoW.Models.User
         public string Name { get; set; }
         public int TeamId { get; set; }
         public int FacultyID { get; set; }
-    public string Email { get; set; }
-}
+        public string Email { get; set; }
+    }
 }
 
