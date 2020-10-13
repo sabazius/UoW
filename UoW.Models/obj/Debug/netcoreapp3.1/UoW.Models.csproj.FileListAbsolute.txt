@@ -14,3 +14,12 @@ C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Model
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csproj.CoreCompileInputs.cache
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.dll
 C:\Users\bbser\OneDrive\Desktop\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.pdb
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.deps.json
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW.Models\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csprojAssemblyReference.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfoInputs.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.AssemblyInfo.cs
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.csproj.CoreCompileInputs.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW.Models\obj\Debug\netcoreapp3.1\UoW.Models.pdb
