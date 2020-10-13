@@ -1,0 +1,12 @@
+D:\stoqn\UoW.DAL\bin\Debug\netcoreapp3.1\UoW.DAL.deps.json
+D:\stoqn\UoW.DAL\bin\Debug\netcoreapp3.1\UoW.DAL.dll
+D:\stoqn\UoW.DAL\bin\Debug\netcoreapp3.1\UoW.DAL.pdb
+D:\stoqn\UoW.DAL\bin\Debug\netcoreapp3.1\UoW.Models.dll
+D:\stoqn\UoW.DAL\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+D:\stoqn\UoW.DAL\obj\Debug\netcoreapp3.1\UoW.DAL.csprojAssemblyReference.cache
+D:\stoqn\UoW.DAL\obj\Debug\netcoreapp3.1\UoW.DAL.AssemblyInfoInputs.cache
+D:\stoqn\UoW.DAL\obj\Debug\netcoreapp3.1\UoW.DAL.AssemblyInfo.cs
+D:\stoqn\UoW.DAL\obj\Debug\netcoreapp3.1\UoW.DAL.csproj.CoreCompileInputs.cache
+D:\stoqn\UoW.DAL\obj\Debug\netcoreapp3.1\UoW.DAL.csproj.CopyComplete
+D:\stoqn\UoW.DAL\obj\Debug\netcoreapp3.1\UoW.DAL.dll
+D:\stoqn\UoW.DAL\obj\Debug\netcoreapp3.1\UoW.DAL.pdb
