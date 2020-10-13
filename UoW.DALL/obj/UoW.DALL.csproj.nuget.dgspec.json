@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\UoW.Models.csproj": {}
+    "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\UoW.DALL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\UoW.Models.csproj": {
+    "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\UoW.DALL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\UoW.Models.csproj",
-        "projectName": "UoW.Models",
-        "projectPath": "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\UoW.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\UoW.DALL.csproj",
+        "projectName": "UoW.DALL",
+        "projectPath": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\UoW.DALL.csproj",
         "packagesPath": "C:\\Users\\Bio Lab_300_1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\obj\\",
+        "outputPath": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bio Lab_300_1\\AppData\\Roaming\\NuGet\\NuGet.Config",

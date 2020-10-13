@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "UoW.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/UoW.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UoW.Models.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "UoW.Models/1.0.0": {
+      "type": "project",
+      "path": "../UoW.Models/UoW.Models.csproj",
+      "msbuildProject": "../UoW.Models/UoW.Models.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "UoW.Models >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Bio Lab_300_1\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\UoW.Models.csproj",
-      "projectName": "UoW.Models",
-      "projectPath": "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\UoW.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj",
+      "projectName": "UoW.DAL",
+      "projectPath": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\UoW.DAL.csproj",
       "packagesPath": "C:\\Users\\Bio Lab_300_1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bio Lab_300_1\\Source\\Repos\\UoW\\UoW.Models\\obj\\",
+      "outputPath": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.DALL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Bio Lab_300_1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.Models\\UoW.Models.csproj": {
+              "projectPath": "C:\\Users\\Bio Lab_300_1\\source\\repos\\UoW\\UoW.Models\\UoW.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

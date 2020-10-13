@@ -82,3 +82,31 @@ C:\Users\Vasil\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\staticwebassets\UoW.
 C:\Users\Vasil\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.dll
 C:\Users\Vasil\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.pdb
 C:\Users\Vasil\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.genruntimeconfig.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.exe
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.deps.json
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.runtimeconfig.json
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.runtimeconfig.dev.json
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.dll
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.pdb
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.Models.dll
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\bin\Debug\netcoreapp3.1\UoW.Models.pdb
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.csprojAssemblyReference.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.AssemblyInfoInputs.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.AssemblyInfo.cs
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.csproj.CoreCompileInputs.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.RazorTargetAssemblyInfo.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.csproj.CopyComplete
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.Manifest.cache
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\staticwebassets\UoW.StaticWebAssets.xml
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.dll
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.pdb
+C:\Users\Bio Lab_300_1\Source\Repos\UoW\UoW\obj\Debug\netcoreapp3.1\UoW.genruntimeconfig.cache
