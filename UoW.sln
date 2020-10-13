@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UoW", "UoW\UoW.csproj", "{E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UoW.Models", "UoW.Models\UoW.Models.csproj", "{B61AFB2D-BBE0-4213-9534-4ECF353E3556}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UoW.DALL", "UoW.DALL\UoW.DALL.csproj", "{6C03353A-1376-4483-9968-371EFED5E5D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B61AFB2D-BBE0-4213-9534-4ECF353E3556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B61AFB2D-BBE0-4213-9534-4ECF353E3556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B61AFB2D-BBE0-4213-9534-4ECF353E3556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C03353A-1376-4483-9968-371EFED5E5D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C03353A-1376-4483-9968-371EFED5E5D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C03353A-1376-4483-9968-371EFED5E5D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C03353A-1376-4483-9968-371EFED5E5D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
