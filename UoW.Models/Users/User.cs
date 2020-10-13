@@ -7,3 +7,10 @@
         public int TeamId { get; set; }
     }
 }
+
+namespace UoW.Models
+{
+    public class UserTask
+    {
+    }
+}
