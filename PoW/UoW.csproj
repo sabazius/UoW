@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PoW.DL\PoW.DL.csproj" />
-    <ProjectReference Include="..\PoW.Models\PoW.Models.csproj" />
+    <ProjectReference Include="..\PoW.DL\UoW.DL.csproj" />
+    <ProjectReference Include="..\PoW.Models\UoW.Models.csproj" />
   </ItemGroup>
 
 

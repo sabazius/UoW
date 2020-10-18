@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoW", "PoW\PoW.csproj", "{3F75B48D-F7F7-4869-A936-3F92D819FD7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UoW", "PoW\UoW.csproj", "{3F75B48D-F7F7-4869-A936-3F92D819FD7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PoW.Models", "PoW.Models\PoW.Models.csproj", "{1E83ADA3-DE83-4958-B1E5-D55B6029A4DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UoW.Models", "PoW.Models\UoW.Models.csproj", "{1E83ADA3-DE83-4958-B1E5-D55B6029A4DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoW.DL", "PoW.DL\PoW.DL.csproj", "{8F25F944-FD56-4CF1-8513-1C349A090FA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UoW.DL", "PoW.DL\UoW.DL.csproj", "{8F25F944-FD56-4CF1-8513-1C349A090FA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
