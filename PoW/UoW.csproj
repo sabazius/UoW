@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PoW.DL\UoW.DL.csproj" />
     <ProjectReference Include="..\PoW.Models\UoW.Models.csproj" />
+    <ProjectReference Include="..\UoW.BL\UoW.BL.csproj" />
   </ItemGroup>
 
 

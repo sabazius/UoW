@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PoW.DL\UoW.DL.csproj" />
+    <ProjectReference Include="..\PoW.Models\UoW.Models.csproj" />
+  </ItemGroup>
+
+</Project>
