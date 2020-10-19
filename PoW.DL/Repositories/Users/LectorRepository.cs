@@ -1,10 +1,10 @@
-﻿using PoW.DL.InMemoryDB;
-using PoW.DL.Interfaces.Users;
-using PoW.Models.Users;
+﻿using UoW.DL.InMemoryDB;
+using UoW.DL.Interfaces.Users;
+using UoW.Models.Users;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PoW.DL.Repositories.Users
+namespace UoW.DL.Repositories.Users
 {
     public class LectorRepository : ILectorRepository
     {

@@ -1,6 +1,6 @@
-﻿using PoW.Models.Tasks;
+﻿using UoW.Models.Tasks;
 
-namespace PoW.DL.Interfaces.Users
+namespace UoW.DL.Interfaces.Users
 {
     public interface ITaskTypeRepository
     {

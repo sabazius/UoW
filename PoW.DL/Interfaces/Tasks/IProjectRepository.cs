@@ -1,7 +1,6 @@
-﻿using PoW.Models.Tasks;
-using PoW.Models.Users;
+﻿using UoW.Models.Tasks;
 
-namespace PoW.DL.Interfaces.Users
+namespace UoW.DL.Interfaces.Users
 {
     public interface IProjectRepository
     {

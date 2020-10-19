@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "PoW": {
+    "UoW": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

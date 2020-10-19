@@ -1,4 +1,4 @@
-﻿namespace PoW.Models.Users
+﻿namespace UoW.Models.Users
 {
     public class Speciality
     {

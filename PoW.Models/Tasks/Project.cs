@@ -1,4 +1,4 @@
-﻿namespace PoW.Models.Tasks
+﻿namespace UoW.Models.Tasks
 {
     public class Project : BaseTask
     {
