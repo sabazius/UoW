@@ -1,6 +1,6 @@
-﻿using PoW.DL.Interfaces.Users;
-using PoW.DL.Repositories.Users;
-using PoW.Models.Users;
+﻿using UoW.DL.Interfaces.Users;
+using UoW.DL.Repositories.Users;
+using UoW.Models.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;

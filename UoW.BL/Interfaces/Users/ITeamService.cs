@@ -1,4 +1,4 @@
-﻿using PoW.Models.Users;
+﻿using UoW.Models.Users;
 
 namespace UoW.BL.Interface.User
 {
