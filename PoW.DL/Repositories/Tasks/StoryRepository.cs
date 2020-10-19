@@ -1,10 +1,10 @@
-﻿using PoW.DL.InMemoryDB;
-using PoW.DL.Interfaces.Users;
-using PoW.Models.Tasks;
+﻿using UoW.DL.InMemoryDB;
+using UoW.DL.Interfaces.Users;
+using UoW.Models.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PoW.DL.Repositories.Tasks
+namespace UoW.DL.Repositories.Tasks
 {
     public class StoryRepository : IStoryRepository
     {

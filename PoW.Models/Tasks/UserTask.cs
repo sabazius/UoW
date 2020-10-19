@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PoW.Models.Tasks
+namespace UoW.Models.Tasks
 {
     public class UserTask : BaseTask
     {

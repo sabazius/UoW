@@ -1,9 +1,9 @@
-﻿using PoW.Models.Tasks;
-using PoW.Models.Users;
+﻿using UoW.Models.Tasks;
+using UoW.Models.Users;
 using System;
 using System.Collections.Generic;
 
-namespace PoW.DL.InMemoryDB
+namespace UoW.DL.InMemoryDB
 {
     public static class InMemoryDb
     {
@@ -26,7 +26,7 @@ namespace PoW.DL.InMemoryDB
                 Id = 1,
                 FacultylID = 123,
                 Name = "Boris",
-                Email = "boris@pow.com",
+                Email = "boris@UoW.com",
                 TeamID = 12
             });
 
@@ -35,7 +35,7 @@ namespace PoW.DL.InMemoryDB
                 Id = 2,
                 FacultylID = 456,
                 Name = "Stefan",
-                Email = "stefan@pow.com",
+                Email = "stefan@UoW.com",
                 TeamID = 12
             });
 

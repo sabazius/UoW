@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PoW.DL.InMemoryDB;
+using UoW.DL.InMemoryDB;
 
-namespace PoW
+namespace UoW
 {
     public class Startup
 	{
@@ -37,7 +37,7 @@ namespace PoW
 			app.UseSwagger();
 			app.UseSwaggerUI(c =>
 			{
-				c.SwaggerEndpoint("/swagger/v1/swagger.json", "PoW API V1");
+				c.SwaggerEndpoint("/swagger/v1/swagger.json", "UoW API V1");
 			});
 
 			app.UseHttpsRedirection();

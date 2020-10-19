@@ -1,6 +1,6 @@
-﻿using PoW.Models.Users;
+﻿using UoW.Models.Users;
 
-namespace PoW.DL.Interfaces.Users
+namespace UoW.DL.Interfaces.Users
 {
     public interface IUserRepository
     {

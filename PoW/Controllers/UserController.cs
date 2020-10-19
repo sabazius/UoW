@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PoW.Models.Users;
+using UoW.Models.Users;
 
-namespace PoW.Controllers.Controllers
+namespace UoW.Controllers.Controllers
 {
     [ApiController]
     [Route("users")]
@@ -21,7 +21,7 @@ namespace PoW.Controllers.Controllers
                 Id = 1,
                 FacultylID = 123,
                 Name = "Boris",
-                Email = "boris@pow.com",
+                Email = "boris@UoW.com",
                 TeamID = 12
             };
         }
