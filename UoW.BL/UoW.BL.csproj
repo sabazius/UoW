@@ -5,12 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interface\Task\" />
-  </ItemGroup>
+    <ProjectReference Include="..\UoW.DL\UoW.DL.csproj" />
+    <ProjectReference Include="..\UoW.Models\UoW.Models.csproj" />
 
   <ItemGroup>
-    <ProjectReference Include="..\PoW.DL\UoW.DL.csproj" />
-    <ProjectReference Include="..\PoW.Models\UoW.Models.csproj" />
   </ItemGroup>
 
 </Project>
