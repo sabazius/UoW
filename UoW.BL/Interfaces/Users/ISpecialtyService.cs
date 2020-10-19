@@ -1,7 +1,4 @@
-﻿using PoW.Models.Users;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using UoW.Models.Users;
 
 namespace UoW.BL.Interfaces.Users
 {

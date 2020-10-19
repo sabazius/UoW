@@ -1,9 +1,6 @@
-﻿using PoW.DL.Interfaces.Users;
-using PoW.Models.Users;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using UoW.BL.Interfaces.Users;
+﻿using UoW.BL.Interfaces.Users;
+using UoW.DL.Interfaces.Users;
+using UoW.Models.Users;
 
 namespace UoW.BL.Services.Users
 {
@@ -14,7 +11,7 @@ namespace UoW.BL.Services.Users
         {
             _specialtyRepository = specialtyRepository;
         }
-        Speciality ISpecialtyService.GetSpecialtyById(int id)
+        public Speciality GetSpecialtyById(int id)
         {
            return _specialtyRepository.GetById(id);
         }
