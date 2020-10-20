@@ -21,6 +21,14 @@ namespace UoW.DL.InMemoryDB
 
         public static void Init()
         {
+            Specialties.Add(new Speciality
+            {
+                FacultyId = 123,
+                Id = 2,
+                LectorId = 321,
+                Name = "Telecommunications",
+                ShortName = "TIS"
+            });
             Users.Add(new User
             {
                 Id = 1,
@@ -98,6 +106,13 @@ namespace UoW.DL.InMemoryDB
                 Name = "Sprint name",
                 StartDate = DateTime.Now,
                 TeamID = 1
+
+            Lectors.Add(new Lector
+            {
+                Id = 24,
+                FirstName = "Vladimir",
+                LastName = "Sovniov",
+                DateStarted = new DateTime(2018, 10, 12)
             });
 
         }

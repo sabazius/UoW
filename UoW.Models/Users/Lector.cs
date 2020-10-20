@@ -8,5 +8,10 @@ namespace UoW.Models.Users
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateStarted{ get; set; }
+
+        public static void Add(Lector lector)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

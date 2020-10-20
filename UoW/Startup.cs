@@ -8,6 +8,7 @@ using UoW.BL.Services.Tasks;
 using UoW.DL.InMemoryDB;
 using UoW.DL.Interfaces.Users;
 using UoW.DL.Repositories.Tasks;
+using UoW.DL.Repositories.Users;
 
 namespace UoW
 {
@@ -27,6 +28,10 @@ namespace UoW
 
 			services.AddSingleton<ISprintRepository, SprintRepository>();
 			services.AddSingleton<ISprintService, SprintService>();
+			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
+			services.AddSingleton<ISpecialtyService, SpecialtyService>();
+			services.AddSingleton<ILectorRepository, LectorRepository > ();
+			services.AddSingleton<ILectorService, LectorService > ();
 			services.AddSingleton<IFacultyService, FacultyService>();
 			services.AddSingleton<IFacultyRepository, FacultyRepository>();
 
