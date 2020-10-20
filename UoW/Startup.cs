@@ -26,6 +26,8 @@ namespace UoW
 		{
 			InMemoryDb.Init();
 
+			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
+			services.AddSingleton<ISpecialtyService, SpecialtyService>();
 			services.AddSingleton<ILectorRepository, LectorRepository > ();
 			services.AddSingleton<ILectorService, LectorService > ();
 			services.AddSingleton<IFacultyService, FacultyService>();

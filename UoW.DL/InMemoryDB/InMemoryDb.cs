@@ -21,6 +21,14 @@ namespace UoW.DL.InMemoryDB
 
         public static void Init()
         {
+            Specialties.Add(new Speciality
+            {
+                FacultyId = 123,
+                Id = 2,
+                LectorId = 321,
+                Name = "Telecommunications",
+                ShortName = "TIS"
+            });
             Users.Add(new User
             {
                 Id = 1,
