@@ -96,7 +96,15 @@ namespace UoW.DL.InMemoryDB
                 OwnerId = 1,
                 StartDate = DateTime.Now,
                 StoryId = 55
-            }); 
+            });
+
+            Lectors.Add(new Lector
+            {
+                Id = 24,
+                FirstName = "Vladimir",
+                LastName = "Sovniov",
+                DateStarted = new DateTime(2018, 10, 12)
+            });
 
         }
 

@@ -7,6 +7,7 @@ using UoW.BL.Interfaces.Users;
 using UoW.BL.Services.Users;
 using UoW.DL.InMemoryDB;
 using UoW.DL.Interfaces.Users;
+using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories.Users;
 
 namespace UoW
@@ -27,6 +28,11 @@ namespace UoW
 
 			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
 			services.AddSingleton<ISpecialtyService, SpecialtyService>();
+			services.AddSingleton<ILectorRepository, LectorRepository > ();
+			services.AddSingleton<ILectorService, LectorService > ();
+			services.AddSingleton<IFacultyService, FacultyService>();
+			services.AddSingleton<IFacultyRepository, FacultyRepository>();
+
 			services.AddControllers();
 			// Register the Swagger generator, defining 1 or more Swagger documents
 			services.AddSwaggerGen();
