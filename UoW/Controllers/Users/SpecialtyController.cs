@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UoW.BL.Interfaces.Users;
 using UoW.BL.Services.Users;
 
 namespace UoW.Controllers
@@ -7,8 +8,9 @@ namespace UoW.Controllers
     [ApiController]
     public class SpecialtyController : ControllerBase
     {
-        private SpecialtyService _specialtyService;
-        public SpecialtyController(SpecialtyService specialtyService)
+        private ISpecialtyService _specialtyService;
+
+        public SpecialtyController(ISpecialtyService specialtyService)
         {
             specialtyService = _specialtyService;
         }
