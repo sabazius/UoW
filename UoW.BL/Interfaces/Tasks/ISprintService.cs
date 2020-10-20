@@ -1,9 +1,12 @@
-﻿using UoW.Models.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using UoW.Models.Tasks;
 
-namespace UoW.BL.Interface.Tasks
+namespace UoW.BL.Interfaces.Tasks
 {
     public interface ISprintService
     {
-       Sprint GetSprintById(int id);
+        Sprint GetSprintById(int id);
     }
 }
