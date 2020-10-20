@@ -1,19 +1,21 @@
 ﻿using UoW.BL.Interfaces.Users;
+using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
 
 namespace UoW.BL.Services.Users
 {
     public class FacultyService : IFacultyService
     {
-        IFacultyService _facultyService;
+        IFacultyRepository _facultyService;
 
-        public FacultyService() 
-        { 
+        public FacultyService(IFacultyRepository facultyService) 
+        {
+            _facultyService = facultyService;
         }
 
         public Faculty GetFacultyById(int id)
         {
-            return _facultyService.GetFacultyById(id);
+            return _facultyService.GetById(id);
         }
     }
 }

@@ -34,8 +34,8 @@ namespace UoW
             services.AddSingleton<ISpecialtyService, SpecialtyService>();
             services.AddSingleton<ILectorRepository, LectorRepository>();
             services.AddSingleton<ILectorService, LectorService>();
-            services.AddSingleton<IFacultyService, FacultyService>();
             services.AddSingleton<IFacultyRepository, FacultyRepository>();
+            services.AddSingleton<IFacultyService, FacultyService>();
 
             services.AddControllers();
             // Register the Swagger generator, defining 1 or more Swagger documents
