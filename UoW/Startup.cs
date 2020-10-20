@@ -3,7 +3,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using UoW.BL.Interfaces.Tasks;
+using UoW.BL.Services.Tasks;
 using UoW.DL.InMemoryDB;
+using UoW.DL.Interfaces.Users;
+using UoW.DL.Repositories.Tasks;
 
 namespace UoW
 {
@@ -20,6 +24,9 @@ namespace UoW
 		public void ConfigureServices(IServiceCollection services)
 		{
 			InMemoryDb.Init();
+
+			services.AddSingleton<IStoryRepository, StoryRepository>();
+			services.AddSingleton<IStoryService, StoryService>();
 
 			services.AddControllers();
 			// Register the Swagger generator, defining 1 or more Swagger documents
