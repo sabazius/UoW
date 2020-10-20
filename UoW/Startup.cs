@@ -9,13 +9,15 @@ using UoW.BL.Services.Tasks;
 using UoW.BL.Services.Users;
 using UoW.DL.InMemoryDB;
 using UoW.DL.Interfaces.Users;
+using UoW.DL.Interfaces.Tasks;
 using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories.Users;
 
+
 namespace UoW
 {
-    public class Startup
-    {
+  public class Startup
+	{
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -36,6 +38,8 @@ namespace UoW
             services.AddSingleton<ILectorService, LectorService>();
             services.AddSingleton<IFacultyRepository, FacultyRepository>();
             services.AddSingleton<IFacultyService, FacultyService>();
+            services.AddSingleton<IStoryRepository, StoryRepository>();
+			      services.AddSingleton<IStoryService, StoryService>();
 
             services.AddControllers();
             // Register the Swagger generator, defining 1 or more Swagger documents
