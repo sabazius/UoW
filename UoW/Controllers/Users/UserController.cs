@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using UoW.BL.Interfaces.Users;
 using UoW.Models.Users;
 
 namespace UoW.Controllers.Controllers
@@ -7,24 +9,15 @@ namespace UoW.Controllers.Controllers
     [Route("users")]
     public class UserController : Controller
     {
-        public UserController()
+        IUserService UserService;
+        private IUserService _userService;
+
+        public UserController(IUserService userService)
         {
-
+            _userService = userService;
         }
-
-        [HttpGet]
-        public User GetUser()
-        {
-            return new User()
-            {
-
-                Id = 1,
-                FacultylID = 123,
-                Name = "Boris",
-                Email = "boris@UoW.com",
-                TeamID = 12
-            };
-        }
-
+          
+    
     }
 }
+
