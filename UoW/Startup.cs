@@ -36,8 +36,8 @@ namespace UoW
             services.AddSingleton<ISpecialtyService, SpecialtyService>();
             services.AddSingleton<ILectorRepository, LectorRepository>();
             services.AddSingleton<ILectorService, LectorService>();
-            services.AddSingleton<IFacultyService, FacultyService>();
             services.AddSingleton<IFacultyRepository, FacultyRepository>();
+            services.AddSingleton<IFacultyService, FacultyService>();
             services.AddSingleton<IStoryRepository, StoryRepository>();
 			      services.AddSingleton<IStoryService, StoryService>();
 

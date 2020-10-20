@@ -106,7 +106,7 @@ namespace UoW.DL.InMemoryDB
                 Name = "Sprint name",
                 StartDate = DateTime.Now,
                 TeamID = 1
-
+            });
             Lectors.Add(new Lector
             {
                 Id = 24,

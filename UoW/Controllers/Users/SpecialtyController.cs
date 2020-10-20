@@ -10,6 +10,7 @@ namespace UoW.Controllers
     public class SpecialtyController : ControllerBase
     {
         private ISpecialtyService _specialtyService;
+
         public SpecialtyController(ISpecialtyService specialtyService)
         {
             _specialtyService = specialtyService;
