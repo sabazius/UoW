@@ -98,6 +98,15 @@ namespace UoW.DL.InMemoryDB
                 StoryId = 55
             });
 
+            Sprints.Add(new Sprint
+            {
+                Description = "Description",
+                Duration = DateTime.Now.AddDays(5),
+                Id = 133,
+                Name = "Sprint name",
+                StartDate = DateTime.Now,
+                TeamID = 1
+
             Lectors.Add(new Lector
             {
                 Id = 24,

@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using UoW.BL.Interfaces.Users;
-using UoW.BL.Services.Users;
+using UoW.BL.Interfaces.Tasks;
+using UoW.BL.Services.Tasks;
 using UoW.DL.InMemoryDB;
 using UoW.DL.Interfaces.Users;
 using UoW.DL.Repositories.Tasks;
@@ -26,6 +26,8 @@ namespace UoW
 		{
 			InMemoryDb.Init();
 
+			services.AddSingleton<ISprintRepository, SprintRepository>();
+			services.AddSingleton<ISprintService, SprintService>();
 			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
 			services.AddSingleton<ISpecialtyService, SpecialtyService>();
 			services.AddSingleton<ILectorRepository, LectorRepository > ();
