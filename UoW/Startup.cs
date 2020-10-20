@@ -7,6 +7,7 @@ using UoW.BL.Interfaces.Users;
 using UoW.BL.Services.Users;
 using UoW.DL.InMemoryDB;
 using UoW.DL.Interfaces.Users;
+using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories.Users;
 
 namespace UoW
@@ -25,6 +26,8 @@ namespace UoW
 		{
 			InMemoryDb.Init();
 
+			services.AddSingleton<ILectorRepository, LectorRepository > ();
+			services.AddSingleton<ILectorService, LectorService > ();
 			services.AddSingleton<IFacultyService, FacultyService>();
 			services.AddSingleton<IFacultyRepository, FacultyRepository>();
 
