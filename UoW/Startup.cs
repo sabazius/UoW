@@ -27,6 +27,8 @@ namespace UoW
 
 			services.AddSingleton<IUserRepository, UserRepository>();
 			services.AddSingleton<IUserService, UserService>();
+			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
+			services.AddSingleton<ISpecialtyService, SpecialtyService>();
 			services.AddSwaggerGen();
 		}
 

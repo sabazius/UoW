@@ -9,15 +9,17 @@ namespace UoW.Controllers.Controllers
     [Route("users")]
     public class UserController : Controller
     {
-        IUserService UserService;
         private IUserService _userService;
 
         public UserController(IUserService userService)
         {
             _userService = userService;
         }
-          
-    
+        [HttpGet]
+        public User GetUser(int userId)
+        {
+            return _userService.GetUserByid(userId);
+        }
     }
 }
 

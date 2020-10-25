@@ -1,6 +1,5 @@
 ﻿using UoW.BL.Interfaces.Users;
 using UoW.DL.Interfaces.Users;
-using UoW.Models.Users;
 
 namespace UoW.BL.Services.Users
 {
