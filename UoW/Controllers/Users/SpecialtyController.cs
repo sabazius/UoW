@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UoW.BL.Interfaces.Users;
-using UoW.BL.Services.Users;
+using UoW.Models.Users;
 using UoW.Models.Users;
 
 namespace UoW.Controllers
@@ -16,10 +16,9 @@ namespace UoW.Controllers
             _specialtyService = specialtyService;
         }
         [HttpGet]
-        public Speciality GetSpecialty(int id)
+        public Speciality GetSpecialtyById(int specialtyId)
         {
-            return _specialtyService.GetSpecialtyById(id);
+            return _specialtyService.GetSpecialtyById(specialtyId);
         }
-
     }
 }

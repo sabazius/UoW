@@ -12,8 +12,6 @@ namespace UoW.Controllers
         private ISpecialtyService _specialtyService;
 
         public SpecialtyController(ISpecialtyService specialtyService)
-<<<<<<< HEAD
-=======
         {
             _specialtyService = specialtyService;
         }

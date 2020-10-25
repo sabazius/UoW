@@ -33,10 +33,12 @@ namespace UoW
 
 			services.AddSingleton<IProjectRepository, ProjectRepository>();
 			services.AddSingleton<IProjectService, ProjectService>();
+			services.AddSingleton<IUserRepository, UserRepository>();
+			services.AddSingleton<IUserService, UserService>();
+			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
+			services.AddSingleton<ISpecialtyService, SpecialtyService>();
             services.AddSingleton<ISprintRepository, SprintRepository>();
             services.AddSingleton<ISprintService, SprintService>();
-            services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
-            services.AddSingleton<ISpecialtyService, SpecialtyService>();
             services.AddSingleton<ILectorRepository, LectorRepository>();
             services.AddSingleton<ILectorService, LectorService>();
             services.AddSingleton<IFacultyRepository, FacultyRepository>();
