@@ -18,7 +18,7 @@ namespace UoW.Controllers.Tasks
         {
             _projectService = projectService;
         }
-
+        [HttpGet]
         public Project GetProjectById(int projectId)
         {
             return _projectService.GetProjectById(projectId);

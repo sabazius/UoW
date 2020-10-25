@@ -11,12 +11,10 @@ namespace UoW.BL.Services.Tasks
     public class ProjectService : IProjectService
     {
         IProjectRepository _projectRepository;
-        public ProjectService(ProjectRepository projectRepository)
+        public ProjectService(IProjectRepository projectRepository)
         {
             _projectRepository = projectRepository;
         }
-
-      
         Project IProjectService.GetProjectById(int id)
         {
             return _projectRepository.GetById(id);
