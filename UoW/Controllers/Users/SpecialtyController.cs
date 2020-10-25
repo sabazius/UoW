@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UoW.BL.Interfaces.Users;
 using UoW.BL.Services.Users;
+using UoW.Models.Users;
 
 namespace UoW.Controllers
 {
@@ -12,9 +13,13 @@ namespace UoW.Controllers
 
         public SpecialtyController(ISpecialtyService specialtyService)
         {
-            specialtyService = _specialtyService;
+            _specialtyService = specialtyService;
         }
-        
+        [HttpGet]
+        public Speciality GetSpecialty(int id)
+        {
+            return _specialtyService.GetSpecialtyById(id);
+        }
 
     }
 }

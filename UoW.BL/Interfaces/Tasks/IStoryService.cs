@@ -5,8 +5,8 @@ using UoW.Models.Tasks;
 
 namespace UoW.BL.Interfaces.Tasks
 {
-    public interface ISprintService
+    public interface IStoryService
     {
-        Sprint GetSprintById(int id);
+        Story GetStoryById(int storyId);
     }
 }

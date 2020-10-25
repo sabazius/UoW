@@ -7,6 +7,7 @@ namespace UoW.BL.Services.Users
     public class SpecialtyService : ISpecialtyService
     {
         private ISpecialityRepository _specialtyRepository;
+
         public SpecialtyService(ISpecialityRepository specialtyRepository)
         {
             _specialtyRepository = specialtyRepository;
