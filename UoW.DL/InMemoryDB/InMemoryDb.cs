@@ -115,6 +115,13 @@ namespace UoW.DL.InMemoryDB
                 DateStarted = new DateTime(2018, 10, 12)
             });
 
+            Projects.Add(new Project
+            {
+                Description = "Project description",
+                Id = 4322,
+                Name = "Some project name",
+                OwnerId = 2
+            });
         }
 
     }
