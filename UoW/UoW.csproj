@@ -13,9 +13,5 @@
     <ProjectReference Include="..\UoW.BL\UoW.BL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\Tasks\" />
-  </ItemGroup>
-
 
 </Project>
