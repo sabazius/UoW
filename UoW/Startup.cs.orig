@@ -3,14 +3,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using UoW.BL.Interfaces.Tasks;
 <<<<<<< HEAD
-using UoW.BL.Interfaces.Users;
-using UoW.BL.Services.Users;
+using UoW.BL.Services.Tasks;
 using UoW.DL.InMemoryDB;
 using UoW.DL.Interfaces.Users;
-using UoW.DL.Repositories.Users;
+using UoW.DL.Repositories;
 =======
-using UoW.BL.Interfaces.Tasks;
 using UoW.BL.Interfaces.Users;
 using UoW.BL.Services.Tasks;
 using UoW.BL.Services.Users;
@@ -42,6 +41,9 @@ namespace UoW
 			services.AddSingleton<IUserService, UserService>();
 			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
 			services.AddSingleton<ISpecialtyService, SpecialtyService>();
+			services.AddSingleton<IProjectRepository, ProjectRepository>();
+			services.AddSingleton<IProjectService, ProjectService>();
+			// Register the Swagger generator, defining 1 or more Swagger documents
 			services.AddSwaggerGen();
 		}
 

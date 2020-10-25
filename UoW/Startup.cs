@@ -4,12 +4,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UoW.BL.Interfaces.Tasks;
+using UoW.BL.Services.Tasks;
 using UoW.BL.Interfaces.Users;
 using UoW.BL.Services.Tasks;
 using UoW.BL.Services.Users;
 using UoW.DL.InMemoryDB;
 using UoW.DL.Interfaces.Users;
 using UoW.DL.Repositories.Tasks;
+using UoW.DL.Repositories;
 using UoW.DL.Repositories.Users;
 
 
@@ -29,12 +31,18 @@ namespace UoW
         {
             InMemoryDb.Init();
 
+			services.AddSingleton<IProjectRepository, ProjectRepository>();
+			services.AddSingleton<IProjectService, ProjectService>();
 			services.AddSingleton<IUserRepository, UserRepository>();
 			services.AddSingleton<IUserService, UserService>();
 			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
 			services.AddSingleton<ISpecialtyService, SpecialtyService>();
             services.AddSingleton<ISprintRepository, SprintRepository>();
             services.AddSingleton<ISprintService, SprintService>();
+            services.AddSingleton<ISprintRepository, SprintRepository>();
+            services.AddSingleton<ISprintService, SprintService>();
+            services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
+            services.AddSingleton<ISpecialtyService, SpecialtyService>();
             services.AddSingleton<ILectorRepository, LectorRepository>();
             services.AddSingleton<ILectorService, LectorService>();
             services.AddSingleton<IFacultyRepository, FacultyRepository>();
