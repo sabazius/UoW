@@ -3,17 +3,19 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
+using UoW.BL.Interface.User;
 using UoW.BL.Interfaces.Tasks;
-using UoW.BL.Services.Tasks;
 using UoW.BL.Interfaces.Users;
 using UoW.BL.Services.Tasks;
+using UoW.BL.Services.User;
 using UoW.BL.Services.Users;
 using UoW.DL.InMemoryDB;
 using UoW.DL.Interfaces.Users;
-using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories;
+using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories.Users;
-
+using UoW.Extensions;
 
 namespace UoW
 {
@@ -23,7 +25,6 @@ namespace UoW
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -33,6 +34,8 @@ namespace UoW
 
 			services.AddSingleton<IProjectRepository, ProjectRepository>();
 			services.AddSingleton<IProjectService, ProjectService>();
+            services.AddSingleton<ITeamRepository, TeamRepository>();
+            services.AddSingleton<ITeamService, TeamService>();
 			services.AddSingleton<IUserRepository, UserRepository>();
 			services.AddSingleton<IUserService, UserService>();
 			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
@@ -45,6 +48,10 @@ namespace UoW
             services.AddSingleton<IFacultyService, FacultyService>();
             services.AddSingleton<IStoryRepository, StoryRepository>();
             services.AddSingleton<IStoryService, StoryService>();
+            
+
+
+            services.AddSingleton(Log.Logger);
 
             services.AddControllers();
             // Register the Swagger generator, defining 1 or more Swagger documents
@@ -52,12 +59,15 @@ namespace UoW
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger logger)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.ConfigureExceptionHandler(logger);
+           
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
             app.UseSwaggerUI(c =>

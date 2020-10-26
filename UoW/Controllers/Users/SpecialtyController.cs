@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Serilog;
+using System;
 using UoW.BL.Interfaces.Users;
-using UoW.Models.Users;
 using UoW.Models.Users;
 
 namespace UoW.Controllers
