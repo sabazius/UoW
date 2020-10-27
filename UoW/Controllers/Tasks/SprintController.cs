@@ -25,12 +25,7 @@ namespace UoW.Controllers.Tasks
             return _sprintService.GetSprintById(sprintId);
         }
 
-        [HttpPost]
-        public Sprint GetSprint(int sprintId, int teamId)
-        {
-            return _sprintService.GetSprint(sprintId, teamId);
-        }
-
+      
     }
 
 }
