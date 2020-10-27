@@ -16,6 +16,7 @@ using UoW.DL.Repositories;
 using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories.Users;
 using UoW.Extensions;
+using AutoMapper;
 
 namespace UoW
 {
@@ -48,8 +49,12 @@ namespace UoW
             services.AddSingleton<IFacultyService, FacultyService>();
             services.AddSingleton<IStoryRepository, StoryRepository>();
             services.AddSingleton<IStoryService, StoryService>();
-            
 
+            services.AddAutoMapper(typeof(Startup));
+            //services.AddAutoMapper(x => 
+            //{ 
+            //    x.CreateMap
+            //});
 
             services.AddSingleton(Log.Logger);
 
