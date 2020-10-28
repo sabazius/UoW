@@ -27,40 +27,34 @@ namespace UoW.Controllers
             var result = _specialtyService.GetSpecialtyById(specialtyId);
             if (result == null) return NotFound();
 
-            var response = new SpecialtyResponse
-            {
-                FacultyId = result.FacultyId,
-                Id = result.Id,
-                LectorId = result.LectorId,
-                Name = result.Name,
-                ShortName = result.ShortName
-            };
+            var specialty = _mapper.Map<Speciality>(result);
 
-            return Ok(response);
+            return Ok(specialty);
         }
 
         [HttpPost]
         public IActionResult CreateSpecialty([FromBody] SpecialtyRequest request)
         {
             if (request == null) return NotFound();
+
             var specialty = _mapper.Map<Speciality>(request);
-            _specialtyService.Create(specialty);
+            var result = _specialtyService.Create(specialty);
+
+            if (result == null) return NotFound();
+
             return Ok(specialty);
         }
 
         [HttpDelete]
         public IActionResult DeleteSpecialty(int id)
         {
-            if(id <= 0)
-            {
-                return BadRequest();
-            }
+            if (id <= 0) return BadRequest();
+
             var specialty = _specialtyService.GetSpecialtyById(id);
             _specialtyService.Delete(id);
-            if(specialty == null)
-            {
-                return NotFound();
-            }
+
+            if (specialty == null) return NotFound();
+
             return Ok();
         }
 
@@ -68,19 +62,12 @@ namespace UoW.Controllers
         public IActionResult UpdateSpecialty([FromBody] SpecialtyRequest request)
         {
             if (request == null) return NotFound();
-            var specialty = new Speciality
-            {
-                FacultyId = request.FacultyId,
-                Id = request.Id,
-                LectorId = request.LectorId,
-                Name = request.Name,
-                ShortName = request.ShortName
-            };
+
+            var specialty = _mapper.Map<Speciality>(request);
             var result = _specialtyService.Update(specialty);
-            if(result == null)
-            {
-                return NotFound();
-            }
+
+            if (result == null) return NotFound();
+
             return Ok(specialty);
         }
     }
