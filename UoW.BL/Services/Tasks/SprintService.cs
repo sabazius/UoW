@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
-using UoW.BL.Interfaces.Tasks;
+﻿using UoW.BL.Interfaces.Tasks;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Tasks;
 
@@ -14,9 +12,28 @@ namespace UoW.BL.Services.Tasks
             _sprintRepository = sprintRepository;
         }
 
+        public Sprint Create(Sprint sprint)
+        {
+            _sprintRepository.Create(sprint);
+
+            return _sprintRepository.GetById(sprint.Id);
+        }
+
+        public void Delete(int userId)
+        {
+            _sprintRepository.Delete(userId);
+        }
+
         public Sprint GetSprintById(int id)
         {
             return _sprintRepository.GetById(id);
+        }
+
+        public Sprint Update(Sprint sprint)
+        {
+            _sprintRepository.Update(sprint);
+
+            return _sprintRepository.GetById(sprint.Id);
         }
     }
 }
