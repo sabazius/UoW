@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Contracts.Responses;
 using UoW.Models.Tasks;
+using UoW.Models.Users;
 
 namespace UoW.Models.Common
 {
