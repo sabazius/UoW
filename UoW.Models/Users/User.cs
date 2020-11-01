@@ -7,5 +7,7 @@
         public int TeamID { get; set; }
         public int FacultylID { get; set; }
         public string Email { get; set; }
+
+        public int UserPositionId { get; set; }
     }
 }

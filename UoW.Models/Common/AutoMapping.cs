@@ -14,6 +14,8 @@ namespace UoW.Models.Common
             CreateMap<SpecialtyResponse, Speciality>();
             CreateMap<SprintRequest, Sprint>();
             CreateMap<SprintResponse, Sprint>();
+            CreateMap<UserPositionRequest, UserPosition>();
+            CreateMap<UserPositionResponse, UserPosition>();
         }
     }
 }

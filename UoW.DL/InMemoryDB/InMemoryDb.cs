@@ -18,6 +18,7 @@ namespace UoW.DL.InMemoryDB
         public static List<Sprint> Sprints { get; set; } = new List<Sprint>();
         public static List<TaskType> TaskTypes { get; set; } = new List<TaskType>();
 
+        public static List<UserPosition> UserPositions { get; set; } = new List<UserPosition>();
 
         public static void Init()
         {
@@ -121,6 +122,26 @@ namespace UoW.DL.InMemoryDB
                 Id = 4322,
                 Name = "Some project name",
                 OwnerId = 2
+            });
+
+            //User positions
+            UserPositions.Add(new UserPosition
+            {
+                Id = 1,
+                PositionName = "Junior Developer",
+                Description = "Begginer C# developer"
+            });
+            UserPositions.Add(new UserPosition
+            {
+                Id = 2,
+                PositionName = "Middle Developer",
+                Description = "Experienced C# developer"
+            });
+            UserPositions.Add(new UserPosition
+            {
+                Id = 3,
+                PositionName = "Senior Developer",
+                Description = "Very experienced C# developer"
             });
         }
 
