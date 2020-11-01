@@ -24,8 +24,6 @@ namespace UoW.Controllers.Tasks
         {
             return _sprintService.GetSprintById(sprintId);
         }
-
-      
     }
 
 }
