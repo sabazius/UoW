@@ -101,7 +101,7 @@ namespace UoW.DL.InMemoryDB
             Sprints.Add(new Sprint
             {
                 Description = "Description",
-                Duration = DateTime.Now.AddDays(5),
+                EndDate = DateTime.Now.AddDays(5),
                 Id = 133,
                 Name = "Sprint name",
                 StartDate = DateTime.Now,

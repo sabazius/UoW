@@ -7,7 +7,7 @@ using UoW.Models.Tasks;
 
 namespace UoW.Controllers.Tasks
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class SprintController : ControllerBase
     {
@@ -28,15 +28,7 @@ namespace UoW.Controllers.Tasks
             if (result == null)
                 return NotFound();
 
-            var response = new SprintResponse
-            {
-                Description = result.Description,
-                Duration = result.Duration,
-                Id = result.Id,
-                Name = result.Name,
-                StartDate = result.StartDate,
-                TeamID = result.TeamID
-            };
+            var response = _mapper.Map<SprintResponse>(result);
 
             return Ok(response);
         }
@@ -83,15 +75,7 @@ namespace UoW.Controllers.Tasks
             if (request == null)
                 return BadRequest();
 
-            var sprint = new Sprint
-            {
-                Description = request.Description,
-                Duration = request.Duration,
-                Id = request.Id,
-                Name = request.Name,
-                StartDate = request.StartDate,
-                TeamID = request.TeamID
-            };
+            var sprint = _mapper.Map<Sprint>(request);
 
             var result = _sprintService.Update(sprint);
 

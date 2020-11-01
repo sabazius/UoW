@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using UoW.BL.Interfaces.Tasks;
+﻿using UoW.BL.Interfaces.Tasks;
 using UoW.DL.Interfaces.Users;
-using UoW.DL.Repositories;
 using UoW.Models.Tasks;
 
 namespace UoW.BL.Services.Tasks

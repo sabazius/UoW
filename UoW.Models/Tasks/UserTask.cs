@@ -9,7 +9,7 @@ namespace UoW.Models.Tasks
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int StoryId { get; set; }
-        public DateTime TimeSpend { get; set; }
+        public TimeSpan TimeSpend { get; set; }
         public int TaskType { get; set; }
     }
 }

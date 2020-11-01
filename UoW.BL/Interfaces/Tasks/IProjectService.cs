@@ -1,5 +1,4 @@
-﻿using UoW.DL.Interfaces.Users;
-using UoW.Models.Tasks;
+﻿using UoW.Models.Tasks;
 
 namespace UoW.BL.Interfaces.Tasks
 {
