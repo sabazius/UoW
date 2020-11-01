@@ -51,6 +51,10 @@ namespace UoW
             services.AddSingleton<IStoryService, StoryService>();
 
             services.AddAutoMapper(typeof(Startup));
+            //services.AddAutoMapper(x => 
+            //{ 
+            //    x.CreateMap
+            //});
 
             services.AddSingleton(Log.Logger);
 

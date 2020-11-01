@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Contracts.Responses;
-using UoW.Models.Users;
+using UoW.Models.Tasks;
 
 namespace UoW.Models.Common
 {
@@ -14,6 +14,8 @@ namespace UoW.Models.Common
         {
             CreateMap<SpecialtyRequest, Speciality>();
             CreateMap<SpecialtyResponse, Speciality>();
+            CreateMap<SprintRequest, Sprint>();
+            CreateMap<Sprint, SprintResponse>();
         }
     }
 }
