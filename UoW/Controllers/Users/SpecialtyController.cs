@@ -61,21 +61,34 @@ namespace UoW.Controllers
             var specialty = _mapper.Map<Speciality>(request);
 
             List<Speciality> specialtiesList = _specialtyService.GetAll();
+            //List<Faculty> faculties = _facultyService.GetAll();  GetAll function not implemented
+            //List<Lector> lectors = _lectorService.GetAll();  GetAll function not implemented
             var uniqueId = true;
             var uniqueName = true;
-            var facultuIdExists = true;
-            var lectorIdExists = true;
+            var facultuIdExists = false;
+            var lectorIdExists = false;
 
             specialtiesList.ForEach(delegate (Speciality spec)
             {
                 if (spec.Id == specialty.Id) uniqueId = false;
                 if(spec.Name == specialty.Name) uniqueName = false;
+                //faculties.ForEach(delegate (Faculty fac)  GetAll function not implemented
+                //{
+                //    if(fac.Id === specialty.facultyId) {facultuIdExists = true; return;} 
+                //})
+                //lectors.ForEach(delegate (Lector lec)  GetAll function not implemented
+                //{
+                //    if(lec.Id === specialty.lectorId) {lectorIdExists = true; return;} 
+                //})
             });
 
             if(!uniqueId || !uniqueName)
             {
                 return Conflict("Dublicate key");
             }
+
+            //if (!facultuIdExists) return NotFound();  
+            //if (!lectorIdExists) return NotFound();
 
             var result = _specialtyService.Create(specialty);
 
