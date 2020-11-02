@@ -27,8 +27,16 @@ namespace UoW.DL.InMemoryDB
                 FacultyId = 123,
                 Id = 2,
                 LectorId = 321,
-                Name = "Telecommunications",
+                Name = "Telecommunications and Information Systems",
                 ShortName = "TIS"
+            });
+            Specialties.Add(new Speciality
+            {
+                FacultyId = 124,
+                Id = 1,
+                LectorId = 213,
+                Name = "Software Engineer",
+                ShortName = "SE"
             });
             Users.Add(new User
             {

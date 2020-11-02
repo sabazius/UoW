@@ -1,4 +1,5 @@
-﻿using UoW.BL.Interfaces.Users;
+﻿using System.Collections.Generic;
+using UoW.BL.Interfaces.Users;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
 
@@ -26,6 +27,11 @@ namespace UoW.BL.Services.Users
         void ISpecialtyService.Delete(int id)
         {
             _specialtyRepository.Delete(id);
+        }
+
+        List<Speciality> ISpecialtyService.GetAll()
+        {
+            return _specialtyRepository.GetAll();
         }
 
         Speciality ISpecialtyService.Update(Speciality speciality)

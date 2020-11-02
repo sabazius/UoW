@@ -43,5 +43,10 @@ namespace UoW.DL.Repositories.Users
                 Create(speciality);
             }
         }
+
+        public List<Speciality> GetAll()
+        {
+            return dbTable;
+        }
     }
 }

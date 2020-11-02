@@ -1,4 +1,5 @@
-﻿using UoW.Models.Users;
+﻿using System.Collections.Generic;
+using UoW.Models.Users;
 
 namespace UoW.BL.Interfaces.Users
 {
@@ -6,6 +7,7 @@ namespace UoW.BL.Interfaces.Users
     {
         Speciality GetSpecialtyById(int id);
         Speciality Create(Speciality speciality);
+        List<Speciality> GetAll();
         void Delete(int id);
         Speciality Update(Speciality speciality);
     }
