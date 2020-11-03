@@ -10,6 +10,8 @@ namespace UoW.Models.Common
     {
         public AutoMapping()
         {
+            CreateMap<LectorResponse, Lector>();
+            CreateMap<LectorRequest, Lector>();
             CreateMap<SpecialtyRequest, Speciality>();
             CreateMap<SpecialtyResponse, Speciality>();
             CreateMap<SprintRequest, Sprint>();
