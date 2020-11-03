@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +9,27 @@ using UoW.Models.Users;
 
 namespace UoW.Controllers.Users
 {
+    [Route("lector")]
+    [ApiController]
     public class LectorsController : ControllerBase
     {
         public LectorService _lectorController;
-
-        public LectorsController(LectorService lectorController)
+        public IMapper _mapper;
+        public LectorsController(LectorService lectorController, IMapper mapper)
         {
             _lectorController = lectorController;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public Lector GetById(int id)
+        public IActionResult GetLectorById(int lectorid)
         {
-            return _lectorController.GetLectorId(id);
+            var result = _lectorController.GetLectorId(lectorid);
+            if (result == null) return NotFound();
+
+            var lector = _mapper.Map<Lector>(result);
+
+            return Ok(lector);
         }
 
     }
