@@ -1,12 +1,16 @@
-﻿using UoW.Models.Users;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UoW.Models.Users;
 
 namespace UoW.DL.Interfaces.Users
 {
     public interface IUserPositionRepository
     {
-        void Create(UserPosition userPosition);
+        UserPosition Create(UserPosition userPosition);
         void Delete(int userPositionId);
-        void Update(UserPosition userPosition);
+        UserPosition Update(UserPosition userPosition);
         UserPosition GetById(int userPositionId);
+
+        IEnumerable<UserPosition> GetAll();
     }
 }

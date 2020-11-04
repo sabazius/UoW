@@ -49,6 +49,8 @@ namespace UoW
             services.AddSingleton<IFacultyService, FacultyService>();
             services.AddSingleton<IStoryRepository, StoryRepository>();
             services.AddSingleton<IStoryService, StoryService>();
+            services.AddSingleton<IUserPositionService, UserPositionService>();
+            services.AddSingleton<IUserPositionRepository, UserPositionRepository>();
 
             services.AddAutoMapper(typeof(Startup));
             //services.AddAutoMapper(x => 
