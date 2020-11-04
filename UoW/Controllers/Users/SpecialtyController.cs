@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Xml;
 using UoW.BL.Interfaces.Users;
@@ -13,15 +14,35 @@ namespace UoW.Controllers
     public class SpecialtyController : ControllerBase
     {
         private ISpecialtyService _specialtyService;
+        private IFacultyService _facultyService;
+        private ILectorService _lectorService;
         private IMapper _mapper;
 
-        public SpecialtyController(ISpecialtyService specialtyService, IMapper mapper)
+        public SpecialtyController(ISpecialtyService specialtyService, IMapper mapper, IFacultyService facultyService, ILectorService lectorService)
         {
             _specialtyService = specialtyService;
+            _facultyService = facultyService;
+            _lectorService = lectorService;
             _mapper = mapper;
         }
+
+        private bool checkUniquness(List<Speciality> specialtiesList, Speciality specialty)
+        {
+            var uniqueId = true;
+            var uniqueName = true;
+            specialtiesList.ForEach(delegate (Speciality spec)
+            {
+                if (spec.Id == specialty.Id) uniqueId = false;
+                if (spec.Name == specialty.Name) uniqueName = false;
+            });
+            if (uniqueId && uniqueName) return true;
+
+            return false;
+
+        }
+
         [HttpGet("id")]
-        public IActionResult GetSpecialtyById(int specialtyId)
+        public IActionResult GetSpecialtyById(int specialtyId) 
         {
             var result = _specialtyService.GetSpecialtyById(specialtyId);
             if (result == null) return NotFound();
@@ -61,41 +82,23 @@ namespace UoW.Controllers
             var specialty = _mapper.Map<Speciality>(request);
 
             List<Speciality> specialtiesList = _specialtyService.GetAll();
-            //List<Faculty> faculties = _facultyService.GetAll();  GetAll function not implemented
-            //List<Lector> lectors = _lectorService.GetAll();  GetAll function not implemented
-            var uniqueId = true;
-            var uniqueName = true;
-            var facultuIdExists = false;
-            var lectorIdExists = false;
 
-            specialtiesList.ForEach(delegate (Speciality spec)
-            {
-                if (spec.Id == specialty.Id) uniqueId = false;
-                if(spec.Name == specialty.Name) uniqueName = false;
-                //faculties.ForEach(delegate (Faculty fac)  GetAll function not implemented
-                //{
-                //    if(fac.Id === specialty.facultyId) {facultuIdExists = true; return;} 
-                //})
-                //lectors.ForEach(delegate (Lector lec)  GetAll function not implemented
-                //{
-                //    if(lec.Id === specialty.lectorId) {lectorIdExists = true; return;} 
-                //})
-            });
+            var facultyIdExists = _facultyService.GetFacultyById(specialty.FacultyId) != null;
+            var lectorIdExists = _lectorService.GetLectorId(specialty.LectorId) != null;
 
-            if(!uniqueId || !uniqueName)
+            if (!checkUniquness(specialtiesList, specialty))
             {
                 return Conflict("Dublicate key");
             }
 
-            //if (!facultuIdExists) return NotFound();  
-            //if (!lectorIdExists) return NotFound();
+            if (!facultyIdExists) return NotFound("Invalid Faculty Id");
+            if (!lectorIdExists) return NotFound("Invalid Lector Id");
 
             var result = _specialtyService.Create(specialty);
 
             if (result == null) return NotFound();
 
             return Ok(specialty);
-
         }
 
         [HttpDelete]
@@ -104,9 +107,9 @@ namespace UoW.Controllers
             if (id <= 0) return BadRequest();
 
             var specialty = _specialtyService.GetSpecialtyById(id);
-            _specialtyService.Delete(id);
-
             if (specialty == null) return NotFound();
+
+             _specialtyService.Delete(id);
 
             return Ok();
         }
@@ -117,13 +120,11 @@ namespace UoW.Controllers
             if (request == null) return NotFound();
 
             var specialty = _mapper.Map<Speciality>(request);
-            var result = _specialtyService.Update(specialty);
 
+            var result = _specialtyService.Update(specialty);
             if (result == null) return NotFound();
 
             return Ok(specialty);
         }
-        
-       
     }
 }
