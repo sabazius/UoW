@@ -7,7 +7,7 @@ namespace UoW.BL.Interfaces.Users
 	{
 		UserPosition GetUserPosition(int userPositionId);
 
-		void SaveUserPosition(UserPosition userPosition);
+		UserPosition SaveUserPosition(UserPosition userPosition);
 
 		void DeleteUserPosition(int userPositionId);
 

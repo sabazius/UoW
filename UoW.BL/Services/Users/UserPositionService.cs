@@ -44,10 +44,5 @@ namespace UoW.BL.Services.Users
 				return _userPositionRepository.Create(userPosition);
 			}
 		}
-
-		void IUserPositionService.SaveUserPosition(UserPosition userPosition)
-		{
-			throw new System.NotImplementedException();
-		}
 	}
 }

@@ -17,81 +17,79 @@ using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories.Users;
 using UoW.Extensions;
 using AutoMapper;
+using FluentValidation.AspNetCore;
 
 namespace UoW
 {
-    public class Startup
-    {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-        public IConfiguration Configuration { get; }
+	public class Startup
+	{
+		public Startup(IConfiguration configuration)
+		{
+			Configuration = configuration;
+		}
+		public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            InMemoryDb.Init();
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
+		{
+			InMemoryDb.Init();
 
 			services.AddSingleton<IProjectRepository, ProjectRepository>();
 			services.AddSingleton<IProjectService, ProjectService>();
-            services.AddSingleton<ITeamRepository, TeamRepository>();
-            services.AddSingleton<ITeamService, TeamService>();
+			services.AddSingleton<ITeamRepository, TeamRepository>();
+			services.AddSingleton<ITeamService, TeamService>();
 			services.AddSingleton<IUserRepository, UserRepository>();
 			services.AddSingleton<IUserService, UserService>();
 			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
 			services.AddSingleton<ISpecialtyService, SpecialtyService>();
-            services.AddSingleton<ISprintRepository, SprintRepository>();
-            services.AddSingleton<ISprintService, SprintService>();
-            services.AddSingleton<ILectorRepository, LectorRepository>();
-            services.AddSingleton<ILectorService, LectorService>();
-            services.AddSingleton<IFacultyRepository, FacultyRepository>();
-            services.AddSingleton<IFacultyService, FacultyService>();
-            services.AddSingleton<IStoryRepository, StoryRepository>();
-            services.AddSingleton<IStoryService, StoryService>();
+			services.AddSingleton<ISprintRepository, SprintRepository>();
+			services.AddSingleton<ISprintService, SprintService>();
+			services.AddSingleton<ILectorRepository, LectorRepository>();
+			services.AddSingleton<ILectorService, LectorService>();
+			services.AddSingleton<IFacultyRepository, FacultyRepository>();
+			services.AddSingleton<IFacultyService, FacultyService>();
+			services.AddSingleton<IStoryRepository, StoryRepository>();
+			services.AddSingleton<IStoryService, StoryService>();
             services.AddSingleton<IUserPositionService, UserPositionService>();
             services.AddSingleton<IUserPositionRepository, UserPositionRepository>();
 
-            services.AddAutoMapper(typeof(Startup));
-            //services.AddAutoMapper(x => 
-            //{ 
-            //    x.CreateMap
-            //});
+			services.AddAutoMapper(typeof(Startup));
 
-            services.AddSingleton(Log.Logger);
+			services.AddSingleton(Log.Logger);
 
-            services.AddControllers();
-            // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen();
-        }
+			services.AddControllers()
+				.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>()); 
+			// Register the Swagger generator, defining 1 or more Swagger documents
+			services.AddSwaggerGen();
+		}
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger logger)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger logger)
+		{
+			if (env.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+			}
 
-            app.ConfigureExceptionHandler(logger);
-           
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "UoW API V1");
-            });
+			app.ConfigureExceptionHandler(logger);
 
-            app.UseHttpsRedirection();
+			// Enable middleware to serve generated Swagger as a JSON endpoint.
+			app.UseSwagger();
+			app.UseSwaggerUI(c =>
+			{
+				c.SwaggerEndpoint("/swagger/v1/swagger.json", "UoW API V1");
+			});
 
-            app.UseRouting();
+			app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+			app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-        }
-    }
+			app.UseAuthorization();
+
+			app.UseEndpoints(endpoints =>
+			{
+				endpoints.MapControllers();
+			});
+		}
+	}
 }
