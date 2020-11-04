@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using UoW.BL.Interfaces.Users;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Contracts.Responses;
@@ -7,7 +8,7 @@ using UoW.Models.Users;
 
 namespace UoW.Controllers.Users
 {
-    [Route("[controller]")]
+	[Route("[controller]")]
     [ApiController]
     public class UserPositionController : ControllerBase
     {
@@ -19,7 +20,7 @@ namespace UoW.Controllers.Users
             _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet("GetUserPosition")]
         public IActionResult GetUserPosition(int positionId)
         {
             var position = _userPositionService.GetUserPosition(positionId);
@@ -27,6 +28,18 @@ namespace UoW.Controllers.Users
             if (position == null) return NotFound($"Position with Id {positionId}");
 
             var response = _mapper.Map<UserPositionResponse>(position);
+
+            return Ok(response);
+        }
+
+        [HttpGet("GetAll")]
+        public IActionResult GetAll()
+        {
+            var result = _userPositionService.GetAll();
+
+            if (result == null) return NotFound("Collection is empty!");
+            
+            var response = _mapper.Map<IEnumerable<UserPositionResponse>>(result);
 
             return Ok(response);
         }

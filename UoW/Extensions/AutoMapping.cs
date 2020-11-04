@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System.Collections.Generic;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Contracts.Responses;
 using UoW.Models.Tasks;
@@ -13,7 +14,10 @@ namespace UoW.Models.Common
             CreateMap<SpecialtyRequest, Speciality>();
             CreateMap<SpecialtyResponse, Speciality>();
             CreateMap<SprintRequest, Sprint>();
-            CreateMap<Sprint, SprintResponse>();
+            CreateMap<SprintResponse, Sprint>();
+            CreateMap<UserPositionRequest, UserPosition>().ReverseMap();
+            CreateMap<UserPositionResponse, UserPosition>().ReverseMap();
+            CreateMap<IEnumerable<UserPositionResponse>, IEnumerable<UserPosition>>();
         }
     }
 }
