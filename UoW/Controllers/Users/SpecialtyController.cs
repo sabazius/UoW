@@ -26,21 +26,6 @@ namespace UoW.Controllers
             _mapper = mapper;
         }
 
-        private bool checkUniquness(List<Speciality> specialtiesList, Speciality specialty)
-        {
-            var uniqueId = true;
-            var uniqueName = true;
-            specialtiesList.ForEach(delegate (Speciality spec)
-            {
-                if (spec.Id == specialty.Id) uniqueId = false;
-                if (spec.Name == specialty.Name) uniqueName = false;
-            });
-            if (uniqueId && uniqueName) return true;
-
-            return false;
-
-        }
-
         [HttpGet("id")]
         public IActionResult GetSpecialtyById(int specialtyId) 
         {
@@ -72,8 +57,6 @@ namespace UoW.Controllers
             return Ok(specialties);
         }
 
-
-
         [HttpPost]
         public IActionResult CreateSpecialty([FromBody] SpecialtyRequest request)
         {
@@ -81,12 +64,12 @@ namespace UoW.Controllers
 
             var specialty = _mapper.Map<Speciality>(request);
 
-            List<Speciality> specialtiesList = _specialtyService.GetAll();
-
             var facultyIdExists = _facultyService.GetFacultyById(specialty.FacultyId) != null;
             var lectorIdExists = _lectorService.GetLectorId(specialty.LectorId) != null;
+            var uniqueId = _specialtyService.GetSpecialtyById(specialty.Id) == null;
+            var uniqueName = _specialtyService.GetByName(specialty.Name) == null;
 
-            if (!checkUniquness(specialtiesList, specialty))
+            if (!uniqueId || !uniqueName)
             {
                 return Conflict("Dublicate key");
             }
@@ -120,6 +103,10 @@ namespace UoW.Controllers
             if (request == null) return NotFound();
 
             var specialty = _mapper.Map<Speciality>(request);
+
+
+            //DeleteSpecialty(id);
+            //return CreateSpecialty(request);
 
             var result = _specialtyService.Update(specialty);
             if (result == null) return NotFound();

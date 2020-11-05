@@ -10,5 +10,6 @@ namespace UoW.DL.Interfaces.Users
         void Update(Speciality user);
         List<Speciality> GetAll();
         Speciality GetById(int userId);
+        Speciality GetByName(string name);
     }
 }

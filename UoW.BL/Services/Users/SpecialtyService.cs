@@ -39,5 +39,10 @@ namespace UoW.BL.Services.Users
             _specialtyRepository.Update(speciality);
             return _specialtyRepository.GetById(speciality.Id);
         }
+
+        Speciality ISpecialtyService.GetByName(string name)
+        {
+            return _specialtyRepository.GetByName(name);
+        }
     }
 }

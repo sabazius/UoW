@@ -10,5 +10,6 @@ namespace UoW.BL.Interfaces.Users
         List<Speciality> GetAll();
         void Delete(int id);
         Speciality Update(Speciality speciality);
+        Speciality GetByName(string name);
     }
 }

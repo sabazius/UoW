@@ -24,17 +24,17 @@ namespace UoW.DL.InMemoryDB
         {
             Specialties.Add(new Speciality
             {
-                FacultyId = 123,
+                FacultyId = 1,
                 Id = 2,
-                LectorId = 321,
+                LectorId = 24,
                 Name = "Telecommunications and Information Systems",
                 ShortName = "TIS"
             });
             Specialties.Add(new Speciality
             {
-                FacultyId = 124,
+                FacultyId = 1,
                 Id = 1,
-                LectorId = 213,
+                LectorId = 24,
                 Name = "Software Engineer",
                 ShortName = "SE"
             });

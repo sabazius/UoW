@@ -35,12 +35,18 @@ namespace UoW.DL.Repositories.Users
             return dbTable.FirstOrDefault(x => x.Id == specialityId);
         }
 
+        public Speciality GetByName(string name)
+        {
+            return dbTable.FirstOrDefault(x => x.Name == name);
+        }
+
         public void Update(Speciality speciality)
         {
             var result = dbTable.FirstOrDefault(x => x.Id == speciality.Id);
+
             if (result != null)
             {
-                Delete(result.Id);
+                Delete(speciality.Id);
                 Create(speciality);
             }
         }

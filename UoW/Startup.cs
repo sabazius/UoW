@@ -17,6 +17,7 @@ using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories.Users;
 using UoW.Extensions;
 using AutoMapper;
+using FluentValidation.AspNetCore;
 
 namespace UoW
 {
@@ -57,8 +58,7 @@ namespace UoW
             //});
 
             services.AddSingleton(Log.Logger);
-
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen();
         }
