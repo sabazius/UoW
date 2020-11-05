@@ -30,6 +30,7 @@ namespace UoW.Controllers.Users
             var lector = _mapper.Map<Lector>(result);
 
             return Ok(lector);
+
         }
 
     }
