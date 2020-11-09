@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using UoW.BL.Interfaces.Users;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Contracts.Responses;
@@ -7,50 +8,61 @@ using UoW.Models.Users;
 
 namespace UoW.Controllers.Users
 {
-    [Route("[controller]")]
-    [ApiController]
-    public class UserPositionController : ControllerBase
-    {
-        private IUserPositionService _userPositionService;
-        private IMapper _mapper;
-        public UserPositionController(IUserPositionService userPositionService, IMapper mapper)
-        {
-            _userPositionService = userPositionService;
-            _mapper = mapper;
-        }
+	[Route("[controller]")]
+	[ApiController]
+	public class UserPositionController : ControllerBase
+	{
+		private IUserPositionService _userPositionService;
+		private IMapper _mapper;
+		public UserPositionController(IUserPositionService userPositionService, IMapper mapper)
+		{
+			_userPositionService = userPositionService;
+			_mapper = mapper;
+		}
 
-        [HttpGet]
-        public IActionResult GetUserPosition(int positionId)
-        {
-            var position = _userPositionService.GetUserPosition(positionId);
+		[HttpGet("GetUserPosition")]
+		public IActionResult GetUserPosition(int positionId)
+		{
+			var position = _userPositionService.GetUserPosition(positionId);
 
-            if (position == null) return NotFound($"Position with Id {positionId}");
+			if (position == null) return NotFound($"Position with Id {positionId}");
 
-            var response = _mapper.Map<UserPositionResponse>(position);
+			var response = _mapper.Map<UserPositionResponse>(position);
 
-            return Ok(response);
-        }
+			return Ok(response);
+		}
 
-        [HttpPost]
-        public IActionResult SaveUserPosition(UserPositionRequest request)
-        {
-            if (request == null) return NotFound(request);
+		[HttpGet("GetAll")]
+		public IActionResult GetAll()
+		{
+			var result = _userPositionService.GetAll();
 
-            var position = _mapper.Map<UserPosition>(request);
+			if (result == null) return NotFound("Collection is empty!");
 
-            _userPositionService.SaveUserPosition(position);
+			var response = _mapper.Map<IEnumerable<UserPositionResponse>>(result);
 
-            return Ok(position);
-        }
+			return Ok(response);
+		}
 
-        [HttpDelete]
-        public IActionResult DeleteUserPosition(int positioId)
-        {
+		[HttpPost]
+		public IActionResult SaveUserPosition(UserPositionRequest request)
+		{
+			if (request == null) return NotFound(request);
 
-            _userPositionService.DeleteUserPosition(positioId);
+			var position = _mapper.Map<UserPosition>(request);
 
-            return Ok();
-        }
+			_userPositionService.SaveUserPosition(position);
 
-    }
+			return Ok(position);
+		}
+
+		[HttpDelete]
+		public IActionResult DeleteUserPosition(int positioId)
+		{
+			_userPositionService.DeleteUserPosition(positioId);
+
+			return Ok();
+		}
+
+	}
 }

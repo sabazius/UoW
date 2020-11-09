@@ -15,9 +15,10 @@ namespace UoW.DL.Repositories.Users
             dbTable = InMemoryDb.UserPositions;
         }
 
-        public void Create(UserPosition user)
+        public UserPosition Create(UserPosition userPosition)
         {
-            dbTable.Add(user);
+            dbTable.Add(userPosition);
+            return userPosition;
         }
 
         public void Delete(int userPositionId)
@@ -29,19 +30,26 @@ namespace UoW.DL.Repositories.Users
             }
         }
 
-        public UserPosition GetById(int userPositionId)
+		public IEnumerable<UserPosition> GetAll()
+		{
+            return dbTable;
+		}
+
+		public UserPosition GetById(int userPositionId)
         {
             return dbTable.FirstOrDefault(x => x.Id == userPositionId);
         }
 
-        public void Update(UserPosition userPosition)
+        public UserPosition Update(UserPosition userPosition)
         {
             var result = dbTable.FirstOrDefault(x => x.Id == userPosition.Id);
             if (result != null)
             {
                 Delete(result.Id);
-                Create(userPosition);
+                return Create(userPosition);
             }
+
+            return null;
         }
     }
 }
