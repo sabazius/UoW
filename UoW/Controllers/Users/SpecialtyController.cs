@@ -16,7 +16,7 @@ namespace UoW.Controllers
         private ISpecialtyService _specialtyService;
         private IMapper _mapper;
 
-        public SpecialtyController(ISpecialtyService specialtyService, IMapper mapper, IFacultyService facultyService, ILectorService lectorService)
+        public SpecialtyController(ISpecialtyService specialtyService, IMapper mapper)
         {
             _specialtyService = specialtyService;
             _mapper = mapper;
@@ -59,12 +59,6 @@ namespace UoW.Controllers
             if (request == null) return NotFound();
 
             var specialty = _mapper.Map<Speciality>(request);
-
-            var validLectorAndFacultyId = _specialtyService.checkExistance(specialty);
-            var validUniqueNameAndId = _specialtyService.checkUniquenes(specialty);
-
-            if (!validLectorAndFacultyId) return NotFound();
-            if (!validUniqueNameAndId) return Conflict("Dublicate key");
 
             var result = _specialtyService.Create(specialty);
 

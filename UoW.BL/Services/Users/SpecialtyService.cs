@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UoW.BL.Interfaces.Users;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
@@ -23,9 +24,18 @@ namespace UoW.BL.Services.Users
 
         Speciality ISpecialtyService.Create(Speciality speciality)
         {
-             _specialtyRepository.Create(speciality);
-
-            return _specialtyRepository.GetById(speciality.Id);
+            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId) != null;
+            var lectorIdExists = _lectorRepository.GetById(speciality.LectorId) != null;
+            var uniqueId = _specialtyRepository.GetById(speciality.Id) == null;
+            var uniqueName = _specialtyRepository.GetByName(speciality.Name) == null;
+            if (facultyIdExists && lectorIdExists && uniqueId && uniqueName)
+            {
+                return _specialtyRepository.Create(speciality);
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
 
         void ISpecialtyService.Delete(int id)
@@ -40,31 +50,23 @@ namespace UoW.BL.Services.Users
 
         Speciality ISpecialtyService.Update(Speciality speciality)
         {
-            _specialtyRepository.Update(speciality);
-            return _specialtyRepository.GetById(speciality.Id);
+            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId) != null;
+            var lectorIdExists = _lectorRepository.GetById(speciality.LectorId) != null;
+            var idExists = _specialtyRepository.GetById(speciality.Id) != null;
+            var uniqueName = _specialtyRepository.GetByName(speciality.Name) == null;
+            if(facultyIdExists && lectorIdExists && idExists && uniqueName)
+            {
+                return _specialtyRepository.Update(speciality);
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
 
         Speciality ISpecialtyService.GetByName(string name)
         {
             return _specialtyRepository.GetByName(name);
-        }
-
-        bool ISpecialtyService.checkExistance(Speciality specialty)
-        {
-            var facultyIdExists = _facultyRepository.GetById(specialty.FacultyId) != null;
-            var lectorIdExists = _lectorRepository.GetById(specialty.LectorId) != null;
-            if (facultyIdExists && lectorIdExists) return true;
-
-            return false;
-        }
-
-        bool ISpecialtyService.checkUniquenes(Speciality speciality)
-        {
-            var uniqueId = _specialtyRepository.GetById(speciality.Id) == null;
-            var uniqueName = _specialtyRepository.GetByName(speciality.Name) == null;
-            if (uniqueId && uniqueName) return true;
-
-            return false;
         }
     }
 }

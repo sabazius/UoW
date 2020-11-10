@@ -16,9 +16,10 @@ namespace UoW.DL.Repositories.Users
             dbTable = InMemoryDb.Specialties;
         }
 
-        public void Create(Speciality speciality)
+        public Speciality Create(Speciality speciality)
         {
             dbTable.Add(speciality);
+            return speciality;
         }
 
         public void Delete(int specialityId)
@@ -40,7 +41,7 @@ namespace UoW.DL.Repositories.Users
             return dbTable.FirstOrDefault(x => x.Name == name);
         }
 
-        public void Update(Speciality speciality)
+        public Speciality Update(Speciality speciality)
         {
             //get specialtyById and store it in temp variable then delete it and check if lectorId and facultyId exist and if name is not taken
             //if some of these verification fails delete the specialty and create it with the old data from temp variable
@@ -50,7 +51,9 @@ namespace UoW.DL.Repositories.Users
             {
                 Delete(speciality.Id);
                 Create(speciality);
+               
             }
+            return speciality;
         }
 
         public List<Speciality> GetAll()
