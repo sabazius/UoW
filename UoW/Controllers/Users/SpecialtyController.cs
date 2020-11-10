@@ -14,15 +14,11 @@ namespace UoW.Controllers
     public class SpecialtyController : ControllerBase
     {
         private ISpecialtyService _specialtyService;
-        private IFacultyService _facultyService;
-        private ILectorService _lectorService;
         private IMapper _mapper;
 
         public SpecialtyController(ISpecialtyService specialtyService, IMapper mapper, IFacultyService facultyService, ILectorService lectorService)
         {
             _specialtyService = specialtyService;
-            _facultyService = facultyService;
-            _lectorService = lectorService;
             _mapper = mapper;
         }
 
@@ -64,18 +60,11 @@ namespace UoW.Controllers
 
             var specialty = _mapper.Map<Speciality>(request);
 
-            var facultyIdExists = _facultyService.GetFacultyById(specialty.FacultyId) != null;
-            var lectorIdExists = _lectorService.GetLectorId(specialty.LectorId) != null;
-            var uniqueId = _specialtyService.GetSpecialtyById(specialty.Id) == null;
-            var uniqueName = _specialtyService.GetByName(specialty.Name) == null;
+            var validLectorAndFacultyId = _specialtyService.checkExistance(specialty);
+            var validUniqueNameAndId = _specialtyService.checkUniquenes(specialty);
 
-            if (!uniqueId || !uniqueName)
-            {
-                return Conflict("Dublicate key");
-            }
-
-            if (!facultyIdExists) return NotFound("Invalid Faculty Id");
-            if (!lectorIdExists) return NotFound("Invalid Lector Id");
+            if (!validLectorAndFacultyId) return NotFound();
+            if (!validUniqueNameAndId) return Conflict("Dublicate key");
 
             var result = _specialtyService.Create(specialty);
 
@@ -103,10 +92,6 @@ namespace UoW.Controllers
             if (request == null) return NotFound();
 
             var specialty = _mapper.Map<Speciality>(request);
-
-
-            //DeleteSpecialty(id);
-            //return CreateSpecialty(request);
 
             var result = _specialtyService.Update(specialty);
             if (result == null) return NotFound();

@@ -11,5 +11,7 @@ namespace UoW.BL.Interfaces.Users
         void Delete(int id);
         Speciality Update(Speciality speciality);
         Speciality GetByName(string name);
+        bool checkExistance(Speciality specialty);
+        bool checkUniquenes(Speciality speciality);
     }
 }

@@ -42,6 +42,8 @@ namespace UoW.DL.Repositories.Users
 
         public void Update(Speciality speciality)
         {
+            //get specialtyById and store it in temp variable then delete it and check if lectorId and facultyId exist and if name is not taken
+            //if some of these verification fails delete the specialty and create it with the old data from temp variable
             var result = dbTable.FirstOrDefault(x => x.Id == speciality.Id);
 
             if (result != null)

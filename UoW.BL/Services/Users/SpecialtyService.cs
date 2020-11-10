@@ -8,9 +8,13 @@ namespace UoW.BL.Services.Users
     public class SpecialtyService : ISpecialtyService
     {
         private ISpecialityRepository _specialtyRepository;
-        public SpecialtyService(ISpecialityRepository specialtyRepository)
+        private IFacultyRepository _facultyRepository;
+        private ILectorRepository _lectorRepository;
+        public SpecialtyService(ISpecialityRepository specialtyRepository, IFacultyRepository facultyRepository, ILectorRepository lectorRepository)
         {
             _specialtyRepository = specialtyRepository;
+            _facultyRepository = facultyRepository;
+            _lectorRepository = lectorRepository;
         }
         public Speciality GetSpecialtyById(int id)
         {
@@ -43,6 +47,24 @@ namespace UoW.BL.Services.Users
         Speciality ISpecialtyService.GetByName(string name)
         {
             return _specialtyRepository.GetByName(name);
+        }
+
+        bool ISpecialtyService.checkExistance(Speciality specialty)
+        {
+            var facultyIdExists = _facultyRepository.GetById(specialty.FacultyId) != null;
+            var lectorIdExists = _lectorRepository.GetById(specialty.LectorId) != null;
+            if (facultyIdExists && lectorIdExists) return true;
+
+            return false;
+        }
+
+        bool ISpecialtyService.checkUniquenes(Speciality speciality)
+        {
+            var uniqueId = _specialtyRepository.GetById(speciality.Id) == null;
+            var uniqueName = _specialtyRepository.GetByName(speciality.Name) == null;
+            if (uniqueId && uniqueName) return true;
+
+            return false;
         }
     }
 }
