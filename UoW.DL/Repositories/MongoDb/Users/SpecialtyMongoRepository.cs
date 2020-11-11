@@ -1,15 +1,11 @@
-﻿using System;
+﻿using MongoDB.Driver;
 using System.Collections.Generic;
-using System.Text;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
-using UoW.Models.Common;
-using MongoDB.Driver;
-using System.Threading.Tasks;
 
 namespace UoW.DL.Repositories.MongoDb.Users
 {
-    public class SpecialtyMongoRepository : ISpecialityRepository
+	public class SpecialtyMongoRepository : ISpecialityRepository
     {
         private readonly IMongoCollection<Speciality> _specialties;
         public SpecialtyMongoRepository()
