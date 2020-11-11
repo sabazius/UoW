@@ -3,6 +3,7 @@ using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace UoW.DL.Repositories.Users
 {
@@ -15,9 +16,10 @@ namespace UoW.DL.Repositories.Users
             dbTable = InMemoryDb.Specialties;
         }
 
-        public void Create(Speciality speciality)
+        public Speciality Create(Speciality speciality)
         {
             dbTable.Add(speciality);
+            return speciality;
         }
 
         public void Delete(int specialityId)
@@ -34,14 +36,29 @@ namespace UoW.DL.Repositories.Users
             return dbTable.FirstOrDefault(x => x.Id == specialityId);
         }
 
-        public void Update(Speciality speciality)
+        public Speciality GetByName(string name)
         {
+            return dbTable.FirstOrDefault(x => x.Name == name);
+        }
+
+        public Speciality Update(Speciality speciality)
+        {
+            //get specialtyById and store it in temp variable then delete it and check if lectorId and facultyId exist and if name is not taken
+            //if some of these verification fails delete the specialty and create it with the old data from temp variable
             var result = dbTable.FirstOrDefault(x => x.Id == speciality.Id);
+
             if (result != null)
             {
-                Delete(result.Id);
+                Delete(speciality.Id);
                 Create(speciality);
+               
             }
+            return speciality;
+        }
+
+        public List<Speciality> GetAll()
+        {
+            return dbTable;
         }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Xml;
 using UoW.BL.Interfaces.Users;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Users;
@@ -18,8 +21,9 @@ namespace UoW.Controllers
             _specialtyService = specialtyService;
             _mapper = mapper;
         }
-        [HttpGet]
-        public IActionResult GetSpecialtyById(int specialtyId)
+
+        [HttpGet("id")]
+        public IActionResult GetSpecialtyById(int specialtyId) 
         {
             var result = _specialtyService.GetSpecialtyById(specialtyId);
             if (result == null) return NotFound();
@@ -29,12 +33,33 @@ namespace UoW.Controllers
             return Ok(specialty);
         }
 
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            List<Speciality> specialties = new List<Speciality>();
+            var result = _specialtyService.GetAll();
+
+            if (result == null || result.Count == 0)
+            {
+                return NotFound();
+            }
+
+            result.ForEach(delegate (Speciality specialty)
+            {
+                var mappedSpecialty = _mapper.Map<Speciality>(specialty);
+                specialties.Add(mappedSpecialty);
+            });
+
+            return Ok(specialties);
+        }
+
         [HttpPost]
         public IActionResult CreateSpecialty([FromBody] SpecialtyRequest request)
         {
             if (request == null) return NotFound();
 
             var specialty = _mapper.Map<Speciality>(request);
+
             var result = _specialtyService.Create(specialty);
 
             if (result == null) return NotFound();
@@ -48,9 +73,9 @@ namespace UoW.Controllers
             if (id <= 0) return BadRequest();
 
             var specialty = _specialtyService.GetSpecialtyById(id);
-            _specialtyService.Delete(id);
-
             if (specialty == null) return NotFound();
+
+             _specialtyService.Delete(id);
 
             return Ok();
         }
@@ -61,8 +86,8 @@ namespace UoW.Controllers
             if (request == null) return NotFound();
 
             var specialty = _mapper.Map<Speciality>(request);
-            var result = _specialtyService.Update(specialty);
 
+            var result = _specialtyService.Update(specialty);
             if (result == null) return NotFound();
 
             return Ok(specialty);

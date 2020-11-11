@@ -6,7 +6,7 @@ using UoW.DL.Interfaces.Users;
 using UoW.Models.Common;
 using UoW.Models.Users;
 
-namespace UoW.DL.Repositories.MongoDB.Users
+namespace UoW.DL.Repositories.MongoDb.Users
 {
 	public class UserPositionMongoRepository : IUserPositionRepository
 	{

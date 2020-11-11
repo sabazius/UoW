@@ -18,7 +18,7 @@ using UoW.DL.Repositories.Users;
 using UoW.Extensions;
 using AutoMapper;
 using FluentValidation.AspNetCore;
-using UoW.DL.Repositories.MongoDB.Users;
+using UoW.DL.Repositories.MongoDb.Users;
 using UoW.Models.Common;
 
 namespace UoW
@@ -36,7 +36,7 @@ namespace UoW
 		{
 			InMemoryDb.Init();
 
-			//services.AddOptions();
+			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
 			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
 
 			services.AddSingleton<IProjectRepository, ProjectRepository>();
@@ -45,7 +45,6 @@ namespace UoW
 			services.AddSingleton<ITeamService, TeamService>();
 			services.AddSingleton<IUserRepository, UserRepository>();
 			services.AddSingleton<IUserService, UserService>();
-			services.AddSingleton<ISpecialityRepository, SpecialityRepository>();
 			services.AddSingleton<ISpecialtyService, SpecialtyService>();
 			services.AddSingleton<ISprintRepository, SprintRepository>();
 			services.AddSingleton<ISprintService, SprintService>();
@@ -61,6 +60,7 @@ namespace UoW
 
 			services.AddSingleton(Log.Logger);
 
+			services.AddSingleton<ISpecialityRepository, SpecialtyMongoRepository>();
 			services.AddSingleton<IUserPositionRepository, UserPositionMongoRepository>();
 
 			services.AddControllers()
