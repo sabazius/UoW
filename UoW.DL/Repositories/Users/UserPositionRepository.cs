@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UoW.DL.InMemoryDB;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
@@ -15,41 +16,42 @@ namespace UoW.DL.Repositories.Users
             dbTable = InMemoryDb.UserPositions;
         }
 
-        public UserPosition Create(UserPosition userPosition)
+        public Task<UserPosition> Create(UserPosition userPosition)
         {
             dbTable.Add(userPosition);
-            return userPosition;
+            return Task.FromResult(userPosition);
         }
 
-        public void Delete(int userPositionId)
+        public Task Delete(int userPositionId)
         {
             var result = dbTable.FirstOrDefault(x => x.Id == userPositionId);
             if (result != null)
             {
                 dbTable.Remove(result);
             }
+            return Task.CompletedTask;
         }
 
-		public IEnumerable<UserPosition> GetAll()
+		public async Task<IEnumerable<UserPosition>> GetAll()
 		{
-            return dbTable;
+            return await Task.FromResult(dbTable);
 		}
 
-		public UserPosition GetById(int userPositionId)
-        {
-            return dbTable.FirstOrDefault(x => x.Id == userPositionId);
+		public async Task<UserPosition> GetById(int userPositionId)
+		{
+            return await Task.FromResult(dbTable.FirstOrDefault(x => x.Id == userPositionId));
         }
 
-        public UserPosition Update(UserPosition userPosition)
-        {
+		public async Task<UserPosition> Update(UserPosition userPosition)
+		{
             var result = dbTable.FirstOrDefault(x => x.Id == userPosition.Id);
             if (result != null)
             {
-                Delete(result.Id);
-                return Create(userPosition);
+                await Delete(result.Id);
+                return await Create(userPosition);
             }
 
             return null;
         }
-    }
+	}
 }

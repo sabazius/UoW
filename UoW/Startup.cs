@@ -18,6 +18,8 @@ using UoW.DL.Repositories.Users;
 using UoW.Extensions;
 using AutoMapper;
 using FluentValidation.AspNetCore;
+using UoW.DL.Repositories.MongoDB.Users;
+using UoW.Models.Common;
 
 namespace UoW
 {
@@ -33,6 +35,9 @@ namespace UoW
 		public void ConfigureServices(IServiceCollection services)
 		{
 			InMemoryDb.Init();
+
+			//services.AddOptions();
+			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
 
 			services.AddSingleton<IProjectRepository, ProjectRepository>();
 			services.AddSingleton<IProjectService, ProjectService>();
@@ -51,11 +56,12 @@ namespace UoW
 			services.AddSingleton<IStoryRepository, StoryRepository>();
 			services.AddSingleton<IStoryService, StoryService>();
             services.AddSingleton<IUserPositionService, UserPositionService>();
-            services.AddSingleton<IUserPositionRepository, UserPositionRepository>();
 
 			services.AddAutoMapper(typeof(Startup));
 
 			services.AddSingleton(Log.Logger);
+
+			services.AddSingleton<IUserPositionRepository, UserPositionMongoRepository>();
 
 			services.AddControllers()
 				.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>()); 

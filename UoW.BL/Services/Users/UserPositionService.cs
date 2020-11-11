@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using UoW.BL.Interfaces.Users;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
@@ -16,33 +17,24 @@ namespace UoW.BL.Services.Users
 			_lectorRepository = lectorRepository;
 		}
 
-		public void DeleteUserPosition(int userPositionId)
+		public async Task DeleteUserPosition(int userPositionId)
 		{
-			_userPositionRepository.Delete(userPositionId);
+			await _userPositionRepository.Delete(userPositionId);
 		}
 
-		public IEnumerable<UserPosition> GetAll()
+		public async Task<IEnumerable<UserPosition>> GetAll()
 		{
-			return _userPositionRepository.GetAll();
+			return await _userPositionRepository.GetAll();
 		}
 
-		public UserPosition GetUserPosition(int userPositionId)
+		public async Task<UserPosition> GetUserPosition(int userPositionId)
 		{
-			return _userPositionRepository.GetById(userPositionId);
+			return await _userPositionRepository.GetById(userPositionId);
 		}
 
-		public UserPosition SaveUserPosition(UserPosition userPosition)
+		public async Task<UserPosition> SaveUserPosition(UserPosition userPosition)
 		{
-			var result = _userPositionRepository.GetById(userPosition.Id);
-
-			if (result != null)
-			{
-				return _userPositionRepository.Update(userPosition);
-			}
-			else
-			{
-				return _userPositionRepository.Create(userPosition);
-			}
+			return await _userPositionRepository.Update(userPosition);
 		}
 	}
 }
