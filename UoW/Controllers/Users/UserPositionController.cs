@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UoW.BL.Interfaces.Users;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Contracts.Responses;
@@ -21,9 +22,9 @@ namespace UoW.Controllers.Users
 		}
 
 		[HttpGet("GetUserPosition")]
-		public IActionResult GetUserPosition(int positionId)
+		public async Task<IActionResult> GetUserPosition(int positionId)
 		{
-			var position = _userPositionService.GetUserPosition(positionId);
+			var position = await _userPositionService.GetUserPosition(positionId);
 
 			if (position == null) return NotFound($"Position with Id {positionId}");
 
@@ -33,9 +34,9 @@ namespace UoW.Controllers.Users
 		}
 
 		[HttpGet("GetAll")]
-		public IActionResult GetAll()
+		public async Task<IActionResult> GetAll()
 		{
-			var result = _userPositionService.GetAll();
+			var result = await _userPositionService.GetAll();
 
 			if (result == null) return NotFound("Collection is empty!");
 
@@ -45,21 +46,21 @@ namespace UoW.Controllers.Users
 		}
 
 		[HttpPost]
-		public IActionResult SaveUserPosition(UserPositionRequest request)
+		public async Task<IActionResult> SaveUserPosition(UserPositionRequest request)
 		{
 			if (request == null) return NotFound(request);
 
 			var position = _mapper.Map<UserPosition>(request);
 
-			_userPositionService.SaveUserPosition(position);
+			var result = await _userPositionService.SaveUserPosition(position);
 
-			return Ok(position);
+			return Ok(result);
 		}
 
 		[HttpDelete]
-		public IActionResult DeleteUserPosition(int positioId)
+		public async Task<IActionResult> DeleteUserPosition(int positioId)
 		{
-			_userPositionService.DeleteUserPosition(positioId);
+			await _userPositionService.DeleteUserPosition(positioId);
 
 			return Ok();
 		}

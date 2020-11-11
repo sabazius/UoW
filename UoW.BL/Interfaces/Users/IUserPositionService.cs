@@ -1,16 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using UoW.Models.Users;
 
 namespace UoW.BL.Interfaces.Users
 {
 	public interface IUserPositionService
 	{
-		UserPosition GetUserPosition(int userPositionId);
+		Task<UserPosition> GetUserPosition(int userPositionId);
 
-		UserPosition SaveUserPosition(UserPosition userPosition);
+		Task<UserPosition> SaveUserPosition(UserPosition userPosition);
 
-		void DeleteUserPosition(int userPositionId);
+		Task DeleteUserPosition(int userPositionId);
 
-		IEnumerable<UserPosition> GetAll();
+		Task<IEnumerable<UserPosition>> GetAll();
 	}
 }

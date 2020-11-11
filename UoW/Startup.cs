@@ -37,6 +37,8 @@ namespace UoW
 			InMemoryDb.Init();
 
 			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
+			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
+
 			services.AddSingleton<IProjectRepository, ProjectRepository>();
 			services.AddSingleton<IProjectService, ProjectService>();
 			services.AddSingleton<ITeamRepository, TeamRepository>();
@@ -53,13 +55,13 @@ namespace UoW
 			services.AddSingleton<IStoryRepository, StoryRepository>();
 			services.AddSingleton<IStoryService, StoryService>();
             services.AddSingleton<IUserPositionService, UserPositionService>();
-            services.AddSingleton<IUserPositionRepository, UserPositionRepository>();
 
 			services.AddAutoMapper(typeof(Startup));
 
 			services.AddSingleton(Log.Logger);
 
 			services.AddSingleton<ISpecialityRepository, SpecialtyMongoRepository>();
+			services.AddSingleton<IUserPositionRepository, UserPositionMongoRepository>();
 
 			services.AddControllers()
 				.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>()); 
