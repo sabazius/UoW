@@ -26,9 +26,9 @@ namespace UoW.DL.Repositories.MongoDB.Users
 			return userPosition;
 		}
 
-		public void Delete(int userPositionId)
+		public async Task Delete(int userPositionId)
 		{
-			_userPositions.DeleteOne(p => p.Id == userPositionId);
+			await _userPositions.DeleteOneAsync(p => p.Id == userPositionId);
 		}
 
 		public async Task<IEnumerable<UserPosition>> GetAll()
