@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using UoW.BL.Interfaces.Users;
 using UoW.Models.Users;
 
@@ -14,9 +15,11 @@ namespace UoW.Controllers.Users
             _facultyService = facultyService;
         }
         [HttpGet]
-        public Faculty GetFacultyById(int id)
+        public async Task<IActionResult> GetFacultyById(int id)
         {
-            return _facultyService.GetFacultyById(id);
+            var result = await _facultyService.GetById(id);
+
+            return Ok(result);
         }
     }
 }

@@ -57,9 +57,9 @@ namespace UoW.DL.Repositories.Users
             return Task.FromResult(speciality);
         }
 
-        public Task<List<Speciality>> GetAll()
+        public Task<IEnumerable<Speciality>> GetAll()
         {
-            return Task.FromResult(dbTable);
+            return Task.FromResult(dbTable.AsEnumerable());
         }
     }
 }

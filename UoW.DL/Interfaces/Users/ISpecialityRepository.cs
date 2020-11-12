@@ -9,7 +9,7 @@ namespace UoW.DL.Interfaces.Users
         Task<Speciality> Create(Speciality user);
         Task Delete(int userId);
         Task<Speciality> Update(Speciality user);
-        Task<List<Speciality>> GetAll();
+        Task<IEnumerable<Speciality>> GetAll();
         Task<Speciality> GetById(int userId);
         Task<Speciality> GetByName(string name);
     }
