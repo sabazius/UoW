@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using UoW.Models.Users;
 
 namespace UoW.BL.Interfaces.Users
 {
     public interface ISpecialtyService
     {
-        Speciality GetSpecialtyById(int id);
-        Speciality Create(Speciality speciality);
-        List<Speciality> GetAll();
-        void Delete(int id);
-        Speciality Update(Speciality speciality);
-        Speciality GetByName(string name);
+        Task<Speciality> GetSpecialtyById(int id);
+        Task<Speciality> Create(Speciality speciality);
+        Task<List<Speciality>> GetAll();
+        Task Delete(int id);
+        Task<Speciality> Update(Speciality speciality);
+        Task<Speciality> GetByName(string name);
     }
 }

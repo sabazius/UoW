@@ -4,6 +4,7 @@ using UoW.Models.Users;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using System.Threading.Tasks;
 
 namespace UoW.DL.Repositories.Users
 {
@@ -16,35 +17,35 @@ namespace UoW.DL.Repositories.Users
             dbTable = InMemoryDb.Specialties;
         }
 
-        public Speciality Create(Speciality speciality)
+        public Task<Speciality> Create(Speciality speciality)
         {
             dbTable.Add(speciality);
-            return speciality;
+            return Task.FromResult(speciality);
         }
 
-        public void Delete(int specialityId)
+        public Task Delete(int specialityId)
         {
             var result = dbTable.FirstOrDefault(x => x.Id == specialityId);
             if (result != null)
             {
                 dbTable.Remove(result);
             }
+            return Task.CompletedTask;
         }
 
-        public Speciality GetById(int specialityId)
+        public Task<Speciality> GetById(int specialityId)
         {
-            return dbTable.FirstOrDefault(x => x.Id == specialityId);
+            var result = dbTable.FirstOrDefault(x => x.Id == specialityId);
+            return Task.FromResult(result);
         }
 
-        public Speciality GetByName(string name)
+        public Task<Speciality> GetByName(string name)
         {
-            return dbTable.FirstOrDefault(x => x.Name == name);
+            return Task.FromResult(dbTable.FirstOrDefault(x => x.Name == name));
         }
 
-        public Speciality Update(Speciality speciality)
+        public Task<Speciality> Update(Speciality speciality)
         {
-            //get specialtyById and store it in temp variable then delete it and check if lectorId and facultyId exist and if name is not taken
-            //if some of these verification fails delete the specialty and create it with the old data from temp variable
             var result = dbTable.FirstOrDefault(x => x.Id == speciality.Id);
 
             if (result != null)
@@ -53,12 +54,12 @@ namespace UoW.DL.Repositories.Users
                 Create(speciality);
                
             }
-            return speciality;
+            return Task.FromResult(speciality);
         }
 
-        public List<Speciality> GetAll()
+        public Task<List<Speciality>> GetAll()
         {
-            return dbTable;
+            return Task.FromResult(dbTable);
         }
     }
 }
