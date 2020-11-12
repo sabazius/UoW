@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
 
@@ -14,37 +15,43 @@ namespace UoW.DL.Repositories.MongoDb.Users
             var database = client.GetDatabase("UoW");
             _specialties = database.GetCollection<Speciality>("Specialty");
         }
-        public Speciality Create(Speciality user)
+        public async Task<Speciality> Create(Speciality user)
         {
-            _specialties.InsertOne(user);
+            await _specialties.InsertOneAsync(user);
             return user;
         }
 
-        public void Delete(int userId)
+        public async Task Delete(int userId)
         {
-            _specialties.DeleteOne(p => p.Id == userId);
+            await _specialties.DeleteOneAsync(p => p.Id == userId);
         }
 
-        public List<Speciality> GetAll()
-        {   var result = _specialties.Find(p => true).ToList();
-            return result;
+        public async Task<IEnumerable<Speciality>> GetAll()
+        {
+            var result = await _specialties.FindAsync(p => true);
+            return result.ToEnumerable();
         }
 
-        public Speciality GetById(int userId)
+        public async Task<Speciality> GetById(int userId)
         {
-            return _specialties.Find(p => p.Id == userId).FirstOrDefault();
+            var result = await _specialties.FindAsync(p => p.Id == userId);
+
+            return result.FirstOrDefault();
         }
 
-        public Speciality GetByName(string name)
+        public async Task<Speciality> GetByName(string name)
         {
-            return _specialties.Find(p => p.Name == name).FirstOrDefault();
+            var result = await _specialties.FindAsync(p => p.Name == name);
+
+            return result.FirstOrDefault();
         }
 
-        public Speciality Update(Speciality spec)
+        public async Task<Speciality> Update(Speciality spec)
         {
-            _specialties.DeleteOne(p => p.Id == spec.Id);
-            _specialties.InsertOne(spec);
+            await _specialties.ReplaceOneAsync(p => p.Id == spec.Id, spec);
+
             return spec;
         }
-    }
+
+	}
 }

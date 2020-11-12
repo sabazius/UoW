@@ -25,11 +25,19 @@ namespace UoW.BL.Services.Users
 
         public async Task<Speciality> Create(Speciality speciality)
         {
-            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId) != null;
+            List<Task> tasks = new List<Task>();
+
+            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId);
+            tasks.Add(facultyIdExists);
+            var uniqueId = _specialtyRepository.GetById(speciality.Id);
+            tasks.Add(uniqueId);
+            var uniqueName = _specialtyRepository.GetByName(speciality.Name);
+            tasks.Add(uniqueName);
+
+            await Task.WhenAll(tasks);
+
             var lectorIdExists = _lectorRepository.GetById(speciality.LectorId) != null;
-            var uniqueId = _specialtyRepository.GetById(speciality.Id) == null;
-            var uniqueName = _specialtyRepository.GetByName(speciality.Name) == null;
-            if (facultyIdExists && lectorIdExists && uniqueId && uniqueName)
+            if (facultyIdExists.Result != null && lectorIdExists && uniqueId.Result != null && uniqueName.Result != null)
             {
                 return await _specialtyRepository.Create(speciality);
             }
@@ -43,18 +51,27 @@ namespace UoW.BL.Services.Users
         {
            await _specialtyRepository.Delete(id);        }
 
-        public async Task<List<Speciality>> GetAll()
+        public async Task<IEnumerable<Speciality>> GetAll()
         {
             return await _specialtyRepository.GetAll();
         }
 
         public async Task<Speciality> Update(Speciality speciality)
         {
-            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId) != null;
+            List<Task> tasks = new List<Task>();
+
+            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId);
+            tasks.Add(facultyIdExists);
+            var idExists = _specialtyRepository.GetById(speciality.Id);
+            tasks.Add(idExists);
+            var uniqueName = _specialtyRepository.GetByName(speciality.Name);
+            tasks.Add(uniqueName);
+
             var lectorIdExists = _lectorRepository.GetById(speciality.LectorId) != null;
-            var idExists = _specialtyRepository.GetById(speciality.Id) != null;
-            var uniqueName = _specialtyRepository.GetByName(speciality.Name) == null;
-            if(facultyIdExists && lectorIdExists && idExists && uniqueName)
+
+            await Task.WhenAll(tasks);
+
+            if(facultyIdExists.Result != null && lectorIdExists && idExists.Result != null && uniqueName.Result == null)
             {
                 return await _specialtyRepository.Update(speciality);
             }

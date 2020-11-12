@@ -8,7 +8,7 @@ namespace UoW.BL.Interfaces.Users
     {
         Task<Speciality> GetSpecialtyById(int id);
         Task<Speciality> Create(Speciality speciality);
-        Task<List<Speciality>> GetAll();
+        Task<IEnumerable<Speciality>> GetAll();
         Task Delete(int id);
         Task<Speciality> Update(Speciality speciality);
         Task<Speciality> GetByName(string name);

@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Xml;
 using UoW.BL.Interfaces.Users;
 using UoW.Models.Contracts.Requests;
+using UoW.Models.Contracts.Responses;
 using UoW.Models.Users;
 
 namespace UoW.Controllers
@@ -34,23 +36,15 @@ namespace UoW.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Speciality> specialties = new List<Speciality>();
-            var result = _specialtyService.GetAll();
+            var result = await _specialtyService.GetAll();
 
-            if (result == null || result.Count == 0)
-            {
-                return NotFound();
-            }
+            if (result == null) return NotFound("Collection is empty!");
 
-            result.ForEach(delegate (Speciality specialty)
-            {
-                var mappedSpecialty = _mapper.Map<Speciality>(specialty);
-                specialties.Add(mappedSpecialty);
-            });
+            var response = _mapper.Map<IEnumerable<SpecialtyResponse>>(result);
 
-            return Ok(specialties);
+            return Ok(response);
         }
 
         [HttpPost]
