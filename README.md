@@ -1,2 +1,2 @@
 # UoW
-#PU .NET Core course
+PU .NET Core course
