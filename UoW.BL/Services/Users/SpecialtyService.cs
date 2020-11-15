@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UoW.BL.Interfaces.Users;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
@@ -17,20 +18,28 @@ namespace UoW.BL.Services.Users
             _facultyRepository = facultyRepository;
             _lectorRepository = lectorRepository;
         }
-        public Speciality GetSpecialtyById(int id)
+        public async Task<Speciality> GetSpecialtyById(int id)
         {
-           return _specialtyRepository.GetById(id);
+           return await _specialtyRepository.GetById(id);
         }
 
-        Speciality ISpecialtyService.Create(Speciality speciality)
+        public async Task<Speciality> Create(Speciality speciality)
         {
-            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId) != null;
+            List<Task> tasks = new List<Task>();
+
+            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId);
+            tasks.Add(facultyIdExists);
+            var uniqueId = _specialtyRepository.GetById(speciality.Id);
+            tasks.Add(uniqueId);
+            var uniqueName = _specialtyRepository.GetByName(speciality.Name);
+            tasks.Add(uniqueName);
+
+            await Task.WhenAll(tasks);
+
             var lectorIdExists = _lectorRepository.GetById(speciality.LectorId) != null;
-            var uniqueId = _specialtyRepository.GetById(speciality.Id) == null;
-            var uniqueName = _specialtyRepository.GetByName(speciality.Name) == null;
-            if (facultyIdExists && lectorIdExists && uniqueId && uniqueName)
+            if (facultyIdExists.Result != null && lectorIdExists && uniqueId.Result != null && uniqueName.Result != null)
             {
-                return _specialtyRepository.Create(speciality);
+                return await _specialtyRepository.Create(speciality);
             }
             else
             {
@@ -38,25 +47,33 @@ namespace UoW.BL.Services.Users
             }
         }
 
-        void ISpecialtyService.Delete(int id)
+        public async Task Delete(int id)
         {
-            _specialtyRepository.Delete(id);
+           await _specialtyRepository.Delete(id);        }
+
+        public async Task<IEnumerable<Speciality>> GetAll()
+        {
+            return await _specialtyRepository.GetAll();
         }
 
-        List<Speciality> ISpecialtyService.GetAll()
+        public async Task<Speciality> Update(Speciality speciality)
         {
-            return _specialtyRepository.GetAll();
-        }
+            List<Task> tasks = new List<Task>();
 
-        Speciality ISpecialtyService.Update(Speciality speciality)
-        {
-            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId) != null;
+            var facultyIdExists = _facultyRepository.GetById(speciality.FacultyId);
+            tasks.Add(facultyIdExists);
+            var idExists = _specialtyRepository.GetById(speciality.Id);
+            tasks.Add(idExists);
+            var uniqueName = _specialtyRepository.GetByName(speciality.Name);
+            tasks.Add(uniqueName);
+
             var lectorIdExists = _lectorRepository.GetById(speciality.LectorId) != null;
-            var idExists = _specialtyRepository.GetById(speciality.Id) != null;
-            var uniqueName = _specialtyRepository.GetByName(speciality.Name) == null;
-            if(facultyIdExists && lectorIdExists && idExists && uniqueName)
+
+            await Task.WhenAll(tasks);
+
+            if(facultyIdExists.Result != null && lectorIdExists && idExists.Result != null && uniqueName.Result == null)
             {
-                return _specialtyRepository.Update(speciality);
+                return await _specialtyRepository.Update(speciality);
             }
             else
             {
@@ -64,9 +81,9 @@ namespace UoW.BL.Services.Users
             }
         }
 
-        Speciality ISpecialtyService.GetByName(string name)
+        public async Task<Speciality> GetByName(string name)
         {
-            return _specialtyRepository.GetByName(name);
+            return await _specialtyRepository.GetByName(name);
         }
     }
 }
