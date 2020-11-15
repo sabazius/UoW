@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using UoW.BL.Interfaces.Tasks;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Contracts.Responses;
@@ -86,6 +87,16 @@ namespace UoW.Controllers.Tasks
 
             return Ok(result);
         }
+
+        [HttpGet("GetAll")]
+        public IActionResult GetAll()
+		{
+            var result = _sprintService.GetAll();
+
+            var sprints = _mapper.Map<IEnumerable<Sprint>>(result);
+
+            return Ok(sprints);
+		}
 
     }
 }

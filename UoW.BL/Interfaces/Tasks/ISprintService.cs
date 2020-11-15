@@ -1,4 +1,5 @@
-﻿using UoW.Models.Tasks;
+﻿using System.Collections.Generic;
+using UoW.Models.Tasks;
 
 namespace UoW.BL.Interfaces.Tasks
 {
@@ -8,5 +9,6 @@ namespace UoW.BL.Interfaces.Tasks
         Sprint Create(Sprint sprint);
         void Delete(int sprintId);
         Sprint Update(Sprint sprint);
+        IEnumerable<Sprint> GetAll();
     }
 }

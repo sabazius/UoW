@@ -1,4 +1,5 @@
-﻿using UoW.BL.Interfaces.Tasks;
+﻿using System.Collections.Generic;
+using UoW.BL.Interfaces.Tasks;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Tasks;
 
@@ -24,7 +25,12 @@ namespace UoW.BL.Services.Tasks
             _sprintRepository.Delete(userId);
         }
 
-        public Sprint GetSprintById(int id)
+		public IEnumerable<Sprint> GetAll()
+		{
+            return _sprintRepository.GetAll();
+		}
+
+		public Sprint GetSprintById(int id)
         {
             return _sprintRepository.GetById(id);
         }
