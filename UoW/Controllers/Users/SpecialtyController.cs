@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Xml;
 using UoW.BL.Interfaces.Users;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Contracts.Responses;
@@ -11,7 +9,7 @@ using UoW.Models.Users;
 
 namespace UoW.Controllers
 {
-    [Route("specialties")]
+	[Route("specialties")]
     [ApiController]
     public class SpecialtyController : ControllerBase
     {
