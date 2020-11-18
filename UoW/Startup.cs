@@ -38,6 +38,8 @@ namespace UoW
 
 			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
 
+			services.AddHealthChecks();
+
 			services.AddSingleton<IProjectRepository, ProjectRepository>();
 			services.AddSingleton<IProjectService, ProjectService>();
 			services.AddSingleton<ITeamRepository, TeamRepository>();
@@ -94,6 +96,7 @@ namespace UoW
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllers();
+				endpoints.MapHealthChecks("/health");
 			});
 		}
 	}
