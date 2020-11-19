@@ -20,6 +20,7 @@ using AutoMapper;
 using FluentValidation.AspNetCore;
 using UoW.DL.Repositories.MongoDb.Users;
 using UoW.Models.Common;
+using UoW.DL.Repositories.MongoDB.Users;
 
 namespace UoW
 {
@@ -39,6 +40,8 @@ namespace UoW
 			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
 			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
 
+			services.AddHealthChecks();
+
 			services.AddSingleton<IProjectRepository, ProjectRepository>();
 			services.AddSingleton<IProjectService, ProjectService>();
 			services.AddSingleton<ITeamRepository, TeamRepository>();
@@ -48,7 +51,7 @@ namespace UoW
 			services.AddSingleton<ISpecialtyService, SpecialtyService>();
 			services.AddSingleton<ISprintRepository, SprintRepository>();
 			services.AddSingleton<ISprintService, SprintService>();
-			services.AddSingleton<ILectorRepository, LectorRepository>();
+			services.AddSingleton<ILectorRepository, LectorMongoRepository>();
 			services.AddSingleton<ILectorService, LectorService>();
 			services.AddSingleton<IFacultyRepository, FacultyRepository>();
 			services.AddSingleton<IFacultyService, FacultyService>();
@@ -95,6 +98,7 @@ namespace UoW
 			app.UseEndpoints(endpoints =>
 			{
 				endpoints.MapControllers();
+				endpoints.MapHealthChecks("/health");
 			});
 		}
 	}

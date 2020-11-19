@@ -1,9 +1,15 @@
-﻿using UoW.Models.Users;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using UoW.Models.Users;
 
 namespace UoW.BL.Interfaces.Users
 {
     public interface ILectorService
     {
-        Lector GetLectorId(int Id);
+        Task<Lector> Create(Lector lector);
+        Task Delete(int lectorId);
+        Task<Lector> Update(Lector lector);
+        Task<Lector> GetById(int lectorId);
+        Task<IEnumerable<Lector>> GetAll();
     }
 }

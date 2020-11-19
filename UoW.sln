@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UoW.Models", "UoW.Models\Uo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UoW.DL", "UoW.DL\UoW.DL.csproj", "{1D1B7B68-3DD8-4C9A-951B-C7560F6B1C96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UoW.Test", "UoW.Test\UoW.Test.csproj", "{E579DC2A-E168-45BD-9343-CEE5365705A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1D1B7B68-3DD8-4C9A-951B-C7560F6B1C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D1B7B68-3DD8-4C9A-951B-C7560F6B1C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D1B7B68-3DD8-4C9A-951B-C7560F6B1C96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E579DC2A-E168-45BD-9343-CEE5365705A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E579DC2A-E168-45BD-9343-CEE5365705A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E579DC2A-E168-45BD-9343-CEE5365705A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E579DC2A-E168-45BD-9343-CEE5365705A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
