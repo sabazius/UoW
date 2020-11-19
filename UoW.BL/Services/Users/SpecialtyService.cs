@@ -37,7 +37,7 @@ namespace UoW.BL.Services.Users
             await Task.WhenAll(tasks);
 
             var lectorIdExists = _lectorRepository.GetById(speciality.LectorId) != null;
-            if (facultyIdExists.Result != null && lectorIdExists && uniqueId.Result != null && uniqueName.Result != null)
+            if (facultyIdExists.Result != null && lectorIdExists && uniqueId.Result == null && uniqueName.Result == null)
             {
                 return await _specialtyRepository.Create(speciality);
             }
@@ -49,7 +49,8 @@ namespace UoW.BL.Services.Users
 
         public async Task Delete(int id)
         {
-           await _specialtyRepository.Delete(id);        }
+           await _specialtyRepository.Delete(id);
+        }
 
         public async Task<IEnumerable<Speciality>> GetAll()
         {
