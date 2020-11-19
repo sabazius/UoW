@@ -18,12 +18,12 @@ namespace UoW.BL.Services.Users
             _facultyRepository = facultyRepository;
             _lectorRepository = lectorRepository;
         }
-        public async Task<Speciality> GetSpecialtyById(int id)
+        public async Task<Specialty> GetSpecialtyById(int id)
         {
            return await _specialtyRepository.GetById(id);
         }
 
-        public async Task<Speciality> Create(Speciality speciality)
+        public async Task<Specialty> Create(Specialty speciality)
         {
             List<Task> tasks = new List<Task>();
 
@@ -52,12 +52,12 @@ namespace UoW.BL.Services.Users
            await _specialtyRepository.Delete(id);
         }
 
-        public async Task<IEnumerable<Speciality>> GetAll()
+        public async Task<IEnumerable<Specialty>> GetAll()
         {
             return await _specialtyRepository.GetAll();
         }
 
-        public async Task<Speciality> Update(Speciality speciality)
+        public async Task<Specialty> Update(Specialty speciality)
         {
             List<Task> tasks = new List<Task>();
 
@@ -82,7 +82,7 @@ namespace UoW.BL.Services.Users
             }
         }
 
-        public async Task<Speciality> GetByName(string name)
+        public async Task<Specialty> GetByName(string name)
         {
             return await _specialtyRepository.GetByName(name);
         }

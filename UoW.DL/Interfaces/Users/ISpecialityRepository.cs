@@ -6,11 +6,11 @@ namespace UoW.DL.Interfaces.Users
 {
     public interface ISpecialityRepository
     {
-        Task<Speciality> Create(Speciality user);
+        Task<Specialty> Create(Specialty user);
         Task Delete(int userId);
-        Task<Speciality> Update(Speciality user);
-        Task<IEnumerable<Speciality>> GetAll();
-        Task<Speciality> GetById(int userId);
-        Task<Speciality> GetByName(string name);
+        Task<Specialty> Update(Specialty user);
+        Task<IEnumerable<Specialty>> GetAll();
+        Task<Specialty> GetById(int userId);
+        Task<Specialty> GetByName(string name);
     }
 }

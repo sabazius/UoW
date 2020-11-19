@@ -1,6 +1,6 @@
 ﻿namespace UoW.Models.Users
 {
-    public class Speciality
+    public class Specialty
     {
         public int Id { get; set; }
         public string Name { get; set; }

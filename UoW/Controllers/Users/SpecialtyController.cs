@@ -23,12 +23,12 @@ namespace UoW.Controllers
         }
 
         [HttpGet("id")]
-        public IActionResult GetSpecialtyById(int specialtyId) 
+        public async Task<IActionResult> GetSpecialtyById(int specialtyId) 
         {
-            var result = _specialtyService.GetSpecialtyById(specialtyId);
-            if (result == null) return NotFound();
+            var result = await _specialtyService.GetSpecialtyById(specialtyId);
+            if (result == null) return NotFound("Specialty not found");
 
-            var specialty = _mapper.Map<Speciality>(result);
+            var specialty = _mapper.Map<Specialty>(result);
 
             return Ok(specialty);
         }
@@ -50,7 +50,7 @@ namespace UoW.Controllers
         {
             if (request == null) return NotFound();
 
-            var specialty = _mapper.Map<Speciality>(request);
+            var specialty = _mapper.Map<Specialty>(request);
 
             var result = _specialtyService.Create(specialty);
 
@@ -73,13 +73,13 @@ namespace UoW.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateSpecialty([FromBody] SpecialtyRequest request)
+        public async Task<IActionResult> UpdateSpecialty([FromBody] SpecialtyRequest request)
         {
             if (request == null) return NotFound();
 
-            var specialty = _mapper.Map<Speciality>(request);
+            var specialty = _mapper.Map<Specialty>(request);
 
-            var result = _specialtyService.Update(specialty);
+            var result = await _specialtyService.Update(specialty);
             if (result == null) return NotFound();
 
             return Ok(specialty);
