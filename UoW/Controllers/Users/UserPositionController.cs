@@ -46,7 +46,7 @@ namespace UoW.Controllers.Users
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> SaveUserPosition(UserPositionRequest request)
+		public async Task<IActionResult> SaveUserPosition(UserPosition request)
 		{
 			if (request == null) return NotFound(request);
 
@@ -54,15 +54,21 @@ namespace UoW.Controllers.Users
 
 			var result = await _userPositionService.SaveUserPosition(position);
 
-			return Ok(result);
+			var response = _mapper.Map<UserPositionResponse>(result);
+
+			return Ok(response);
 		}
 
 		[HttpDelete]
 		public async Task<IActionResult> DeleteUserPosition(int positioId)
 		{
+			var userPos = await _userPositionService.GetUserPosition(positioId);
+
+			if (userPos == null) return NotFound(positioId);
+
 			await _userPositionService.DeleteUserPosition(positioId);
 
-			return Ok();
+			return Ok(positioId);
 		}
 
 	}
