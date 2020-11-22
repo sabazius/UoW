@@ -9,12 +9,10 @@ namespace UoW.BL.Services.Users
 	public class UserPositionService : IUserPositionService
 	{
 		private IUserPositionRepository _userPositionRepository;
-		private ILectorRepository _lectorRepository;
 
-		public UserPositionService(IUserPositionRepository userPositionRepository, ILectorRepository lectorRepository)
+		public UserPositionService(IUserPositionRepository userPositionRepository)
 		{
 			_userPositionRepository = userPositionRepository;
-			_lectorRepository = lectorRepository;
 		}
 
 		public async Task DeleteUserPosition(int userPositionId)
