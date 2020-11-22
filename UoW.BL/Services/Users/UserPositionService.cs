@@ -9,12 +9,15 @@ namespace UoW.BL.Services.Users
 	public class UserPositionService : IUserPositionService
 	{
 		private IUserPositionRepository _userPositionRepository;
-		private ILectorRepository _lectorRepository;
 
-		public UserPositionService(IUserPositionRepository userPositionRepository, ILectorRepository lectorRepository)
+		public UserPositionService(IUserPositionRepository userPositionRepository)
 		{
 			_userPositionRepository = userPositionRepository;
-			_lectorRepository = lectorRepository;
+		}
+
+		public async Task<UserPosition> Create(UserPosition userPosition)
+		{
+			return await _userPositionRepository.Create(userPosition);
 		}
 
 		public async Task DeleteUserPosition(int userPositionId)
@@ -32,7 +35,7 @@ namespace UoW.BL.Services.Users
 			return await _userPositionRepository.GetById(userPositionId);
 		}
 
-		public async Task<UserPosition> SaveUserPosition(UserPosition userPosition)
+		public async Task<UserPosition> Update(UserPosition userPosition)
 		{
 			return await _userPositionRepository.Update(userPosition);
 		}
