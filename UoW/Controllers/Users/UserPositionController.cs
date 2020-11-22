@@ -45,14 +45,28 @@ namespace UoW.Controllers.Users
 			return Ok(response);
 		}
 
-		[HttpPost]
-		public async Task<IActionResult> SaveUserPosition(UserPosition request)
+		[HttpPost("update")]
+		public async Task<IActionResult> Update(UserPositionRequest request)
 		{
 			if (request == null) return NotFound(request);
 
 			var position = _mapper.Map<UserPosition>(request);
 
-			var result = await _userPositionService.SaveUserPosition(position);
+			var result = await _userPositionService.Update(position);
+
+			var response = _mapper.Map<UserPositionResponse>(result);
+
+			return Ok(response);
+		}
+
+		[HttpPost("create")]
+		public async Task<IActionResult> Create(UserPositionRequest request)
+		{
+			if (request == null) return BadRequest(request);
+
+			var position = _mapper.Map<UserPosition>(request);
+
+			var result = await _userPositionService.Create(position);
 
 			var response = _mapper.Map<UserPositionResponse>(result);
 
