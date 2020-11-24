@@ -101,21 +101,31 @@ namespace UoW.Test
         public async Task Specialty_Update_Name()
         {
             var specialtyId = 1;
+            var expectedSpecialty = "New Position Name";
 
-            var specialty = _specialities.FirstOrDefault(x => x.Id == specialtyId);
-            specialty.Name = "edited name";
+            var specailty = _specialities.FirstOrDefault(x => x.Id == specialtyId);
+            specailty.Name = expectedSpecialty;
 
-            _specialtyRepository.Setup(x => x.Update(specialty))
-                .Returns(Task.FromResult(specialty));
+            _specialtyRepository.Setup(x => x.Update(specailty)).ReturnsAsync(_specialities.FirstOrDefault(x => x.Id == specialtyId));
+            _specialtyRepository.Setup(x => x.GetByName(specailty.Name));
+            _specialtyRepository.Setup(x => x.GetById(specailty.Id)).ReturnsAsync(specailty);
 
-            var result = await _controller.UpdateSpecialty(_mapper.Map<SpecialtyRequest>(specialty));
+            _facultyRepository.Setup(x => x.GetById(1))
+                .ReturnsAsync(new Faculty { Id = specailty.FacultyId});
 
+            _lectorRepository.Setup(x => x.GetById(specailty.LectorId))
+               .Returns(new Lector { Id = specailty.LectorId });
+
+            //Act
+            var result = await _controller.UpdateSpecialty(specailty);
+
+            //Assert
             var okObjectResult = result as OkObjectResult;
             Assert.NotNull(okObjectResult);
 
-            var spec = okObjectResult.Value as Specialty;
+            var spec = okObjectResult.Value as SpecialtyResponse;
             Assert.NotNull(spec);
-            Assert.Equal("edited name", spec.Name);
+            Assert.Equal(expectedSpecialty, spec.Name);
         }
     }
 }

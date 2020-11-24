@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using UoW.Models.Contracts.Requests;
 using UoW.Models.Users;
 
 namespace UoW.BL.Interfaces.Users

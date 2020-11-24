@@ -73,16 +73,16 @@ namespace UoW.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateSpecialty([FromBody] SpecialtyRequest request)
+        public async Task<IActionResult> UpdateSpecialty([FromBody] Specialty request)
         {
             if (request == null) return NotFound();
 
             var specialty = _mapper.Map<Specialty>(request);
 
             var result = await _specialtyService.Update(specialty);
-            if (result == null) return NotFound();
+            if (result == null) return NotFound("not found");
 
-            return Ok(specialty);
+            return Ok(_mapper.Map<SpecialtyResponse>(result));
         }
     }
 }
