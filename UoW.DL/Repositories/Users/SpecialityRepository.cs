@@ -10,14 +10,14 @@ namespace UoW.DL.Repositories.Users
 {
     public class SpecialityRepository : ISpecialityRepository
     {
-        private static List<Speciality> dbTable;
+        private static List<Specialty> dbTable;
 
         public SpecialityRepository()
         {
             dbTable = InMemoryDb.Specialties;
         }
 
-        public Task<Speciality> Create(Speciality speciality)
+        public Task<Specialty> Create(Specialty speciality)
         {
             dbTable.Add(speciality);
             return Task.FromResult(speciality);
@@ -33,18 +33,18 @@ namespace UoW.DL.Repositories.Users
             return Task.CompletedTask;
         }
 
-        public Task<Speciality> GetById(int specialityId)
+        public Task<Specialty> GetById(int specialityId)
         {
             var result = dbTable.FirstOrDefault(x => x.Id == specialityId);
             return Task.FromResult(result);
         }
 
-        public Task<Speciality> GetByName(string name)
+        public Task<Specialty> GetByName(string name)
         {
             return Task.FromResult(dbTable.FirstOrDefault(x => x.Name == name));
         }
 
-        public Task<Speciality> Update(Speciality speciality)
+        public Task<Specialty> Update(Specialty speciality)
         {
             var result = dbTable.FirstOrDefault(x => x.Id == speciality.Id);
 
@@ -57,7 +57,7 @@ namespace UoW.DL.Repositories.Users
             return Task.FromResult(speciality);
         }
 
-        public Task<IEnumerable<Speciality>> GetAll()
+        public Task<IEnumerable<Specialty>> GetAll()
         {
             return Task.FromResult(dbTable.AsEnumerable());
         }

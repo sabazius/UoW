@@ -11,14 +11,14 @@ namespace UoW.Models.Common
     {
         public AutoMapping()
         {
-            CreateMap<SpecialtyRequest, Speciality>().ReverseMap();
-            CreateMap<SpecialtyResponse, Speciality>().ReverseMap();
+            CreateMap<SpecialtyRequest, Specialty>().ReverseMap();
+            CreateMap<SpecialtyResponse, Specialty>().ReverseMap();
             CreateMap<SprintRequest, Sprint>();
             CreateMap<SprintResponse, Sprint>();
             CreateMap<UserPositionRequest, UserPosition>().ReverseMap();
             CreateMap<UserPositionResponse, UserPosition>().ReverseMap();
             CreateMap<IEnumerable<UserPositionResponse>, IEnumerable<UserPosition>>();
-            CreateMap<IEnumerable<SpecialtyResponse>, IEnumerable<Speciality>>();
+            CreateMap<IEnumerable<SpecialtyResponse>, IEnumerable<Specialty>>();
         }
     }
 }

@@ -20,6 +20,12 @@ using AutoMapper;
 using FluentValidation.AspNetCore;
 using UoW.DL.Repositories.MongoDb.Users;
 using UoW.Models.Common;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.Collections.Generic;
+using System.Collections;
+using Microsoft.OpenApi.Models;
 
 namespace UoW
 {
@@ -35,6 +41,10 @@ namespace UoW
 		public void ConfigureServices(IServiceCollection services)
 		{
 			InMemoryDb.Init();
+
+			var jwtSettings = new JwtSettings();
+			Configuration.Bind(nameof(jwtSettings), jwtSettings);
+			services.AddSingleton(jwtSettings);
 
 			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
 
@@ -64,10 +74,53 @@ namespace UoW
 			services.AddSingleton<ISpecialityRepository, SpecialtyMongoRepository>();
 			services.AddSingleton<IUserPositionRepository, UserPositionMongoRepository>();
 
+			services.AddAuthentication(op =>
+			{
+				op.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+				op.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+				op.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+			})
+				.AddJwtBearer(x =>
+				{
+					x.SaveToken = true;
+					x.TokenValidationParameters = new TokenValidationParameters
+					{
+						ValidateIssuerSigningKey = true,
+						IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Secret)),
+						ValidateIssuer = false,
+						RequireExpirationTime = false,
+						ValidateLifetime = true
+					};
+				});
+
 			services.AddControllers()
 				.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>()); 
 			// Register the Swagger generator, defining 1 or more Swagger documents
-			services.AddSwaggerGen();
+			services.AddSwaggerGen(x =>
+			{
+				var sercurity = new Dictionary<string, IEnumerable<string>>
+				{
+					{"Bearer", new string[0] }
+				};
+
+				OpenApiSecurityScheme secutiryDefinition = new OpenApiSecurityScheme()
+				{
+					Name = "Bearer",
+					BearerFormat = "JWT",
+					Scheme = "bearer",
+					In = ParameterLocation.Header,
+					Type = SecuritySchemeType.Http,
+					Description = "Authorization token"
+				};
+
+				x.AddSecurityDefinition("jwt", secutiryDefinition);
+				x.AddSecurityRequirement(new OpenApiSecurityRequirement()
+				{
+					{secutiryDefinition, new string[] {} }
+				});
+
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
