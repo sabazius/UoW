@@ -119,10 +119,19 @@ namespace UoW.Test
 			var position = _userPositions.FirstOrDefault(x => x.Id == userPositionId);
 			position.PositionName = expectedPositionName;
 
-			_userPositionRepository.Setup(x => x.Update(position)).ReturnsAsync(_userPositions.FirstOrDefault(x => x.Id == userPositionId));
+
+			_userPositionRepository.Setup(x => x.Update(It.IsAny<UserPosition>())).Callback(() => 
+			{
+				position.PositionName = expectedPositionName;
+			}).Returns(() => Task<UserPosition>.Factory.StartNew(() => new UserPosition() 
+			{
+				Id = position.Id,
+				Description = position.Description,
+				PositionName = position.PositionName
+			}));
 
 			//Act
-			var result = await _controller.SaveUserPosition(position);
+			var result = await _controller.Update(_mapper.Map<UserPositionRequest>(position));
 
 			//Assert
 			var okObjectResult = result as OkObjectResult;
@@ -142,6 +151,7 @@ namespace UoW.Test
 			var position = _userPositions.FirstOrDefault(x => x.Id == userPositionId);
 
 
+			_userPositionRepository.Setup(x => x.GetById(userPositionId)).ReturnsAsync(_userPositions.FirstOrDefault(x => x.Id == userPositionId));
 			_userPositionRepository.Setup(x => x.Delete(userPositionId)).Callback( () => _userPositions.Remove(position));
 
 			//Act
@@ -169,11 +179,44 @@ namespace UoW.Test
 			var result = await _controller.DeleteUserPosition(userPositionId);
 
 			//Assert
-			var okObjectResult = result as NotFoundObjectResult;
-			Assert.NotNull(okObjectResult);
+			var notFoundObjectResult = result as NotFoundObjectResult;
+			Assert.NotNull(notFoundObjectResult);
 
 			Assert.Null(_userPositions.FirstOrDefault(x => x.Id == userPositionId));
 		}
 
+		[Fact]
+		public async Task UserPosition_Create_PositionName()
+		{
+			//setup
+			var position = new UserPosition()
+			{
+				Id = 3,
+				PositionName = "Postion Name 3",
+				Description = "Description 33"
+			};
+
+			_userPositionRepository.Setup(x => x.Create(It.IsAny<UserPosition>())).Callback(() =>
+			{
+				_userPositions.Add(position);
+			}).Returns(() => Task<UserPosition>.Factory.StartNew(() => new UserPosition()
+			{
+				Id = 3,
+				PositionName = "Postion Name 3",
+				Description = "Description 33"
+			}));
+
+			//Act
+			var result = await _controller.Create(_mapper.Map<UserPositionRequest>(position));
+
+			//Assert
+			var okObjectResult = result as OkObjectResult;
+			Assert.NotNull(okObjectResult);
+
+			var pos = okObjectResult.Value as UserPositionResponse;
+			Assert.NotNull(pos);
+
+			Assert.NotNull(_userPositions.FirstOrDefault(x => x.Id == position.Id));
+		}
 	}
 }
