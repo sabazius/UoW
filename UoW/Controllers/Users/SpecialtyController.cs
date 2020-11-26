@@ -60,14 +60,14 @@ namespace UoW.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteSpecialty(int id)
+        public async  Task<IActionResult> DeleteSpecialty(int id)
         {
             if (id <= 0) return BadRequest();
 
-            var specialty = _specialtyService.GetSpecialtyById(id);
+            var specialty = await _specialtyService.GetSpecialtyById(id);
             if (specialty == null) return NotFound();
 
-             _specialtyService.Delete(id);
+             await _specialtyService.Delete(id);
 
             return Ok();
         }

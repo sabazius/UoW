@@ -127,5 +127,48 @@ namespace UoW.Test
             Assert.NotNull(spec);
             Assert.Equal(expectedSpecialty, spec.Name);
         }
+
+        [Fact]
+        public async Task Specialty_Delete_Existing_Specialty()
+        {
+            //setup
+            var speicaltyId = 1;
+
+            var specialty = _specialities.FirstOrDefault(x => x.Id == speicaltyId);
+
+
+            _specialtyRepository.Setup(x => x.GetById(speicaltyId)).ReturnsAsync(_specialities.FirstOrDefault(x => x.Id == speicaltyId));
+            _specialtyRepository.Setup(x => x.Delete(speicaltyId)).Callback(() => _specialities.Remove(specialty));
+
+            //Act
+            var result = await _controller.DeleteSpecialty(speicaltyId);
+
+            //Assert
+            //var okObjectResult = result as OkObjectResult;
+            //Assert.NotNull(okObjectResult);
+
+            Assert.Null(_specialities.FirstOrDefault(x => x.Id == speicaltyId));
+        }
+
+        [Fact]
+        public async Task Specialty_Delete_NotExisting_Specialty()
+        {
+            //setup
+            var specialtyId = 3;
+
+            var specialty = _specialities.FirstOrDefault(x => x.Id == specialtyId);
+
+
+            _specialtyRepository.Setup(x => x.Delete(specialtyId)).Callback(() => _specialities.Remove(specialty));
+
+            //Act
+            var result = await _controller.DeleteSpecialty(specialtyId);
+
+            //Assert
+            //var notFoundObjectResult = result as NotFoundObjectResult;
+            //Assert.NotNull(notFoundObjectResult);
+
+            Assert.Null(_specialities.FirstOrDefault(x => x.Id == specialtyId));
+        }
     }
 }

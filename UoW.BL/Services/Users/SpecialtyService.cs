@@ -49,7 +49,7 @@ namespace UoW.BL.Services.Users
 
         public async Task Delete(int id)
         {
-           await _specialtyRepository.Delete(id);
+            await _specialtyRepository.Delete(id);
         }
 
         public async Task<IEnumerable<Specialty>> GetAll()
