@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using UoW.BL.Interfaces;
 using UoW.Models.Contracts.Requests;
 using UoW.Models.Identity;
 
@@ -11,13 +10,11 @@ namespace UoW.Controllers
 	[ApiController]
 	public class IdentityController : ControllerBase
 	{
-		IIndentityService _identityService;
 		private readonly UserManager<ApplicationUser> _userManager;
 		private readonly SignInManager<ApplicationUser> _signInManager;
 
-		public IdentityController(IIndentityService identityService, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+		public IdentityController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
 		{
-			_identityService = identityService;
 			_userManager = userManager;
 			_signInManager = signInManager;
 		}
