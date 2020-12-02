@@ -22,5 +22,7 @@ namespace UoW.Models.Identity
 		public string Country { get; set; }
 
 		public string City { get; set; }
+
+		public int UserId { get; set; }
 	}
 }

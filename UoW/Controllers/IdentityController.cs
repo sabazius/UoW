@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using UoW.BL.Interfaces;
 using UoW.Models.Contracts.Requests;
+using UoW.Models.Contracts.Responses;
 using UoW.Models.Identity;
 
 namespace UoW.Controllers
@@ -13,39 +15,52 @@ namespace UoW.Controllers
 		private readonly UserManager<ApplicationUser> _userManager;
 		private readonly SignInManager<ApplicationUser> _signInManager;
 
-		public IdentityController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+		private IIdentityService _identityService;
+
+		public IdentityController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IIdentityService identityService)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;
+			_identityService = identityService;
 		}
 
 		[HttpPost("register")]
 		public async Task<IActionResult> Register([FromBody] UserRegistrationRequest request)
 		{
-			var existingUser = _userManager.FindByNameAsync(request.UserName);
+			var authResult = await _identityService.RegisterAsync(request.UserName, request.Password);
 
-			if (existingUser != null)
+			if (!authResult.IsSuccess)
 			{
-				return BadRequest("User already exist");
+				return BadRequest(new AuthFailedResponse
+				{
+					Errors = authResult.Errors
+				});
 			}
 
-			var user = new ApplicationUser
+			return Ok(new AuthSuccessResponse
 			{
-				UserName = request.UserName,
-				Email = request.UserName
-			};
-
-			var result = await _userManager.CreateAsync(user, request.Password);
-
-			return Ok(result);
+				Token = authResult.Token
+			});
 		}
 
 		[HttpPost("login")]
 		public async Task<IActionResult> Login([FromBody] UserLoginRequest request)
 		{
-			var result = await _signInManager.PasswordSignInAsync(request.Username, request.Password, false, false);
+			var loginResponse = await _identityService.LoginAsync(request.Username, request.Password);
 
-			return Ok(result);
+			if (!loginResponse.IsSuccess)
+			{
+				return BadRequest(new AuthFailedResponse
+				{
+					Errors = loginResponse.Errors
+				});
+			}
+
+
+			return Ok(new AuthSuccessResponse
+			{
+				Token = loginResponse.Token
+			});
 		}
 
 		[HttpPost]

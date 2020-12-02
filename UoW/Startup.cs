@@ -11,6 +11,8 @@ using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System;
 using System.Text;
+using UoW.BL.Interfaces;
+using UoW.BL.Services;
 using UoW.DL.InMemoryDB;
 using UoW.Extensions;
 using UoW.Models.Common;
@@ -38,6 +40,8 @@ namespace UoW
 			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
 
 			var mongoSettings = Configuration.GetSection(nameof(MongoDbConfiguration)).Get<MongoDbConfiguration>();
+
+			services.AddScoped<IIdentityService, IdentityService>();
 
 			services.AddIdentity<ApplicationUser, ApplicationRole>()
 				.AddMongoDbStores<ApplicationUser, ApplicationRole, Guid>(mongoSettings.ConnectionString, mongoSettings.DatabaseName)
@@ -68,7 +72,8 @@ namespace UoW
 						IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Secret)),
 						ValidateIssuer = false,
 						RequireExpirationTime = false,
-						ValidateLifetime = true
+						ValidateLifetime = true,
+						ValidateAudience = false
 					};
 				});
 
@@ -100,6 +105,7 @@ namespace UoW
 			app.UseRouting();
 
 			app.UseAuthorization();
+			app.UseAuthentication();
 
 			app.UseEndpoints(endpoints =>
 			{

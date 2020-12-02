@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using System;
 using System.Collections.Generic;
 using UoW.BL.Interface.User;
 using UoW.BL.Interfaces;
@@ -30,7 +32,6 @@ namespace UoW.Extensions
 			services.AddSingleton<IFacultyService, FacultyService>();
 			services.AddSingleton<IStoryService, StoryService>();
 			services.AddSingleton<IUserPositionService, UserPositionService>();
-			services.AddSingleton<IIndentityService, IndentityService>();
 		}
 
 		public static void AddUoWRepositories(this IServiceCollection services)
@@ -50,27 +51,29 @@ namespace UoW.Extensions
 		{
 			services.AddSwaggerGen(x =>
 			{
-				var sercurity = new Dictionary<string, IEnumerable<string>>
+				// Include 'SecurityScheme' to use JWT Authentication
+				var jwtSecurityScheme = new OpenApiSecurityScheme
 				{
-					{"Bearer", new string[0] }
-				};
-
-				OpenApiSecurityScheme secutiryDefinition = new OpenApiSecurityScheme()
-				{
-					Name = "Bearer",
-					BearerFormat = "JWT",
 					Scheme = "bearer",
+					BearerFormat = "JWT",
+					Name = "JWT Authentication",
 					In = ParameterLocation.Header,
 					Type = SecuritySchemeType.Http,
-					Description = "Authorization token"
+					Description = "Put **_ONLY_** your JWT Bearer token on textbox below!",
+
+					Reference = new OpenApiReference
+					{
+						Id = JwtBearerDefaults.AuthenticationScheme,
+						Type = ReferenceType.SecurityScheme
+					}
 				};
 
-				x.AddSecurityDefinition("jwt", secutiryDefinition);
-				x.AddSecurityRequirement(new OpenApiSecurityRequirement()
-				{
-					{secutiryDefinition, new string[] {} }
-				});
+				x.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
 
+				x.AddSecurityRequirement(new OpenApiSecurityRequirement
+				{
+					{ jwtSecurityScheme, Array.Empty<string>() }
+				});
 			});
 		}
 	}
