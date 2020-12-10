@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -17,11 +18,15 @@ namespace UoW.BL.Services
 		private readonly UserManager<ApplicationUser> _userManager;
 		private readonly SignInManager<ApplicationUser> _signInManager;
 		private readonly JwtSettings _jwtSettings;
-		public IdentityService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, JwtSettings jwtSettings)
+		private readonly ILogger _log;
+
+		public IdentityService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,
+							   JwtSettings jwtSettings, ILogger log)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;
 			_jwtSettings = jwtSettings;
+			_log = log;
 		}
 
 		public async Task<AuthenticationResult> LoginAsync(string userName, string password)
@@ -30,6 +35,7 @@ namespace UoW.BL.Services
 
 			if (user == null)
 			{
+				_log.Information($"User {user} does not exist!");
 				return new AuthenticationResult
 				{
 					Errors = new string[] { $"User/Password combination is wrong!" },
@@ -41,6 +47,7 @@ namespace UoW.BL.Services
 
 			if (!validPassword)
 			{
+				_log.Warning($"User/Password combination is wrong! for user:{user}");
 				return new AuthenticationResult
 				{
 					Errors = new string[] { $"User/Password combination is wrong!" },
@@ -57,6 +64,7 @@ namespace UoW.BL.Services
 
 			if (existingUser != null)
 			{
+				_log.Information($"User {userName} already exist!");
 				return new AuthenticationResult
 				{
 					Errors = new string[] { $"User {userName} already exist!" }
@@ -74,6 +82,7 @@ namespace UoW.BL.Services
 
 			if (!result.Succeeded)
 			{
+				_log.Information($"Error registering user {userName} | Errors:{ result.Errors.Select(x => x.Description)}");
 				return new AuthenticationResult
 				{
 					Errors = result.Errors.Select(x => x.Description)
@@ -96,6 +105,7 @@ namespace UoW.BL.Services
 					new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
 					new Claim(JwtRegisteredClaimNames.Email, user.Email),
 					new Claim("id", user.Id.ToString()),
+					new Claim("View", "View")
 				}),
 				Expires = DateTime.UtcNow.AddHours(1),
 				SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)

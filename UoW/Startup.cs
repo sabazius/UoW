@@ -77,6 +77,12 @@ namespace UoW
 					};
 				});
 
+			services.AddAuthorization(options =>
+			{
+				options.AddPolicy("ViewUserPositions", p => p.RequireAuthenticatedUser().RequireClaim("View"));
+			});
+
+
 			services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
 
 			// Register the Swagger generator, defining 1 or more Swagger documents

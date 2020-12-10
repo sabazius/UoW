@@ -36,6 +36,7 @@ namespace UoW.Controllers.Users
 			return Ok(response);
 		}
 
+		[Authorize(Policy = "ViewUserPositions")]
 		[HttpGet("GetAll")]
 		public async Task<IActionResult> GetAll()
 		{
