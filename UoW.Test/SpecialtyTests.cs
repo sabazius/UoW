@@ -114,7 +114,7 @@ namespace UoW.Test
                 .ReturnsAsync(new Faculty { Id = specailty.FacultyId});
 
             _lectorRepository.Setup(x => x.GetById(specailty.LectorId))
-               .Returns(new Lector { Id = specailty.LectorId });
+               .ReturnsAsync(new Lector { Id = specailty.LectorId });
 
             //Act
             var result = await _controller.UpdateSpecialty(specailty);
