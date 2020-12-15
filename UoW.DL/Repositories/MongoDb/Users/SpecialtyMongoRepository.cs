@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
 
@@ -7,44 +8,50 @@ namespace UoW.DL.Repositories.MongoDb.Users
 {
 	public class SpecialtyMongoRepository : ISpecialityRepository
     {
-        private readonly IMongoCollection<Speciality> _specialties;
+        private readonly IMongoCollection<Specialty> _specialties;
         public SpecialtyMongoRepository()
         {
             var client = new MongoClient("mongodb+srv://admin:tpaqMq6k0G9bpVWz@pu-net-core.52gte.mongodb.net/UoW?retryWrites=true&w=majority");
             var database = client.GetDatabase("UoW");
-            _specialties = database.GetCollection<Speciality>("Specialty");
+            _specialties = database.GetCollection<Specialty>("Specialty");
         }
-        public Speciality Create(Speciality user)
+        public async Task<Specialty> Create(Specialty user)
         {
-            _specialties.InsertOne(user);
+            await _specialties.InsertOneAsync(user);
             return user;
         }
 
-        public void Delete(int userId)
+        public async Task Delete(int userId)
         {
-            _specialties.DeleteOne(p => p.Id == userId);
+            await _specialties.DeleteOneAsync(p => p.Id == userId);
         }
 
-        public List<Speciality> GetAll()
-        {   var result = _specialties.Find(p => true).ToList();
-            return result;
+        public async Task<IEnumerable<Specialty>> GetAll()
+        {
+            var result = await _specialties.FindAsync(p => true);
+            return result.ToEnumerable();
         }
 
-        public Speciality GetById(int userId)
+        public async Task<Specialty> GetById(int userId)
         {
-            return _specialties.Find(p => p.Id == userId).FirstOrDefault();
+            var result = await _specialties.FindAsync(p => p.Id == userId);
+
+            return result.FirstOrDefault();
         }
 
-        public Speciality GetByName(string name)
+        public async Task<Specialty> GetByName(string name)
         {
-            return _specialties.Find(p => p.Name == name).FirstOrDefault();
+            var result = await _specialties.FindAsync(p => p.Name == name);
+
+            return result.FirstOrDefault();
         }
 
-        public Speciality Update(Speciality spec)
+        public async Task<Specialty> Update(Specialty spec)
         {
-            _specialties.DeleteOne(p => p.Id == spec.Id);
-            _specialties.InsertOne(spec);
+            await _specialties.ReplaceOneAsync(p => p.Id == spec.Id, spec);
+
             return spec;
         }
-    }
+
+	}
 }

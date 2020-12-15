@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UoW.Models\UoW.Models.csproj" />
     <ProjectReference Include="..\UoW\UoW.csproj" />
   </ItemGroup>
 

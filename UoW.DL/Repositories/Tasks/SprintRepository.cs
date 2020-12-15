@@ -29,7 +29,10 @@ namespace UoW.DL.Repositories.Tasks
             }
         }
 
-        public Sprint GetById(int sprintId)
+        public IEnumerable<Sprint> GetAll() =>
+            dbTable.AsEnumerable();
+
+		public Sprint GetById(int sprintId)
         {
             return dbTable.FirstOrDefault(x => x.Id == sprintId);
         }

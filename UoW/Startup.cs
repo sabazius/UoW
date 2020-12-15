@@ -1,26 +1,22 @@
+using AutoMapper;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
-using UoW.BL.Interface.User;
-using UoW.BL.Interfaces.Tasks;
-using UoW.BL.Interfaces.Users;
-using UoW.BL.Services.Tasks;
-using UoW.BL.Services.User;
-using UoW.BL.Services.Users;
+using System;
+using System.Text;
+using UoW.BL.Interfaces;
+using UoW.BL.Services;
 using UoW.DL.InMemoryDB;
-using UoW.DL.Interfaces.Users;
-using UoW.DL.Repositories;
-using UoW.DL.Repositories.Tasks;
-using UoW.DL.Repositories.Users;
 using UoW.Extensions;
-using AutoMapper;
-using FluentValidation.AspNetCore;
-using UoW.DL.Repositories.MongoDb.Users;
 using UoW.Models.Common;
-using UoW.DL.Repositories.MongoDB.Users;
+using UoW.Models.Identity;
 
 namespace UoW
 {
@@ -37,39 +33,60 @@ namespace UoW
 		{
 			InMemoryDb.Init();
 
+			var jwtSettings = new JwtSettings();
+			Configuration.Bind(nameof(jwtSettings), jwtSettings);
+			services.AddSingleton(jwtSettings);
+
 			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
-			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
+
+			var mongoSettings = Configuration.GetSection(nameof(MongoDbConfiguration)).Get<MongoDbConfiguration>();
+
+			services.AddScoped<IIdentityService, IdentityService>();
+
+			services.AddIdentity<ApplicationUser, ApplicationRole>()
+				.AddMongoDbStores<ApplicationUser, ApplicationRole, Guid>(mongoSettings.ConnectionString, mongoSettings.DatabaseName)
+				.AddSignInManager()
+				.AddDefaultTokenProviders();
 
 			services.AddHealthChecks();
-
-			services.AddSingleton<IProjectRepository, ProjectRepository>();
-			services.AddSingleton<IProjectService, ProjectService>();
-			services.AddSingleton<ITeamRepository, TeamRepository>();
-			services.AddSingleton<ITeamService, TeamService>();
-			services.AddSingleton<IUserRepository, UserRepository>();
-			services.AddSingleton<IUserService, UserService>();
-			services.AddSingleton<ISpecialtyService, SpecialtyService>();
-			services.AddSingleton<ISprintRepository, SprintRepository>();
-			services.AddSingleton<ISprintService, SprintService>();
-			services.AddSingleton<ILectorRepository, LectorMongoRepository>();
-			services.AddSingleton<ILectorService, LectorService>();
-			services.AddSingleton<IFacultyRepository, FacultyRepository>();
-			services.AddSingleton<IFacultyService, FacultyService>();
-			services.AddSingleton<IStoryRepository, StoryRepository>();
-			services.AddSingleton<IStoryService, StoryService>();
-            services.AddSingleton<IUserPositionService, UserPositionService>();
+			services.AddUoWServices();
+			services.AddUoWRepositories();
 
 			services.AddAutoMapper(typeof(Startup));
 
 			services.AddSingleton(Log.Logger);
 
-			services.AddSingleton<ISpecialityRepository, SpecialtyMongoRepository>();
-			services.AddSingleton<IUserPositionRepository, UserPositionMongoRepository>();
+			services.AddAuthentication(op =>
+			{
+				op.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+				op.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+				op.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 
-			services.AddControllers()
-				.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>()); 
+			})
+				.AddJwtBearer(x =>
+				{
+					x.SaveToken = true;
+					x.TokenValidationParameters = new TokenValidationParameters
+					{
+						ValidateIssuerSigningKey = true,
+						IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings.Secret)),
+						ValidateIssuer = false,
+						RequireExpirationTime = false,
+						ValidateLifetime = true,
+						ValidateAudience = false
+					};
+				});
+
+			services.AddAuthorization(options =>
+			{
+				options.AddPolicy("ViewUserPositions", p => p.RequireAuthenticatedUser().RequireClaim("View"));
+			});
+
+
+			services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+
 			// Register the Swagger generator, defining 1 or more Swagger documents
-			services.AddSwaggerGen();
+			services.AddSwaggerConfiguration();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,6 +111,7 @@ namespace UoW
 			app.UseRouting();
 
 			app.UseAuthorization();
+			app.UseAuthentication();
 
 			app.UseEndpoints(endpoints =>
 			{

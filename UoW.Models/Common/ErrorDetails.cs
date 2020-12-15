@@ -11,6 +11,5 @@ namespace UoW.Models.Common
         {
             return JsonConvert.SerializeObject(this);
         }
-
     }
 }

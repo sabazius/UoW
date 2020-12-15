@@ -8,7 +8,9 @@ namespace UoW.BL.Interfaces.Users
 	{
 		Task<UserPosition> GetUserPosition(int userPositionId);
 
-		Task<UserPosition> SaveUserPosition(UserPosition userPosition);
+		Task<UserPosition> Update(UserPosition userPosition);
+
+		Task<UserPosition> Create(UserPosition userPosition);
 
 		Task DeleteUserPosition(int userPositionId);
 

@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Xml;
+using System.Threading.Tasks;
 using UoW.BL.Interfaces.Users;
 using UoW.Models.Contracts.Requests;
+using UoW.Models.Contracts.Responses;
 using UoW.Models.Users;
 
 namespace UoW.Controllers
 {
-    [Route("specialties")]
+	[Route("specialties")]
     [ApiController]
     public class SpecialtyController : ControllerBase
     {
@@ -23,34 +23,26 @@ namespace UoW.Controllers
         }
 
         [HttpGet("id")]
-        public IActionResult GetSpecialtyById(int specialtyId) 
+        public async Task<IActionResult> GetSpecialtyById(int specialtyId) 
         {
-            var result = _specialtyService.GetSpecialtyById(specialtyId);
-            if (result == null) return NotFound();
+            var result = await _specialtyService.GetSpecialtyById(specialtyId);
+            if (result == null) return NotFound("Specialty not found");
 
-            var specialty = _mapper.Map<Speciality>(result);
+            var specialty = _mapper.Map<Specialty>(result);
 
             return Ok(specialty);
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            List<Speciality> specialties = new List<Speciality>();
-            var result = _specialtyService.GetAll();
+            var result = await _specialtyService.GetAll();
 
-            if (result == null || result.Count == 0)
-            {
-                return NotFound();
-            }
+            if (result == null) return NotFound("Collection is empty!");
 
-            result.ForEach(delegate (Speciality specialty)
-            {
-                var mappedSpecialty = _mapper.Map<Speciality>(specialty);
-                specialties.Add(mappedSpecialty);
-            });
+            var response = _mapper.Map<IEnumerable<SpecialtyResponse>>(result);
 
-            return Ok(specialties);
+            return Ok(response);
         }
 
         [HttpPost]
@@ -58,7 +50,7 @@ namespace UoW.Controllers
         {
             if (request == null) return NotFound();
 
-            var specialty = _mapper.Map<Speciality>(request);
+            var specialty = _mapper.Map<Specialty>(request);
 
             var result = _specialtyService.Create(specialty);
 
@@ -68,29 +60,29 @@ namespace UoW.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteSpecialty(int id)
+        public async  Task<IActionResult> DeleteSpecialty(int id)
         {
             if (id <= 0) return BadRequest();
 
-            var specialty = _specialtyService.GetSpecialtyById(id);
+            var specialty = await _specialtyService.GetSpecialtyById(id);
             if (specialty == null) return NotFound();
 
-             _specialtyService.Delete(id);
+             await _specialtyService.Delete(id);
 
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult UpdateSpecialty([FromBody] SpecialtyRequest request)
+        public async Task<IActionResult> UpdateSpecialty([FromBody] Specialty request)
         {
             if (request == null) return NotFound();
 
-            var specialty = _mapper.Map<Speciality>(request);
+            var specialty = _mapper.Map<Specialty>(request);
 
-            var result = _specialtyService.Update(specialty);
-            if (result == null) return NotFound();
+            var result = await _specialtyService.Update(specialty);
+            if (result == null) return NotFound("not found");
 
-            return Ok(specialty);
+            return Ok(_mapper.Map<SpecialtyResponse>(result));
         }
     }
 }

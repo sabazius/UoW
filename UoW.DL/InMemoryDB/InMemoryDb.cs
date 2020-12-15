@@ -13,7 +13,7 @@ namespace UoW.DL.InMemoryDB
         public static List<Team> Teams { get; set; } = new List<Team>();
         public static List<Faculty> Faculties { get; set; } = new List<Faculty>();
         public static List<Lector> Lectors { get; set; } = new List<Lector>();
-        public static List<Speciality> Specialties { get; set; } = new List<Speciality>();
+        public static List<Specialty> Specialties { get; set; } = new List<Specialty>();
         public static List<Project> Projects { get; set; } = new List<Project>();
         public static List<Sprint> Sprints { get; set; } = new List<Sprint>();
         public static List<TaskType> TaskTypes { get; set; } = new List<TaskType>();
@@ -22,7 +22,7 @@ namespace UoW.DL.InMemoryDB
 
         public static void Init()
         {
-            Specialties.Add(new Speciality
+            Specialties.Add(new Specialty
             {
                 FacultyId = 1,
                 Id = 2,
@@ -30,7 +30,7 @@ namespace UoW.DL.InMemoryDB
                 Name = "Telecommunications and Information Systems",
                 ShortName = "TIS"
             });
-            Specialties.Add(new Speciality
+            Specialties.Add(new Specialty
             {
                 FacultyId = 1,
                 Id = 1,

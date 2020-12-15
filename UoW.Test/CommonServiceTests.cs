@@ -1,34 +1,36 @@
-using Microsoft.AspNetCore.TestHost;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.TestHost;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace UoW.Test
 {
-    public class CommonServiceTests
-    {
-        protected readonly HttpClient _client;
+	public class CommonServiceTests
+	{
+		protected readonly HttpClient _client;
 
-        //public CommonServiceTests()
-        //{
-        //    var sever = new TestServer(new WebHostBulder()
-        //        .UseEnvironment("Development")
-        //        .UseStartup<Startup>());
 
-        //    _client = server.CreateClient();
-        //}
+		public CommonServiceTests()
+		{
+			var server = new TestServer(new WebHostBuilder()
+				.UseEnvironment("Development")
+				.UseStartup<Startup>());
 
-        //[Fact]
-        //public void TestHealthCheck()
-        //{
-        //    var response = _client.GetAsync("health");
-        //    response.EnsureSuccessStatusCode();
+			_client = server.CreateClient();
+		}
 
-        //    Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
+		[Fact]
+		public async Task TestHealthCheck()
+		{
+			var response = await _client.GetAsync("health");
+			response.EnsureSuccessStatusCode();
 
-        //    var responseString = await response.Content.ReadAsStringAsync();
+			Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
 
-        //    Assert.Equal("Health", responseString);
-        //}
-    }
+			var responseString = await response.Content.ReadAsStringAsync();
+
+			Assert.Equal("Healthy", responseString);
+		}
+	}
 }
