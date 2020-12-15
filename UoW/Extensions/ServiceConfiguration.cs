@@ -14,6 +14,7 @@ using UoW.BL.Services.Users;
 using UoW.DL.Interfaces.Users;
 using UoW.DL.Repositories;
 using UoW.DL.Repositories.MongoDb.Users;
+using UoW.DL.Repositories.MongoDB.Users;
 using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories.Users;
 
@@ -40,7 +41,7 @@ namespace UoW.Extensions
 			services.AddSingleton<ITeamRepository, TeamRepository>();
 			services.AddSingleton<IUserRepository, UserRepository>();
 			services.AddSingleton<ISprintRepository, SprintRepository>();
-			services.AddSingleton<ILectorRepository, LectorRepository>();
+			services.AddSingleton<ILectorRepository, LectorMongoRepository>();
 			services.AddSingleton<IFacultyRepository, FacultyRepository>();
 			services.AddSingleton<IStoryRepository, StoryRepository>();
 			services.AddSingleton<ISpecialityRepository, SpecialtyMongoRepository>();
