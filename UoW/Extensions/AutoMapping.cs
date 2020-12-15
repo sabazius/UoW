@@ -18,6 +18,9 @@ namespace UoW.Models.Common
             CreateMap<UserPositionRequest, UserPosition>().ReverseMap();
             CreateMap<UserPositionResponse, UserPosition>().ReverseMap();
             CreateMap<IEnumerable<UserPositionResponse>, IEnumerable<UserPosition>>();
+            CreateMap<LectorRequest, Lector>().ReverseMap();
+            CreateMap<LectorResponse, Lector>().ReverseMap();
+            CreateMap<IEnumerable<LectorResponse>, IEnumerable<Lector>>();
         }
     }
 }
