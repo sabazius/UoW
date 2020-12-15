@@ -54,7 +54,7 @@ namespace UoW.Test
                 .ReturnsAsync(_lectors);
 
             //inject
-            var controller = new LectorsController(nockedService.Object);
+            var controller = new LectorsController(nockedService.Object, _mapper);
 
              //Act
             var result = await controller.GetAll();
