@@ -1,12 +1,15 @@
-﻿using UoW.Models.Users;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using UoW.Models.Users;
 
 namespace UoW.DL.Interfaces.Users
 {
     public interface ILectorRepository
     {
-    	void Create(Lector user);
-        void Delete(int userId);
-        void Update(Lector user);
-        Lector GetById(int userId);
+    	Task<Lector> Create(Lector user);
+        Task Delete(int userId);
+        Task<Lector> Update(Lector user);
+        Task<Lector> GetById(int userId);
+        Task<IEnumerable<Lector>> GetAll();
     }
 }
