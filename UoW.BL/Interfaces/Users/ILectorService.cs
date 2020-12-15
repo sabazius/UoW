@@ -11,5 +11,6 @@ namespace UoW.BL.Interfaces.Users
         Task<Lector> Update(Lector lector);
         Task<Lector> GetById(int lectorId);
         Task<IEnumerable<Lector>> GetAll();
+        Task<Lector> UpdateFaculty(int facultyId,int lectorId);
     }
 }

@@ -9,10 +9,12 @@ namespace UoW.BL.Services.Users
     public class LectorService : ILectorService
     {
         ILectorRepository _lectorRepository;
+        IFacultyRepository _facultyRepository;
 
-        public LectorService(ILectorRepository lectorRepository)
+        public LectorService(ILectorRepository lectorRepository,IFacultyRepository facultyRepository)
         {
             _lectorRepository = lectorRepository;
+            _facultyRepository = facultyRepository;
         }
 
         public async Task<Lector> Create(Lector lector)
@@ -39,5 +41,25 @@ namespace UoW.BL.Services.Users
         {
             return await _lectorRepository.Update(lector);
         }
+
+        public async Task<Lector> UpdateFaculty(int facultyId,int lectorId)
+        {
+           var lector = await _lectorRepository.GetById(lectorId);
+
+            if (lector == null)
+                return null;
+
+            var faculty = await _facultyRepository.GetById(facultyId);
+
+            if (faculty == null)
+                return null;
+
+            lector.FacultyId = facultyId;
+
+            var result = await _lectorRepository.Update(lector);
+
+            return result;
+        }
+
     }
 }

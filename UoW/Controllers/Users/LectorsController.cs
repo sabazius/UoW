@@ -13,20 +13,32 @@ namespace UoW.Controllers.Users
     
     public class LectorsController : ControllerBase
     {
-        public ILectorService _lectorController;
+        public ILectorService _lectorService;
 
         private IMapper _mapper;
 
-        public LectorsController(ILectorService lectorController, IMapper mapper)
+        public LectorsController(ILectorService lectorService, IMapper mapper)
         {
-            _lectorController = lectorController;
+            _lectorService = lectorService;
             _mapper = mapper;
         }
 
         [HttpPost("Update")]
-        public async Task<IActionResult> Update(LectorRequest request)
+        public async Task<IActionResult> Update([FromBody]LectorRequest request)
         {
-            var result = await _lectorController.Update(_mapper.Map<Lector>(request));
+            var result = await _lectorService.Update(_mapper.Map<Lector>(request));
+
+            if (result == null) return NotFound();
+
+            var lector = _mapper.Map<LectorResponse>(result);
+
+            return Ok(lector);
+        }
+
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create([FromBody]LectorRequest request)
+        {
+            var result = await _lectorService.Create(_mapper.Map<Lector>(request));
 
             if (result == null) return NotFound();
 
@@ -38,7 +50,7 @@ namespace UoW.Controllers.Users
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _lectorController.GetAll();
+            var result = await _lectorService.GetAll();
 
             if (result == null) return NotFound();
 
@@ -51,7 +63,7 @@ namespace UoW.Controllers.Users
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(int id)
         {
-            var result = await _lectorController.GetById(id);
+            var result = await _lectorService.GetById(id);
 
             if (result == null) return NotFound();
 
@@ -63,7 +75,7 @@ namespace UoW.Controllers.Users
         [HttpDelete("Delete")]
         public async Task<IActionResult> Delete(int id)
         {
-            await _lectorController.Delete(id);
+            await _lectorService.Delete(id);
             return Ok();
         }
 
