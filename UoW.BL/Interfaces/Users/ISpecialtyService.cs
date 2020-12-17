@@ -13,5 +13,6 @@ namespace UoW.BL.Interfaces.Users
         Task Delete(int id);
         Task<Specialty> Update(Specialty speciality);
         Task<Specialty> GetByName(string name);
+        Task<Specialty> UpdateSpecialty(int specialtyId, int lectorId, string name, string shortName);
     }
 }
