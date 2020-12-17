@@ -8,15 +8,27 @@ namespace UoW.Controllers
 {
 	public class UserOperations : ControllerBase
 	{
+		private readonly ISpecialtyService _specialtyService;
         private readonly ILectorService _lectorService;
-
-        private readonly IMapper _mapper;
-
-		public UserOperations(ILectorService lectorService, IMapper mapper)
+		private readonly IMapper _mapper;
+		public UserOperations(ISpecialtyService specialtyService, ILectorService lectorService, IMapper mapper)
 		{
+			_specialtyService = specialtyService;
+			_mapper = mapper;
             _lectorService = lectorService;
-            _mapper = mapper;
-        }
+		}
+
+		[HttpPost("SpecialtyUpdate")]
+		public async Task<IActionResult> SpecialtyUpdate(int specialtyId, string name, int lectorId, string shortName)
+		{
+			var result = await _specialtyService.UpdateSpecialty(specialtyId, lectorId, name, shortName);
+
+			if (result == null) return NotFound();
+
+			var specialty = _mapper.Map<SpecialtyResponse>(result);
+
+			return Ok(specialty);
+		}
 
         [HttpPost("LectorUpdateFacultyId")]
         public async Task<IActionResult> LectorUpdateFacultyId( int facultyId,int lectorId)

@@ -86,5 +86,41 @@ namespace UoW.BL.Services.Users
         {
             return await _specialtyRepository.GetByName(name);
         }
+
+        public async Task<Specialty> UpdateSpecialty(int specialtyId, int lectorId, string name, string shortName)
+        {
+            var specialty = await _specialtyRepository.GetById(specialtyId);
+
+            if (specialty == null)
+            {
+                return null;
+            }
+
+            if(name != specialty.Name)
+            {
+                var validName = await _specialtyRepository.GetByName(name) == null;
+
+                if (!validName)
+                {
+                    return null;
+                }
+                specialty.Name = name;
+            }
+
+
+            var lector = await _lectorRepository.GetById(lectorId);
+
+            if (lector == null)
+            {
+                return null;
+            }
+
+            specialty.LectorId = lectorId;
+            specialty.ShortName = shortName;
+
+            var result = await _specialtyRepository.Update(specialty);
+
+            return result;
+        }
     }
 }
