@@ -24,7 +24,14 @@ namespace UoW.DL.Repositories.MongoDB.Users
 
 		public async Task<Lector> Create(Lector lector)
 		{
-			await _lectors.InsertOneAsync(lector);
+			try
+			{
+				await _lectors.InsertOneAsync(lector);
+			}
+			catch (Exception e)
+			{
+
+			}
 			return lector;
 		}
 

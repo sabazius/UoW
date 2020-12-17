@@ -27,6 +27,7 @@ namespace UoW.Extensions
 			services.AddSingleton<IProjectService, ProjectService>();
 			services.AddSingleton<ITeamService, TeamService>();
 			services.AddSingleton<IUserService, UserService>();
+			services.AddSingleton<IUserTaskService, UserTaskService>();
 			services.AddSingleton<ISpecialtyService, SpecialtyService>();
 			services.AddSingleton<ISprintService, SprintService>();
 			services.AddSingleton<ILectorService, LectorService>();
@@ -46,6 +47,7 @@ namespace UoW.Extensions
 			services.AddSingleton<IStoryRepository, StoryRepository>();
 			services.AddSingleton<ISpecialityRepository, SpecialtyMongoRepository>();
 			services.AddSingleton<IUserPositionRepository, UserPositionMongoRepository>();
+			services.AddSingleton<IUserTaskRepository, UserTaskMongoRepository>();
 		}
 
 		public static void AddSwaggerConfiguration(this IServiceCollection services)

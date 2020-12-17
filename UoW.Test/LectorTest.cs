@@ -21,6 +21,7 @@ namespace UoW.Test
         private Mock<ILectorRepository> _lectorRepository;
         private LectorsController _lectorContoller;
         private ILectorService _ilectorService;
+        private Mock<IFacultyRepository> _facultyRepository;
 
 
         IList<Lector> _lectors = new List<Lector>()
@@ -37,8 +38,11 @@ namespace UoW.Test
             });
 
             _mapper = nockMapper.CreateMapper();
+
+            _facultyRepository = new Mock<IFacultyRepository>();
+
             _lectorRepository = new Mock<ILectorRepository>();
-            _ilectorService = new LectorService(_lectorRepository.Object);
+            _ilectorService = new LectorService(_lectorRepository.Object, _facultyRepository.Object);
         }
 
 
@@ -78,6 +82,9 @@ namespace UoW.Test
 
             _lectorRepository.Setup(x => x.GetById(LectorId))
                 .ReturnsAsync(_lectors.FirstOrDefault(x => x.Id == LectorId));
+
+            //_facultyRepository.Setup(x => x.GetById())
+            //   .ReturnsAsync(_lectors.FirstOrDefault(x => x.Id == LectorId));
 
             var result = await _lectorContoller.GetById(LectorId);
 

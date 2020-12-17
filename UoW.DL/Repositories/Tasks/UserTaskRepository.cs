@@ -1,12 +1,11 @@
-﻿using UoW.DL.InMemoryDB;
-using UoW.DL.Interfaces.Users;
-using UoW.Models.Tasks;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using UoW.DL.InMemoryDB;
+using UoW.Models.Tasks;
 
 namespace UoW.DL.Repositories.Tasks
 {
-    public class UserTaskRepository : IUserTaskRepository
+	public class UserTaskRepository
     {
         private static List<UserTask> dbTable;
 

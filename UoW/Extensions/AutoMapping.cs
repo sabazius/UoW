@@ -21,6 +21,8 @@ namespace UoW.Models.Common
             CreateMap<IEnumerable<SpecialtyResponse>, IEnumerable<Specialty>>();
             CreateMap<LectorResponse, Lector>().ReverseMap();
             CreateMap<LectorRequest, Lector>().ReverseMap();
+            CreateMap<UserTaskRequest, UserTask>().ReverseMap();
+            CreateMap<UserTaskResponse, UserTask>().ReverseMap();
             CreateMap<IEnumerable<LectorResponse>, IEnumerable<Lector>>();
         }
     }

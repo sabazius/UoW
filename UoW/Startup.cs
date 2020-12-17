@@ -56,6 +56,10 @@ namespace UoW
 
 			services.AddSingleton(Log.Logger);
 
+			services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+			services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+
 			services.AddAuthentication(op =>
 			{
 				op.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -83,7 +87,6 @@ namespace UoW
 			});
 
 
-			services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
 
 			// Register the Swagger generator, defining 1 or more Swagger documents
 			services.AddSwaggerConfiguration();

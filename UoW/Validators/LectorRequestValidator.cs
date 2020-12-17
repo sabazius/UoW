@@ -6,14 +6,14 @@ using UoW.Models.Contracts.Requests;
 
 namespace UoW.Validators
 {
-    class LectorRequestValidator : AbstractValidator<LectorRequest>
+    public class LectorRequestValidator : AbstractValidator<LectorRequest>
     {
         public LectorRequestValidator()
         {
             RuleFor(x => x.Id).GreaterThan(0);
             RuleFor(x => x.FacultyId).GreaterThan(0);
-            RuleFor(x => x.FirstName).MinimumLength(3).MaximumLength(20);
-            RuleFor(x => x.LastName).MinimumLength(3).MaximumLength(20);
+            RuleFor(x => x.FirstName).Must(x => x.Length > 3 && x.Length < 50);
+            RuleFor(x => x.LastName).Must(x => x.Length > 3 && x.Length < 50);
         }
     }
 }
