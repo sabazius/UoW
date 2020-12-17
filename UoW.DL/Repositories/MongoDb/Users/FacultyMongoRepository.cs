@@ -47,7 +47,14 @@ namespace UoW.DL.Repositories.MongoDb.Users
 			return result.FirstOrDefault();
 		}
 
-		public async Task<Faculty> Update(Faculty Faculty)
+        public async Task<Faculty> GetByName(string name)
+        {
+			var result = await _faculties.FindAsync(p => p.Name == name);
+
+			return result.FirstOrDefault();
+		}
+
+        public async Task<Faculty> Update(Faculty Faculty)
 		{
 			await _faculties.ReplaceOneAsync(p => p.Id == Faculty.Id, Faculty);
 

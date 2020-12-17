@@ -10,12 +10,14 @@ namespace UoW.Controllers
 	{
 		private readonly ISpecialtyService _specialtyService;
         private readonly ILectorService _lectorService;
+        private readonly IFacultyService _facultyService;
 		private readonly IMapper _mapper;
-		public UserOperations(ISpecialtyService specialtyService, ILectorService lectorService, IMapper mapper)
+		public UserOperations(ISpecialtyService specialtyService, ILectorService lectorService, IMapper mapper, IFacultyService facultyService)
 		{
 			_specialtyService = specialtyService;
 			_mapper = mapper;
             _lectorService = lectorService;
+            _facultyService = facultyService;
 		}
 
 		[HttpPost("SpecialtyUpdate")]
@@ -40,6 +42,18 @@ namespace UoW.Controllers
             var lector = _mapper.Map<LectorResponse>(result);
 
             return Ok(lector);
+        }
+
+        [HttpPost("FacultyUpdate")]
+        public async Task<IActionResult> FacultyUpdate(int facultyId, string name, string shortName, string description)
+        {
+            var result = await _facultyService.UpdateFaculty(facultyId, name, shortName, description);
+
+            if (result == null) return NotFound();
+
+            var faculty = _mapper.Map<FacultyResponse>(result);
+
+            return Ok(faculty);
         }
     }
 }

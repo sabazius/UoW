@@ -9,5 +9,6 @@ namespace UoW.DL.Interfaces.Users
         Task Delete(int userId);
         Task<Faculty> Update(Faculty user);
         Task<Faculty> GetById(int userId);
+        Task<Faculty> GetByName(string name);
     }
 }
