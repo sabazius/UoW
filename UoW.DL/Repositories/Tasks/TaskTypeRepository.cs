@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace UoW.DL.Repositories.Tasks
 {
-    public class TaskTypeRepository : ITaskTypeRepository
+    public class TaskTypeRepository 
     {
         private static List<TaskType> dbTable;
 
