@@ -19,6 +19,10 @@ namespace UoW.Models.Common
             CreateMap<FacultyResponse, Faculty>().ReverseMap();
             CreateMap<IEnumerable<FacultyResponse>, IEnumerable<Faculty>>();
 
+            CreateMap<UserRequest, User>().ReverseMap();
+            CreateMap<UserResponse, User>().ReverseMap();
+            CreateMap<IEnumerable<UserResponse>, IEnumerable<User>>();
+
             CreateMap<SprintRequest, Sprint>();
             CreateMap<SprintResponse, Sprint>();
             CreateMap<UserPositionRequest, UserPosition>().ReverseMap();

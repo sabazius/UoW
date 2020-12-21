@@ -8,13 +8,15 @@ namespace UoW.Controllers
 {
 	public class UserOperations : ControllerBase
 	{
-		private readonly ISpecialtyService _specialtyService;
+        private readonly ISpecialtyService _specialtyService;
+        private readonly IUserService _userService;
         private readonly ILectorService _lectorService;
         private readonly IFacultyService _facultyService;
 		private readonly IMapper _mapper;
-		public UserOperations(ISpecialtyService specialtyService, ILectorService lectorService, IMapper mapper, IFacultyService facultyService)
+		public UserOperations(ISpecialtyService specialtyService, IUserService userService, ILectorService lectorService, IMapper mapper, IFacultyService facultyService)
 		{
-			_specialtyService = specialtyService;
+            _specialtyService = specialtyService;
+            _userService = userService;
 			_mapper = mapper;
             _lectorService = lectorService;
             _facultyService = facultyService;
@@ -33,9 +35,9 @@ namespace UoW.Controllers
 		}
 
         [HttpPost("LectorUpdateFacultyId")]
-        public async Task<IActionResult> LectorUpdateFacultyId( int facultyId,int lectorId)
+        public async Task<IActionResult> LectorUpdateFacultyId(int facultyId, int lectorId)
         {
-            var result = await _lectorService.UpdateFaculty(facultyId,lectorId);
+            var result = await _lectorService.UpdateFaculty(facultyId, lectorId);
 
             if (result == null) return NotFound();
 
@@ -54,6 +56,18 @@ namespace UoW.Controllers
             var faculty = _mapper.Map<FacultyResponse>(result);
 
             return Ok(faculty);
+        }
+
+        [HttpPost("UserUpdate")]
+        public async Task<IActionResult> UserUpdate(int userId, int teamId, int facultyId, string email, int userPositionId)
+        {
+            var result = await _userService.UpdateUser(userId, teamId, facultyId, email, userPositionId);
+
+            if (result == null) return NotFound();
+
+            var user = _mapper.Map<UserResponse>(result);
+
+            return Ok(user);
         }
     }
 }
