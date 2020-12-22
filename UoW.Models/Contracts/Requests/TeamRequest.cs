@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UoW.Models.Contracts.Requests
 {
-    class TeamRequest
+    public  class TeamRequest
     {
         public int Id { get; set; }
         public string Name { get; set; }
