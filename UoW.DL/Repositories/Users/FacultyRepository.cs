@@ -50,5 +50,10 @@ namespace UoW.DL.Repositories.Users
 
             return Task.FromResult(faculty);
         }
+
+        public Task<Faculty> GetByName(string name)
+        {
+            return Task.FromResult(dbTable.FirstOrDefault(x => x.Name == name));
+        }
     }
 }

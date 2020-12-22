@@ -21,6 +21,7 @@ namespace UoW.Test
         private Mock<ILectorRepository> _lectorRepository;
         private LectorsController _lectorContoller;
         private ILectorService _ilectorService;
+        private Mock<IFacultyRepository> _facultyService;
 
 
         IList<Lector> _lectors = new List<Lector>()
@@ -37,8 +38,9 @@ namespace UoW.Test
             });
 
             _mapper = nockMapper.CreateMapper();
+            _facultyService = new Mock<IFacultyRepository>();
             _lectorRepository = new Mock<ILectorRepository>();
-            _ilectorService = new LectorService(_lectorRepository.Object);
+            _ilectorService = new LectorService(_lectorRepository.Object, _facultyService.Object);
         }
 
 

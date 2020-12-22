@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace UoW.DL.Repositories.Users
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository 
     {
         private static List<User> dbTable;
 
@@ -15,9 +15,10 @@ namespace UoW.DL.Repositories.Users
             dbTable = InMemoryDb.Users;
         }
 
-        public void Create(User user)
+        public User Create(User user)
         {
             dbTable.Add(user);
+            return user;
         }
 
         public void Delete(int userId)

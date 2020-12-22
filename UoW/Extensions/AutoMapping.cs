@@ -13,12 +13,21 @@ namespace UoW.Models.Common
         {
             CreateMap<SpecialtyRequest, Specialty>().ReverseMap();
             CreateMap<SpecialtyResponse, Specialty>().ReverseMap();
+            CreateMap<IEnumerable<SpecialtyResponse>, IEnumerable<Specialty>>();
+
+            CreateMap<FacultyRequest, Faculty>().ReverseMap();
+            CreateMap<FacultyResponse, Faculty>().ReverseMap();
+            CreateMap<IEnumerable<FacultyResponse>, IEnumerable<Faculty>>();
+
+            CreateMap<UserRequest, User>().ReverseMap();
+            CreateMap<UserResponse, User>().ReverseMap();
+            CreateMap<IEnumerable<UserResponse>, IEnumerable<User>>();
+
             CreateMap<SprintRequest, Sprint>();
             CreateMap<SprintResponse, Sprint>();
             CreateMap<UserPositionRequest, UserPosition>().ReverseMap();
             CreateMap<UserPositionResponse, UserPosition>().ReverseMap();
             CreateMap<IEnumerable<UserPositionResponse>, IEnumerable<UserPosition>>();
-            CreateMap<IEnumerable<SpecialtyResponse>, IEnumerable<Specialty>>();
             CreateMap<LectorResponse, Lector>().ReverseMap();
             CreateMap<LectorRequest, Lector>().ReverseMap();
             CreateMap<IEnumerable<LectorResponse>, IEnumerable<Lector>>();

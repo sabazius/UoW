@@ -39,7 +39,7 @@ namespace UoW.Extensions
 		{
 			services.AddSingleton<IProjectRepository, ProjectRepository>();
 			services.AddSingleton<ITeamRepository, TeamRepository>();
-			services.AddSingleton<IUserRepository, UserRepository>();
+			services.AddSingleton<IUserRepository, UserMongoRepository>();
 			services.AddSingleton<ISprintRepository, SprintRepository>();
 			services.AddSingleton<ILectorRepository, LectorMongoRepository>();
 			services.AddSingleton<IFacultyRepository, FacultyRepository>();

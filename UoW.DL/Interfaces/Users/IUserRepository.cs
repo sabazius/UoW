@@ -1,12 +1,16 @@
-﻿using UoW.Models.Users;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using UoW.Models.Users;
 
 namespace UoW.DL.Interfaces.Users
 {
     public interface IUserRepository
     {
-    	void Create(User user);
-        void Delete(int userId);
-        void Update(User user);
-        User GetById(int userId);
+        Task<User> Create(User user);
+        Task Delete(int userId);
+        Task<User> Update(User user);
+        Task<User> GetById(int userId);
+        Task<User> GetByEmail(string name);
+        Task<IEnumerable<User>> GetAll();
     }
 }

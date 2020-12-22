@@ -38,5 +38,34 @@ namespace UoW.BL.Services.Users
 		{
 			return await _facultyService.Update(user);
 		}
+
+		public async Task<Faculty> UpdateFaculty(int facultyId, string name, string shortName, string description)
+		{
+            var faculty = await _facultyService.GetById(facultyId);
+
+            if (faculty == null)
+            {
+                return null;
+            }
+
+            if (name != faculty.Name)
+            {
+                var validName = await _facultyService.GetByName(name) == null;
+
+                if (!validName)
+                {
+                    return null;
+                }
+                faculty.Name = name;
+            }
+
+            faculty.ShortName = shortName;
+            faculty.Description = description;
+
+            var result = await _facultyService.Update(faculty);
+
+            return result;
+        }
+		
 	}
 }
