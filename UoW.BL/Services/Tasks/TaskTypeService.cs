@@ -40,21 +40,16 @@ namespace UoW.BL.Services.Tasks
             return await _taskTypeRepository.Update(taskType);
         }
 
-        public TaskType UpdateDescription(int description, int lectorId)
+        public async Task<TaskType> UpdateDescription(string description, int taskTypeId)
         {
-            var description = _taskTypeRepository.GetById(lectorId);
+            var taskType = await _taskTypeRepository.GetById(taskTypeId);
 
-            if (description == null)
+            if (taskType == null)
                 return null;
 
-            var faculty = await _facultyRepository.GetById(description);
+            taskType.Description = description;
 
-            if (faculty == null)
-                return null;
-
-            description.FacultyId = facultyId;
-
-            var result = await _lectorRepository.Update(lector);
+            var result = await _taskTypeRepository.Update(taskType);
 
             return result;
         }

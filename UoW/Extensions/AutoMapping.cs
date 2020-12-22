@@ -15,6 +15,9 @@ namespace UoW.Models.Common
             CreateMap<SpecialtyResponse, Specialty>().ReverseMap();
             CreateMap<SprintRequest, Sprint>();
             CreateMap<SprintResponse, Sprint>();
+            CreateMap<TaskTypeRequest, TaskType>().ReverseMap();
+            CreateMap<TaskTypeResponse, TaskType>().ReverseMap();
+            CreateMap<IEnumerable<TaskTypeResponse>, IEnumerable<TaskType>>();
             CreateMap<UserPositionRequest, UserPosition>().ReverseMap();
             CreateMap<UserPositionResponse, UserPosition>().ReverseMap();
             CreateMap<IEnumerable<UserPositionResponse>, IEnumerable<UserPosition>>();

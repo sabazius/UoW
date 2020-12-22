@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using UoW.Models.Contracts.Responses;
 using UoW.BL.Interfaces.Tasks;
 
 namespace UoW.Controllers
@@ -17,13 +19,13 @@ namespace UoW.Controllers
             }
 
 		[HttpPost("TaskTypeUpdateDescription")]
-		public IActionResult TaskTypeUpdateDescription(int description, int lectorId)
+		public async  Task<IActionResult> TaskTypeUpdateDescription(string description, int taskTypeId)
 		{
-			var result = _typeTaskService.UpdateFaculty(description, lectorId);
+			var result = await _typeTaskServer.UpdateDescription(description, taskTypeId);
 
 			if (result == null) return NotFound();
 
-			var lector = _mapper.Map<TypeTaskResponse>(result);
+			var lector = _mapper.Map<TaskTypeResponse>(result);
 
 			return Ok(lector);
 		}
