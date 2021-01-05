@@ -40,7 +40,7 @@ namespace UoW.Extensions
 
 		public static void AddUoWRepositories(this IServiceCollection services)
 		{
-			services.AddSingleton<IProjectRepository, ProjectRepository>();
+			services.AddSingleton<IProjectRepository, ProjectMongoRepository>();
 			services.AddSingleton<ITeamRepository, TeamRepository>();
 			services.AddSingleton<IUserRepository, UserMongoRepository>();
 			services.AddSingleton<ISprintRepository, SprintRepository>();

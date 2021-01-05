@@ -15,6 +15,10 @@ namespace UoW.Models.Common
             CreateMap<SpecialtyResponse, Specialty>().ReverseMap();
             CreateMap<IEnumerable<SpecialtyResponse>, IEnumerable<Specialty>>();
 
+            CreateMap<ProjectRequest, Project>().ReverseMap();
+            CreateMap<ProjectResponse, Project>().ReverseMap();
+            CreateMap<IEnumerable<ProjectResponse>, IEnumerable<Project>>();
+
             CreateMap<FacultyRequest, Faculty>().ReverseMap();
             CreateMap<FacultyResponse, Faculty>().ReverseMap();
             CreateMap<IEnumerable<FacultyResponse>, IEnumerable<Faculty>>();

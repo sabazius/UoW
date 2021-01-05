@@ -12,12 +12,14 @@ namespace UoW.Controllers
 		
 		private readonly ITaskTypeService _typeTaskServer;
 		private readonly IUserTaskService _userTaskServer;
+		private readonly IProjectService _projectServer;
 		private readonly IMapper _mapper;
 
-			public TaskOperations(ITaskTypeService typeTaskService,IMapper mapper, IUserTaskService userTaskServer)
+			public TaskOperations(ITaskTypeService typeTaskService,IMapper mapper, IUserTaskService userTaskServer, IProjectService projectServer)
 		    {
 				_typeTaskServer = typeTaskService;
 				_userTaskServer = userTaskServer;
+				_projectServer = projectServer;
 				_mapper = mapper;
             }
 
@@ -29,7 +31,6 @@ namespace UoW.Controllers
 			if (result == null) return NotFound();
 
 			var lector = _mapper.Map<TaskTypeResponse>(result);
-
 			return Ok(lector);
 		}
 
@@ -43,6 +44,18 @@ namespace UoW.Controllers
 			var userTask = _mapper.Map<UserTaskResponse>(result);
 
 			return Ok(userTask);
+		}
+
+		[HttpPost("ProjectUpdate")]
+		public async Task<IActionResult> ProjectUpdate(int projectId, int ownerId, int teamId, string description)
+		{
+			var result = await _projectServer.UpdateProject(projectId, ownerId, teamId, description);
+
+			if (result == null) return NotFound();
+
+			var project = _mapper.Map<ProjectResponse>(result);
+
+			return Ok(project);
 		}
 	}
 }

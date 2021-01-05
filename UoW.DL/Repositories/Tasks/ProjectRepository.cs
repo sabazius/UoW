@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace UoW.DL.Repositories
 {
-    public class ProjectRepository : IProjectRepository
+    public class ProjectRepository 
     {
         private static List<Project> dbTable;
 
