@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UoW.Models.Contracts.Responses;
 using UoW.BL.Interfaces.Tasks;
 using System;
+using UoW.Models.Contracts.Requests;
 
 namespace UoW.Controllers
 {
@@ -34,9 +35,10 @@ namespace UoW.Controllers
 		}
 
 		[HttpPost("UserTaskUpdate")]
-		public async Task<IActionResult> UserTaskUpdate(int userTaskId, int assignedToUserId, DateTime startDate, DateTime EndDate, int taskType, string description, string name, TimeSpan timeSpend)
+		//public async Task<IActionResult> UserTaskUpdate(int userTaskId, int assignedToUserId, DateTime startDate, DateTime EndDate, int taskType, string description, string name, TimeSpan timeSpend)
+		public async Task<IActionResult> UserTaskUpdate([FromBody] UpdateTaskRequest updateTaskRequest)
 		{
-			var result = await _userTaskServer.UpdateUserTask(userTaskId, assignedToUserId, startDate, EndDate, taskType, description, name, timeSpend);
+			var result = await _userTaskServer.UpdateUserTask(updateTaskRequest);
 
 			if (result == null) return NotFound();
 

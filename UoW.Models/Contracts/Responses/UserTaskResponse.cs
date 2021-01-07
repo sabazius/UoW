@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using UoW.Models.Tasks;
 
 namespace UoW.Models.Contracts.Responses
 {
-    public class UserTaskResponse
+	public class UserTaskResponse
     {
         public int OwnerId { get; set; }
         public int AssignedToUserID { get; set; }
@@ -13,5 +12,9 @@ namespace UoW.Models.Contracts.Responses
         public int StoryId { get; set; }
         public TimeSpan TimeSpend { get; set; }
         public int TaskType { get; set; }
+
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

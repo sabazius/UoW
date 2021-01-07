@@ -25,7 +25,7 @@ namespace UoW.Models.Common
 
             CreateMap<UserTaskRequest, UserTask>().ReverseMap();
             CreateMap<UserResponse, UserTask>().ReverseMap();
-            CreateMap<IEnumerable<UserTaskResponse>, IEnumerable<UserTask>>();
+            CreateMap<IEnumerable<UserTaskResponse>, IEnumerable<UserTask>>().ReverseMap();
 
             CreateMap<SprintRequest, Sprint>();
             CreateMap<SprintResponse, Sprint>();

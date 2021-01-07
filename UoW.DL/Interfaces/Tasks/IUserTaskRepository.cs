@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MongoDB.Driver;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UoW.Models.Tasks;
 
@@ -12,5 +13,6 @@ namespace UoW.DL.Interfaces.Users
         Task<UserTask> GetById(int userId);
         Task<UserTask> GetByName(string name);
         Task<IEnumerable<UserTask>> GetAll();
-    }
+		MongoClient GetClient();
+	}
 }
