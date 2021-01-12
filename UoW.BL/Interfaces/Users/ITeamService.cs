@@ -8,7 +8,7 @@ namespace UoW.BL.Interface.User
     {
         Task<Team> GetTeamById(int id);
         Task<Team> Create(Team team);
-        Task Delete(int teamId);
+        Task Delete(int id);
         Task<Team> Update(Team team);
         Task<IEnumerable<Team>> GetAll();
         Task<Team> UpdateName(string name, int teamId);

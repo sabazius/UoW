@@ -18,14 +18,15 @@ namespace UoW.BL.Services.User
             _teamRepository = teamRepository;
         }
 
+
         public async Task<Team> Create(Team team)
         {
             return await _teamRepository.Create(team);
         }
 
-        public async Task Delete(int teamId)
+        public async Task Delete(int id)
         {
-            await _teamRepository.Delete(teamId);
+            await _teamRepository.Delete(id);
         }
 
         public async Task<IEnumerable<Team>> GetAll()
@@ -35,7 +36,7 @@ namespace UoW.BL.Services.User
 
         public async Task<Team> GetTeamById(int id)
         {
-            return await _teamRepository.GetTeamById(id);
+            return await _teamRepository.GetById(id);
         }
 
         public async Task<Team> Update(Team team)
@@ -45,26 +46,31 @@ namespace UoW.BL.Services.User
 
         public async Task<Team> UpdateFacultyID(int facultyId, int teamId)
         {
-            var lector = await _teamRepository.GetById(teamId);
+            var team = await _teamRepository.GetById(teamId);
 
-            if (lector == null)
+            if (team == null)
                 return null;
 
-            var faculty = await _facultyRepository.GetById(facultyId);
+            team.FacultyID = facultyId;
 
-            if (faculty == null)
-                return null;
-
-            lector.FacultyId = facultyId;
-
-            var result = await _lectorRepository.Update(lector);
+            var result = await _teamRepository.Update(team);
 
             return result;
         }
 
-        public Task<Team> UpdateName(string name, int teamId)
+        public async Task<Team> UpdateName(string name, int teamId)
         {
-            throw new NotImplementedException();
+            var team = await _teamRepository.GetById(teamId);
+
+            if (team == null)
+                return null;
+
+            team.Name = name;
+
+            var result = await _teamRepository.Update(team);
+
+            return result;
         }
+
     }
 }
