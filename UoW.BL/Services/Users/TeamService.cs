@@ -1,15 +1,12 @@
-﻿using UoW.DL.Interfaces.Users;
-using UoW.DL.Repositories.Users;
-using UoW.Models.Users;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using UoW.BL.Interface.User;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using UoW.BL.Interface.User;
+using UoW.DL.Interfaces.Users;
+using UoW.Models.Users;
 
 namespace UoW.BL.Services.User
 {
-    public class TeamService : ITeamService
+	public class TeamService : ITeamService
     {
         private readonly ITeamRepository _teamRepository;
 
@@ -24,9 +21,11 @@ namespace UoW.BL.Services.User
             return await _teamRepository.Create(team);
         }
 
-        public async Task Delete(int id)
+        public Task Delete(int id)
         {
             _teamRepository.Delete(id);
+
+            return Task.CompletedTask;
         }
 
         public async Task<IEnumerable<Team>> GetAll()
