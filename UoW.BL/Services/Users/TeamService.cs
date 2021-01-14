@@ -26,7 +26,7 @@ namespace UoW.BL.Services.User
 
         public async Task Delete(int id)
         {
-            await _teamRepository.Delete(id);
+            _teamRepository.Delete(id);
         }
 
         public async Task<IEnumerable<Team>> GetAll()
