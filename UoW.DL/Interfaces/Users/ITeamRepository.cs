@@ -1,12 +1,15 @@
-﻿using UoW.Models.Users;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using UoW.Models.Users;
 
 namespace UoW.DL.Interfaces.Users
 {
     public interface ITeamRepository
     {
-    	void Create(Team user);
+    	Task<Team> Create(Team user);
         void Delete(int userId);
-        void Update(Team user);
-        Team GetById(int userId);
+        Task<Team> Update(Team user);
+        Task<IEnumerable<Team>> GetAll();
+        Task<Team> GetById(int userId);
     }
 }

@@ -3,6 +3,7 @@ using UoW.DL.Interfaces.Users;
 using UoW.Models.Users;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace UoW.DL.Repositories.Users
 {
@@ -15,9 +16,10 @@ namespace UoW.DL.Repositories.Users
             dbTable = InMemoryDb.Teams;
         }
 
-        public void Create(Team team)
+        public Task<Team> Create(Team team)
         {
             dbTable.Add(team);
+            return Task.FromResult(team);
         }
 
         public void Delete(int teamId)
@@ -29,19 +31,30 @@ namespace UoW.DL.Repositories.Users
             }
         }
 
-        public Team GetById(int teamId)
+        public Task<IEnumerable<Team>> GetAll()
         {
-            return dbTable.FirstOrDefault(x => x.Id == teamId);
+            return Task.FromResult(dbTable.AsEnumerable());
         }
 
-        public void Update(Team team)
+        public Task<Team> GetById(int teamId)
+        {
+            var result = dbTable.FirstOrDefault(x => x.Id == teamId);
+            return Task.FromResult(result);
+        }
+
+        public Task<Team> Update(Team team)
         {
             var result = dbTable.FirstOrDefault(x => x.Id == team.Id);
+
             if (result != null)
             {
-                Delete(result.Id);
+                Delete(team.Id);
                 Create(team);
+
             }
+            return Task.FromResult(team);
         }
+
+        
     }
 }
