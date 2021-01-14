@@ -49,7 +49,7 @@ namespace UoW.BL.Services.Tasks
 			var sprint = _sprintRepository.GetById(story.SprintId);
 			sprint.MinutesSpended += minutes;
 
-			var project = _projectRepository.GetById(story.ProjectId);
+			var project = await _projectRepository.GetById(story.ProjectId);
 			project.MinutesSpended += minutes;
 
 			using (var session = await client.StartSessionAsync())
@@ -63,7 +63,7 @@ namespace UoW.BL.Services.Tasks
 
 					_storyRepository.Update(story);
 					_sprintRepository.Update(sprint);
-					_projectRepository.Update(project);
+					await _projectRepository.Update(project);
 
 					return result;
 				}
