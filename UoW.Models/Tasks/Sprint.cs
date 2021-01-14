@@ -10,6 +10,6 @@ namespace UoW.Models.Tasks
 
         public DateTime EndDate { get; set; }
 
-		public TimeSpan TimeSpend { get; set; }
-	}
+        public int MinutesSpended { get; set; }
+    }
 }

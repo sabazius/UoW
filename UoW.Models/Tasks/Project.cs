@@ -6,6 +6,6 @@ namespace UoW.Models.Tasks
     {
         public int OwnerId { get; set; }
         public int TeamId { get; set; }
-        public TimeSpan TimeSpended { get; set; }
+        public int MinutesSpended { get; set; }
     }
 }

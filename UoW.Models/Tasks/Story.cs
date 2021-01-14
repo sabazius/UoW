@@ -8,8 +8,8 @@ namespace UoW.Models.Tasks
         public DateTime EndDate { get; set; }
         public int ProjectId { get; set; }
 
-		public TimeSpan TimeSpend { get; set; }
+        public int MinutesSpended { get; set; }
 
-		public int SprintId { get; set; }
+        public int SprintId { get; set; }
 	}
 }

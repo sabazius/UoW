@@ -36,21 +36,21 @@ namespace UoW.BL.Services.Tasks
 			_logger = logger;
 		}
 
-		public async Task<UserTask> AddTime(int taskId, TimeSpan timeSpend)
+		public async Task<UserTask> AddTime(int taskId, int minutes)
 		{
 			var client = _userTaskRepository.GetClient();
 
 			var task = await _userTaskRepository.GetById(taskId);
-			task.TimeSpend.Add(timeSpend);
+			task.MinutesSpended += minutes;
 
 			var story = _storyRepository.GetById(task.StoryId);
-			story.TimeSpend.Add(timeSpend);
+			story.MinutesSpended += minutes;
 
 			var sprint = _sprintRepository.GetById(story.SprintId);
-			sprint.TimeSpend.Add(timeSpend);
+			sprint.MinutesSpended += minutes;
 
 			var project = _projectRepository.GetById(story.ProjectId);
-			project.TimeSpended.Add(timeSpend);
+			project.MinutesSpended += minutes;
 
 			using (var session = await client.StartSessionAsync())
 			{
@@ -138,7 +138,7 @@ namespace UoW.BL.Services.Tasks
 			userTask.StartDate = updateTaskRequest.StartDate;
 			userTask.EndDate = updateTaskRequest.EndDate;
 			userTask.Description = updateTaskRequest.Description;
-			userTask.TimeSpend = updateTaskRequest.TimeSpend;
+			userTask.MinutesSpended += updateTaskRequest.MinutesSpend;
 
 			var result = await _userTaskRepository.Update(userTask);
 

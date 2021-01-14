@@ -10,9 +10,8 @@ namespace UoW.Models.Contracts.Responses
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public int StoryId { get; set; }
-        public TimeSpan TimeSpend { get; set; }
+        public int MinutesSpended { get; set; }
         public int TaskType { get; set; }
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

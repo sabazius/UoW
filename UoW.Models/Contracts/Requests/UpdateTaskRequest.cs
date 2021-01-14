@@ -18,6 +18,6 @@ namespace UoW.Models.Contracts.Requests
 
 		public string Name { get; set; }
 
-		public TimeSpan TimeSpend { get; set; }
+		public int MinutesSpend { get; set; }
 	}
 }

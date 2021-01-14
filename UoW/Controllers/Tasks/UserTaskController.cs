@@ -40,9 +40,9 @@ namespace UoW.Controllers.Tasks
 
 			if (result == null) return NotFound("Collection is empty!");
 
-			//var response = _mapper.Map<IEnumerable<UserTaskResponse>>(result);
+			var response = _mapper.Map<IEnumerable<UserTaskResponse>>(result);
 
-			return Ok(result);
+			return Ok(response);
 		}
 
 		[HttpPost("update")]
