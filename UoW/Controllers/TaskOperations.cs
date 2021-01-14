@@ -9,19 +9,19 @@ namespace UoW.Controllers
 	public class TaskOperations : ControllerBase
 	{
 		
-		private readonly ITaskTypeService _typeTaskServer;
+		private readonly ITaskTypeService _typeTaskService;
 		private readonly IMapper _mapper;
 
 			public TaskOperations(ITaskTypeService typeTaskService,IMapper mapper)
 		    {
-				_typeTaskServer = typeTaskService;
+				_typeTaskService = typeTaskService;
 				_mapper = mapper;
             }
 
 		[HttpPost("TaskTypeUpdateDescription")]
 		public async  Task<IActionResult> TaskTypeUpdateDescription(string description, int taskTypeId)
 		{
-			var result = await _typeTaskServer.UpdateDescription(description, taskTypeId);
+			var result = await _typeTaskService.UpdateDescription(description, taskTypeId);
 
 			if (result == null) return NotFound();
 

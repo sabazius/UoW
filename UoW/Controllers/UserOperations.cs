@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using UoW.BL.Interface.User;
 using UoW.BL.Interfaces.Users;
 using UoW.Models.Contracts.Responses;
 
@@ -12,12 +13,14 @@ namespace UoW.Controllers
         private readonly IUserService _userService;
         private readonly ILectorService _lectorService;
         private readonly IFacultyService _facultyService;
+        private readonly ITeamService _teamService;
 		private readonly IMapper _mapper;
-		public UserOperations(ISpecialtyService specialtyService, IUserService userService, ILectorService lectorService, IMapper mapper, IFacultyService facultyService)
+		public UserOperations(ISpecialtyService specialtyService, IUserService userService, ILectorService lectorService, IMapper mapper, IFacultyService facultyService, ITeamService teamService)
 		{
             _specialtyService = specialtyService;
             _userService = userService;
-			_mapper = mapper;
+            _teamService = teamService;
+            _mapper = mapper;
             _lectorService = lectorService;
             _facultyService = facultyService;
 		}
@@ -68,6 +71,30 @@ namespace UoW.Controllers
             var user = _mapper.Map<UserResponse>(result);
 
             return Ok(user);
+        }
+
+        [HttpPost("TeamUpdateName")]
+        public async Task<IActionResult> TeamUpdateName(string name, int teamId)
+        {
+            var result = await _teamService.UpdateName(name, teamId);
+
+            if (result == null) return NotFound();
+
+            var team = _mapper.Map<TeamResponse>(result);
+
+            return Ok(team);
+        }
+
+        [HttpPost("TeamUpdateFacultyId")]
+        public async Task<IActionResult> TeamUpdateFacultyId(int facultyId, int teamId)
+        {
+            var result = await _teamService.UpdateFacultyID(facultyId , teamId);
+
+            if (result == null) return NotFound();
+
+            var team = _mapper.Map<TeamResponse>(result);
+
+            return Ok(team);
         }
     }
 }
