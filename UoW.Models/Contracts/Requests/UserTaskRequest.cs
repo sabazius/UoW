@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace UoW.Models.Tasks
+namespace UoW.Models.Contracts.Requests
 {
-    public class UserTask : BaseTask
+    public class UserTaskRequest
     {
         public int OwnerId { get; set; }
         public int AssignedToUserID { get; set; }

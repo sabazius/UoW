@@ -14,6 +14,7 @@ using UoW.BL.Services.Users;
 using UoW.DL.Interfaces.Users;
 using UoW.DL.Repositories;
 using UoW.DL.Repositories.MongoDb.Users;
+using UoW.DL.Repositories.MongoDB.Tasks;
 using UoW.DL.Repositories.MongoDB.Users;
 using UoW.DL.Repositories.Tasks;
 using UoW.DL.Repositories.Users;
@@ -34,6 +35,7 @@ namespace UoW.Extensions
 			services.AddSingleton<IStoryService, StoryService>();
 			services.AddSingleton<IUserPositionService, UserPositionService>();
 			services.AddSingleton<ITaskTypeService, TaskTypeService>();
+			services.AddSingleton<IUserTaskService, UserTaskService>();
 		}
 
 		public static void AddUoWRepositories(this IServiceCollection services)
@@ -48,6 +50,7 @@ namespace UoW.Extensions
 			services.AddSingleton<ISpecialityRepository, SpecialtyMongoRepository>();
 			services.AddSingleton<IUserPositionRepository, UserPositionMongoRepository>();
 			services.AddSingleton<ITaskTypeRepository, TaskTypeMongoRepository>();
+			services.AddSingleton<IUserTaskRepository, UserTaskMongoRepository>();
 		}
 
 		public static void AddSwaggerConfiguration(this IServiceCollection services)

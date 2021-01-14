@@ -11,14 +11,22 @@ namespace UoW.Controllers
 	public class TaskOperations : ControllerBase
 	{
 		
-		private readonly ITaskTypeService _typeTaskService;
+<<<<<<< HEAD
+		private readonly ITaskTypeService _typeTaskServer;
 		private readonly IUserTaskService _userTaskServer;
+=======
+		private readonly ITaskTypeService _typeTaskService;
+>>>>>>> master
 		private readonly IMapper _mapper;
 
 			public TaskOperations(ITaskTypeService typeTaskService,IMapper mapper, IUserTaskService userTaskServer)
 		    {
-				_typeTaskService = typeTaskService;
+<<<<<<< HEAD
+				_typeTaskServer = typeTaskService;
 				_userTaskServer = userTaskServer;
+=======
+				_typeTaskService = typeTaskService;
+>>>>>>> master
 				_mapper = mapper;
             }
 

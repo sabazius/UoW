@@ -172,7 +172,6 @@ namespace UoW.Test
 
 			var position = _userPositions.FirstOrDefault(x => x.Id == userPositionId);
 
-
 			_userPositionRepository.Setup(x => x.Delete(userPositionId)).Callback(() => _userPositions.Remove(position));
 
 			//Act
