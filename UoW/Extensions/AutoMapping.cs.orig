@@ -15,10 +15,6 @@ namespace UoW.Models.Common
             CreateMap<SpecialtyResponse, Specialty>().ReverseMap();
             CreateMap<IEnumerable<SpecialtyResponse>, IEnumerable<Specialty>>();
 
-            CreateMap<ProjectRequest, Project>().ReverseMap();
-            CreateMap<ProjectResponse, Project>().ReverseMap();
-            CreateMap<IEnumerable<ProjectResponse>, IEnumerable<Project>>();
-
             CreateMap<FacultyRequest, Faculty>().ReverseMap();
             CreateMap<FacultyResponse, Faculty>().ReverseMap();
             CreateMap<IEnumerable<FacultyResponse>, IEnumerable<Faculty>>();
@@ -26,13 +22,17 @@ namespace UoW.Models.Common
             CreateMap<UserRequest, User>().ReverseMap();
             CreateMap<UserResponse, User>().ReverseMap();
             CreateMap<IEnumerable<UserResponse>, IEnumerable<User>>();
-            CreateMap<TeamRequest, Team>().ReverseMap();
+<<<<<<< HEAD
+
             CreateMap<UserTaskRequest, UserTask>().ReverseMap();
             CreateMap<UserResponse, UserTask>().ReverseMap();
-            CreateMap<TeamResponse, Team>().ReverseMap();
-            CreateMap<IEnumerable<TeamResponse>, IEnumerable<Team>>();
             CreateMap<IEnumerable<UserTaskResponse>, IEnumerable<UserTask>>().ReverseMap();
 
+=======
+            CreateMap<TeamRequest, Team>().ReverseMap();
+            CreateMap<TeamResponse, Team>().ReverseMap();
+            CreateMap<IEnumerable<TeamResponse>, IEnumerable<Team>>();
+>>>>>>> master
             CreateMap<SprintRequest, Sprint>();
             CreateMap<SprintResponse, Sprint>();
             CreateMap<TaskTypeRequest, TaskType>().ReverseMap();

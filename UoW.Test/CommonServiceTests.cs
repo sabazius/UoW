@@ -1,23 +1,33 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace UoW.Test
 {
-	public class CommonServiceTests
+	public class CommonServiceTests : IClassFixture<WebApplicationFactory<Startup>>
 	{
 		protected readonly HttpClient _client;
+		private readonly WebApplicationFactory<Startup> _factory;
 
-
-		public CommonServiceTests()
+		public CommonServiceTests(WebApplicationFactory<Startup> factory)
 		{
-			var server = new TestServer(new WebHostBuilder()
-				.UseEnvironment("Development")
-				.UseStartup<Startup>());
+			var projectDir = Directory.GetCurrentDirectory();
+			var configPath = Path.Combine(projectDir, "appsettings.json");
 
-			_client = server.CreateClient();
+			_factory = factory.WithWebHostBuilder(builder => 
+			{
+				builder.ConfigureAppConfiguration((context, conf) =>
+				{
+					conf.AddJsonFile(configPath);
+				});
+			});
+
+			_client = _factory.CreateClient();
 		}
 
 		[Fact]

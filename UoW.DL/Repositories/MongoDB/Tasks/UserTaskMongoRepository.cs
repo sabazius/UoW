@@ -13,10 +13,12 @@ namespace UoW.DL.Repositories.MongoDB.Tasks
     public class UserTaskMongoRepository : IUserTaskRepository
     {
         private readonly IMongoCollection<UserTask> _userTasks;
+        private readonly MongoClient client;
+
 
         public UserTaskMongoRepository(IOptions<MongoDbConfiguration> config)
         {
-            var client = new MongoClient(config.Value.ConnectionString);
+            client = new MongoClient(config.Value.ConnectionString);
             var database = client.GetDatabase(config.Value.DatabaseName);
 
             _userTasks = database.GetCollection<UserTask>("UserTask");
@@ -59,5 +61,10 @@ namespace UoW.DL.Repositories.MongoDB.Tasks
 
             return usetTask;
         }
-    }
+
+		public MongoClient GetClient()
+		{
+            return client;
+		}
+	}
 }
