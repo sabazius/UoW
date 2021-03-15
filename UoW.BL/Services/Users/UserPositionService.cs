@@ -10,6 +10,7 @@ namespace UoW.BL.Services.Users
 	{
 		private IUserPositionRepository _userPositionRepository;
 
+
 		public UserPositionService(IUserPositionRepository userPositionRepository)
 		{
 			_userPositionRepository = userPositionRepository;

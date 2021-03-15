@@ -12,15 +12,23 @@ namespace UoW.BL.Services.Users
         private ISpecialityRepository _specialtyRepository;
         private IFacultyRepository _facultyRepository;
         private ILectorRepository _lectorRepository;
-        public SpecialtyService(ISpecialityRepository specialtyRepository, IFacultyRepository facultyRepository, ILectorRepository lectorRepository)
+        private readonly IRabbitMqProducer _rabbitMqProducer;
+
+        public SpecialtyService(ISpecialityRepository specialtyRepository, IFacultyRepository facultyRepository,
+                                ILectorRepository lectorRepository, IRabbitMqProducer rabbitMqProducer)
         {
             _specialtyRepository = specialtyRepository;
             _facultyRepository = facultyRepository;
             _lectorRepository = lectorRepository;
+            _rabbitMqProducer = rabbitMqProducer;
         }
         public async Task<Specialty> GetSpecialtyById(int id)
         {
-           return await _specialtyRepository.GetById(id);
+            var result = await _specialtyRepository.GetById(id);
+
+            _rabbitMqProducer.Publish(result.Name);
+
+            return result;
         }
 
         public async Task<Specialty> Create(Specialty speciality)

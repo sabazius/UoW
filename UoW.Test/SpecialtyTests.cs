@@ -40,7 +40,7 @@ namespace UoW.Test
             _specialtyRepository = new Mock<ISpecialityRepository>();
             _lectorRepository = new Mock<ILectorRepository>();
             _facultyRepository = new Mock<IFacultyRepository>();
-            _specialtyService = new SpecialtyService(_specialtyRepository.Object, _facultyRepository.Object, _lectorRepository.Object);
+            _specialtyService = new SpecialtyService(_specialtyRepository.Object, _facultyRepository.Object, _lectorRepository.Object, null);
             _controller = new SpecialtyController(_specialtyService, _mapper);
 
         }

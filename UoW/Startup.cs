@@ -38,6 +38,7 @@ namespace UoW
 			services.AddSingleton(jwtSettings);
 
 			services.Configure<MongoDbConfiguration>(Configuration.GetSection(nameof(MongoDbConfiguration)));
+			services.Configure<RabbitMqConfig>(Configuration.GetSection(nameof(RabbitMqConfig)));
 
 			var mongoSettings = Configuration.GetSection(nameof(MongoDbConfiguration)).Get<MongoDbConfiguration>();
 
@@ -82,6 +83,7 @@ namespace UoW
 				options.AddPolicy("ViewUserPositions", p => p.RequireAuthenticatedUser().RequireClaim("View"));
 			});
 
+			services.AddSingleton<RabbitMqProducer>();
 
 			services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
 
