@@ -45,7 +45,8 @@ namespace UoW
 				})
                 .ConfigureServices( (context, services) => 
                 {
-                    services.AddHostedService<KafkaBackgroundProducer>();
+                    //services.AddHostedService<KafkaBackgroundProducer>();
+                    services.AddHostedService<KafkaBackgroundConsumer>();
                 });
 	}
 }
