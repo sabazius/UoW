@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using System;
+using UoW.DL.Kafka;
 
 namespace UoW
 {
@@ -40,6 +42,10 @@ namespace UoW
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
 					webBuilder.UseStartup<Startup>();
-				});
+				})
+                .ConfigureServices( (context, services) => 
+                {
+                    services.AddHostedService<KafkaBackgroundProducer>();
+                });
 	}
 }
